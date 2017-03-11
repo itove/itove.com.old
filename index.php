@@ -5,7 +5,6 @@
  * @todo
  */
 require_once 'autoload.php';
-
 $inc = 'inc';
 $t = $_GET["t"];
 require_once $inc . '/header.inc';
