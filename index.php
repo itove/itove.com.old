@@ -4,23 +4,8 @@
  * @version
  * @todo
  */
+require_once 'autoload.php';
 
-class pus{
-	private $a;
-	private $b;
-	private $c;
-	function __construct(){
-	}
-
-	function __destruct(){
-	}
-
-	function f(){
-	}
-}
-
-#new pus();
-#pus::f();
 $inc = 'inc';
 $t = $_GET["t"];
 require_once $inc . '/header.inc';
