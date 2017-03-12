@@ -7,7 +7,7 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>The Art of Teaching is the Art of Assisting Discovery</h1>
 							<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-							<p><a class="btn btn-primary btn-lg btn-learn" href="#">我 们 的 业 务</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href=""><i class="icon-play"></i>了解 ITOVE</a></p>
+							<p><a class="btn btn-primary btn-lg btn-learn" href="product">我 们 的 业 务</a> <a class="btn btn-primary btn-lg btn-video" href="faq"><i class="icon-tv"></i>了解 ITOVE</a></p>
 						</div>
 					</div>
 				</div>

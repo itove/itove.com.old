@@ -57,7 +57,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="num">Call: +86 132 0726 2011</p>
+						<p class="num">Call: +86 0719 8025335</p>
 						<ul class="fh5co-social">
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -72,21 +72,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-1">
-						<div id="fh5co-logo"><a href=".">ITOVE<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="/">ITOVE<span>.</span></a></div>
 					</div>
 					<div class="col-xs-11 text-right menu-1">
 						<ul>
 							<li  class="<?php if($t == "") echo "active"; ?>"><a href="/">首 页</a></li>
 							<li class="<?php if($t == "product") echo "active"; ?>"><a href="product">产 品</a></li>
-							<li class="<?php if($t == "faq") echo "active"; ?>"><a href="faq">FAQ</a></li>
-							<li class="has-dropdown <?php if($t == "more") echo "active"; ?>">
-								<a href="more">动态</a>
+							<li class="has-dropdown <?php if($t == "faq") echo "active"; ?>">
+								<a href="faq">资 源</a>
 								<ul class="dropdown">
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
+									<li class="<?php if($t == "faq") echo "active"; ?>"><a href="faq">FAQ</a></li>
+									<li><a href="blog">Blog</a></li>
+									<li><a href="api">API</a></li>
 								</ul>
 							</li>
 							<li class="<?php if($t == "contact") echo "active"; ?>" ><a href="contact">联 系</a></li>

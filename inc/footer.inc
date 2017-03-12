@@ -23,13 +23,13 @@
 					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Learning</h4>
+					<h4>ITOVE</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Course</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
+						<li><a href="product">产 品</a></li>
+						<li><a href="faq">FAQ</a></li>
+						<li><a href="blog">Blog</a></li>
+						<li><a href="contact">联 系</a></li>
+						<li><a href="api">API</a></li>
 					</ul>
 				</div>
 
@@ -70,7 +70,7 @@
 				<div class="col-md-12 text-center">
 					<p>
 						<small class="block">&copy; 2017 ITOVE.com . 鄂ICP备15020545号</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> </small>
+						<small class="block">Themed by FreeHTML5.co Images from unsplash</small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
