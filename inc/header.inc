@@ -82,7 +82,7 @@
 								<a href="faq">资 源</a>
 								<ul class="dropdown">
 									<li class="<?php if($t == "faq") echo "active"; ?>"><a href="faq">FAQ</a></li>
-									<li><a href="blog">Blog</a></li>
+									<li><a href="/blog.itove.com">Blog</a></li>
 									<li><a href="api">API</a></li>
 								</ul>
 							</li>
