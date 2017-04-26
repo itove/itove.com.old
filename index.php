@@ -9,10 +9,10 @@ $inc = 'inc';
 $t = $_GET["t"];
 require_once $inc . '/header.inc';
 switch($t){
-case "product":
+case "product0":
 	require_once $inc.'/'.$t.'.inc';
 	break;
-case "faq":
+case "faq0":
 	require_once $inc.'/'.$t.'.inc';
 	break;
 case "more":

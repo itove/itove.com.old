@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ITOVE - 中小企业IT解决方案</title>
+	<title>ITOVE - IT resolve</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="ITOVE, 中小企业IT解决方案" />
 	<meta name="keywords" content="ITOVE, 小孚, IT, 互联网, 解决方案, linux, 服务器" />
@@ -86,6 +86,7 @@
 									<li><a href="api">API</a></li>
 								</ul>
 							</li>
+							<li class="<?php if($t == "contact") echo "active"; ?>"><a href="contact">联 系</a></li>
 							<li class="btn-cta"><a href="#"><span>登 录</span></a></li>
 							<li class="btn-cta"><a href="#"><span>注 册</span></a></li>
 						</ul>

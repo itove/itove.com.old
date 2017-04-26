@@ -1,4 +1,4 @@
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/c.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -6,7 +6,6 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Contact Us</h1>
-							<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>
 						</div>
 					</div>
 				</div>
@@ -22,9 +21,9 @@
 					<div class="fh5co-contact-info">
 						<h3>联系我们</h3>
 						<ul>
-							<li class="address">湖北省十堰市<br>人民北路68号大都会606</li>
+							<li class="address">湖北省十堰市<br>天津路28号<br>NOVO+众创空间</li>
 							<li class="phone"><a href="tel://07198025335">+86 0719 8025335</a></li>
-							<li class="email"><a href="mailto:us@itove.com">us@itove.com</a></li>
+							<li class="email"><a href="mailto:a@itove.com">a@itove.com</a></li>
 							<li class="url"><a href="http://itove.com">itove.com</a></li>
 						</ul>
 					</div>

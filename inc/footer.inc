@@ -1,67 +1,48 @@
-	<div id="fh5co-started" style="background-image:url(images/img_bg_2.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Lets Get Started</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<p><a href="#" class="btn btn-default btn-lg">Create A Free Course</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
-					<h4>About ITOVE</h4>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+					<h4>ABOUT ITOVE</h4>
+					<p>ITOVE 为中小企业定制完善的 IT 解决方案。</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
 					<h4>ITOVE</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="product">产 品</a></li>
-						<li><a href="faq">FAQ</a></li>
-						<li><a href="blog">Blog</a></li>
-						<li><a href="contact">联 系</a></li>
-						<li><a href="api">API</a></li>
+						<li><a href="product">product</a></li>
+						<li><a href="faq">faq</a></li>
+						<li><a href="http://blog.itove.com">blog</a></li>
+						<li><a href="contact">contact</a></li>
+						<li><a href="api">api</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Learn &amp; Grow</h4>
+					<h4>TODO</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
+						<li><a href="#">recruit</a></li>
+						<li><a href="#">build</a></li>
+						<li><a href="#">marketing</a></li>
+						<li><a href="#">ssl</a></li>
+						<li><a href="#">api</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Engage us</h4>
+					<h4>PROJECT</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Marketing</a></li>
-						<li><a href="#">Visual Assistant</a></li>
-						<li><a href="#">System Analysis</a></li>
-						<li><a href="#">Advertise</a></li>
+						<li><a href="#">vpn</a></li>
+						<li><a href="#">bash</a></li>
+						<li><a href="#">wechat</a></li>
+						<li><a href="#">actod</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Legal</h4>
+					<h4>TEAM</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
+						<li><a href="#">richard</a></li>
+						<li><a href="#">dennis</a></li>
+						<li><a href="https://dotcra.com">dotcra</a></li>
 					</ul>
 				</div>
 			</div>
@@ -81,7 +62,6 @@
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
 							<li><a href="#"><i class="icon-sina-weibo"></i></a></li>
 							<li><a href="#"><i class="icon-qq"></i></a></li>
-							<li><a href="#"><i class="icon-chat"></i></a></li>
 						</ul>
 					</p>
 				</div>
