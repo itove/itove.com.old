@@ -51,7 +51,7 @@
 				<div class="col-md-12 text-center">
 					<p>
 						<small class="block">&copy; 2017 ITOVE.com . 鄂ICP备15020545号</small> 
-						<small class="block">Themed by FreeHTML5.co Images from unsplash</small>
+						<small class="block">Theme by FreeHTML5.co Images from unsplash</small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
