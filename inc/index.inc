@@ -12,3 +12,7 @@
 			</div>
 		</div>
 	</header>
+
+<!--
+	vim:ft=html
+-->

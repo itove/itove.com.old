@@ -135,3 +135,7 @@
 			</div>
 		</div>
 	</div>
+
+<!--
+	vim:ft=html
+-->
