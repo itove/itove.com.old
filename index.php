@@ -4,24 +4,17 @@
  * @version
  * @todo
  */
-require_once 'autoload.php';
+require 'autoload.php';
 $inc = 'inc';
+$pages=['product0','faq0','more','contact','si'];
 $t = $_GET["t"];
-require_once $inc . '/header.inc';
-switch($t){
-case "product0":
-	require_once $inc.'/'.$t.'.inc';
-	break;
-case "faq0":
-	require_once $inc.'/'.$t.'.inc';
-	break;
-case "more":
-	require_once $inc.'/'.$t.'.inc';
-	break;
-case "contact":
-	require_once $inc.'/'.$t.'.inc';
-	break;
-default:
-	require_once $inc.'/index.inc';
-}
-require_once $inc . '/footer.inc';
+
+require $inc . '/header.inc';
+
+
+if(in_array($t, $pages))
+	require $inc.'/'.$t.'.inc';
+else
+	require $inc.'/index.inc';
+
+require $inc . '/footer.inc';

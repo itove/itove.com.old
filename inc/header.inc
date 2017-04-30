@@ -87,7 +87,7 @@
 								</ul>
 							</li>
 							<li class="<?php if($t == "contact") echo "active"; ?>"><a href="contact">联 系</a></li>
-							<li class="btn-cta"><a href="#"><span>登 录</span></a></li>
+							<li class="btn-cta"><a href="si"><span>登 录</span></a></li>
 							<li class="btn-cta"><a href="#"><span>注 册</span></a></li>
 						</ul>
 					</div>
