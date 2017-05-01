@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="">
 </head>
 <body>
-<div>
+<div  id="wrapper">
 <form action="signin" method="POST">
 <input type="text" name="user" autofocus>
 <input type="password" name="pw">
