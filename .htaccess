@@ -2,8 +2,8 @@ RewriteEngine On
 #RewriteRule ^([a-zA-Z0-9]+)$ index.php?t=$1 [L]
 RewriteRule ^(\w+)$ index.php?t=$1 [L]
 
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
