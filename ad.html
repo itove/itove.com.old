@@ -46,7 +46,7 @@ p{
 	width: 60px;
 }
 .title{
-	font-size: 66%;
+	font-size: 70%;
 	vertical-align: middle;
 }
 .addr{
@@ -74,6 +74,28 @@ p{
 #title{
 	font-size: 1.4em;
 }
+.one{
+}
+.distro{
+	display: inline-block;
+	font-size: 40%;
+	width: 27%;
+}
+#support{
+	font-size: 80%;
+}
+#recruit{
+	font-size: 70%;
+	margin:0px;
+}
+.contact .fa-mobile{
+	width: 3%;
+}
+.contact .fa-weixin{
+	font-size: 80%;
+	width: 6%;
+}
+
 </style>
 </head>
 
@@ -83,16 +105,29 @@ p{
 	</div>
 
 	<div class="work">
-		<p id="dev" class="zh">主营网站、公众号、小程序等开发</p>
-		<p id="linux" class="colored"><span class="zh">并提供专业</span> Linux <span class="zh">培训与支持</span></p>
-		<p id="wel" class="zh">欢迎来电垂询</p>
+		<p id="dev" class="zh">网站、公众号、小程序开发</p>
+		<span id="linux" class="colored one">Linux</span>
+		<div class="distro one colored">
+			RedHat/CentOS Fedora
+			Debian Ubuntu SUSE
+		</div>
+		<span id="support" class="colored zh one">支持与培训</span>
+		<!-- <p id="wel" class="zh">欢迎来电垂询</p> -->
 	</div>
 
 	<div class="contact" id="contact">
-		<p class="colored"><i class="fa fa-mobile" aria-hidden="true"></i><span>132 0726 2011</span></p>
-		<p><i class="fa fa-phone" aria-hidden="true"></i><span>0719-8025335</span></p>
-		<p class="colored"><i class="fa fa-bookmark" aria-hidden="true"></i><span>http://itove.com</span></p>
-		<p><i class="fa fa-envelope" aria-hidden="true"></i><span>sale@itove.com</span></p>
+		<p class="">
+		<i class="fa fa-weixin" aria-hidden="true"></i>
+		<i class="fa fa-mobile" aria-hidden="true"></i>
+		<span>132 0726 2011</span>
+		</p>
+		<p class="colored"><i class="fa fa-phone" aria-hidden="true"></i><span>0719-8025335</span></p>
+		<p class=""><i class="fa fa-bookmark" aria-hidden="true"></i><span>http://itove.com</span></p>
+		<p class="colored"><i class="fa fa-envelope" aria-hidden="true"></i><span>sale@itove.com</span></p>
+	</div>
+
+	<div class="contact">
+		<p class=""><i class="fa fa-university" aria-hidden="true"></i><span class="addr zh">天津路28号NOVO<sup>+</sup>众创空间</span></p>
 	</div>
 
 	<div id="sns" class="colored">
@@ -103,9 +138,10 @@ p{
 	<i class="fa fa-github" aria-hidden="true"></i>
 	<span class="snsacc">itovecom</span>
 	</div >
-	<div class="contact">
-		<p><i class="fa fa-university" aria-hidden="true"></i><span class="addr zh">天津路28号NOVO<sup>+</sup>众创空间</span></p>
-	</div>
+	<p id="recruit">
+	<i class="fa fa-handshake-o" aria-hidden="true"></i>
+	<span id="" class="zh">伙伴招募... btw</span>
+	</p>
 
 	<script src=""></script>
 	<noscript></noscript>
