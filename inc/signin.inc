@@ -11,7 +11,7 @@
 <form action="signin" method="POST">
 <input type="text" name="user" autofocus>
 <input type="password" name="pw">
-<input type="submit" value="fuck">
+<input type="submit" value="submit">
 <?php 
 if(isset($pw) && $pw!=$p) echo 'wrong pass';
 ?>
