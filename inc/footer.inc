@@ -55,7 +55,7 @@
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="https://github.com/Dotcra" target="_blank"><i class="icon-github"></i></a></li>
+							<li><a href="https://github.com/itovecom" target="_blank"><i class="icon-github"></i></a></li>
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-linkedin"></i></a></li>
