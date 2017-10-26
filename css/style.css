@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-cover .display-t,
 .fh5co-cover .display-tc {
   z-index: 9;
-  height: 700px;
+  height: 550px;
   display: table;
   width: 100%;
   margin-top: 100px;
