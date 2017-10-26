@@ -5,7 +5,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>TO THE UNKNOWN</h1>
+							<h1>YOU DON'T HAVE TO DO THIS</h1>
 						</div>
 					</div>
 				</div>
