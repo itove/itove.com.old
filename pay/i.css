@@ -1,6 +1,6 @@
 body{
 	text-align: center;
-	padding-top: 10%;
+	padding-top: 7%;
 }
 
 
@@ -54,11 +54,6 @@ nav{
 }
 
 @media screen and (min-width: 500px){
-	body{
-		padding-top: 7%;
-	}
-
-
 	.one{
 		width: 14%;
 	}
