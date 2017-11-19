@@ -46,7 +46,7 @@ nav{
 }
 
 #tab{
-	padding-top: 3%;
+	padding-top: 1.5%;
 }
 
 .btn{
@@ -70,7 +70,6 @@ nav{
 	#tab{
 		width: 70%;
 		margin: auto;
-		padding-top: 1.5%;
 	}
 
 	.form-control{
