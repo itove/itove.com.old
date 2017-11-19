@@ -1,0 +1,43 @@
+body{
+	text-align: center;
+	padding-top: 7%;
+}
+
+
+.one{
+	//float:left;
+	display: inline-block;
+	width: 8%;
+	height: 50px;
+	text-align: center;
+	margin-bottom: 2%;
+	border: 0.1rem solid grey;
+	font-size: 0;
+}
+
+.one .td{
+	font-size: 1rem;
+}
+
+.th{
+	//background-color: red;
+	border-bottom: 0.1rem solid grey;
+	font-size: 0.7rem;
+}
+
+#passwd{
+	margin: 3%;
+}
+
+nav{
+	display: inline-block;
+}
+
+.head{
+	font-size: 1.5rem;
+}
+
+#tab{
+	width: 70%;
+	margin: auto;
+}
