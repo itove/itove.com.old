@@ -1,8 +1,47 @@
-<script>
-var s = window.screen
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+body{
+	padding-top: 20%;
+}
+#screen {
+	margin: auto;
+	width: 60%;
+	text-align: center;
+	font-size: 2rem;
+	color: red;
+}
+</style>
+</head>
+<body>
+	<div id="screen">
+	<p id="width">400</p>
+	<p id="awidth">400</p>
+	<p id="height">600</p>
+	<p id="aheight">600</p>
+	</div>
 
-document.write(s.width);
-document.write(s.availWidth);
-document.write(s.height);
-document.write(s.availHeight);
+<script>
+var s = window.screen;
+var a = document.getElementById('width');
+var b = document.getElementById('awidth');
+var c = document.getElementById('height');
+var d = document.getElementById('aheight');
+a.innerHTML = s.width;
+b.innerHTML = s.availWidth;
+c.innerHTML = s.height;
+d.innerHTML = s.availHeight;
 </script>
+	<noscript></noscript>
+</body>
+</html>
+
+<!--
+	vim:ft=html
+-->
+
