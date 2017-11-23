@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="">
 <style>
 body{
-	padding-top: 20%;
+	padding-top: 10%;
 }
 #screen {
 	margin: auto;
@@ -16,14 +16,22 @@ body{
 	font-size: 2rem;
 	color: red;
 }
+p{
+	font-size: 1rem;
+	color: grey;
+}
 </style>
 </head>
 <body>
 	<div id="screen">
-	<p id="width">400</p>
-	<p id="awidth">400</p>
-	<p id="height">600</p>
-	<p id="aheight">600</p>
+		<p>window.screen.width/height</p>
+		<span id="width">400</span>×<span id="height">600</span>
+		<p>window.screen.availWidth/Height</p>
+		<span id="awidth">400</span>×<span id="aheight">600</span>
+		<p>window.innerWidth/Height</p>
+		<span id="iwidth">400</span>×<span id="iheight">600</span>
+		<p>window.outerWidth/Height</p>
+		<span id="owidth">400</span>×<span id="oheight">600</span>
 	</div>
 
 <script>
@@ -32,10 +40,18 @@ var a = document.getElementById('width');
 var b = document.getElementById('awidth');
 var c = document.getElementById('height');
 var d = document.getElementById('aheight');
+var e = document.getElementById('iwidth');
+var f = document.getElementById('iheight');
+var g = document.getElementById('owidth');
+var h = document.getElementById('oheight');
 a.innerHTML = s.width;
 b.innerHTML = s.availWidth;
 c.innerHTML = s.height;
 d.innerHTML = s.availHeight;
+e.innerHTML = window.innerWidth;
+f.innerHTML = window.innerHeight;
+g.innerHTML = window.outerWidth;
+h.innerHTML = window.outerHeight;
 </script>
 	<noscript></noscript>
 </body>
