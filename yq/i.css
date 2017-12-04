@@ -1,0 +1,55 @@
+#caro {
+	font-size: 18px;
+}
+
+
+#caro_0, .host, .phantom{
+	position: relative;
+	width: 200px;
+	height: 60px;
+	text-align: center;
+	background-color: #ecf0f3;
+	margin-left: 1px;
+	margin: 5px;
+	cursor: pointer;
+	color: black;
+}
+
+.host p, .phantom p{
+	margin: auto;
+}
+
+#caro_0, #caro_1, #caro_2, #caro_3, #caro_4{
+}
+
+#caro_1a, #caro_1b, #caro_1c, #caro_2a, #caro_2b, #caro_2c, #caro_3a, #caro_3b, #caro_3c, #caro_4a, #caro_4b, #caro_4c{
+	background-color: #ecf0f3;
+	margin: 2px;
+	margin-left: 15px;
+}
+
+#caro_0{
+	background-color: #0657b2;
+	cursor: unset;
+	color: white;
+	font-size: 26px;
+	font-weight: 900;
+	height: auto;
+	padding: 5px 0px 5px 0px;
+}
+#caro_0 p{
+	margin: 8px;
+}
+
+.vanish{
+	display: none;
+}
+.host .fa-stack{
+	position: absolute;
+	right: 15px;
+	top:5px;
+	transform: scale(0.6, 0.6);
+}
+.host p, .phantom p{
+	line-height: 60px;
+}
