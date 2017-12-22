@@ -10,7 +10,7 @@ class page{
 	function load(){
 		$inc = 'inc';
 		$pages=['product0','faq0','more','contact','signin','signup'];
-		$t = $_GET["t"];
+		$t = $_GET['t'];
 
 		if($t=='signin'){
 			require 'signin.php';
