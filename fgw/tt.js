@@ -35,11 +35,11 @@ if(s) s.addEventListener('keyup', search);
 
 // click on projects entries to progress page
 function progressPage(){
-	location.href='progress.html';
+	location.href='progress';
 }
 // click on users entries to passwd page
 function passwd(){
-	location.href='setting.html';
+	location.href='setting';
 }
 
 // close alerts

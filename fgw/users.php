@@ -1,34 +1,15 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>茅箭区资产投资管理平台</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Custom styles for this template -->
-    <link href="tt.css" rel="stylesheet">
-  </head>
-
   <body>
 
 	  <div class="container" id="setting">
 		  <nav aria-label="breadcrumb" class="position-relative">
 			  <ol class="breadcrumb">
-				  <li class="breadcrumb-item"><a href="index.html">茅箭区资产投资管理平台</a></li>
+				  <li class="breadcrumb-item"><a href="./">茅箭区资产投资管理平台</a></li>
 				  <li class="breadcrumb-item active" aria-current="page">设 置</li>
 			  </ol>
 			  <div id="settings" class="btn-group btn-group-sm position-absolute" role="group" aria-label="Basic example">
-				  <a role="button" href="setting.html" class="btn btn-danger">修改密码</a>
-				  <a role="button" href="users.html" class="btn btn-danger active">用户管理</a>
-				  <a role="button" href="upload.html" class="btn btn-danger">上传报表</a>
+				  <a role="button" href="setting" class="btn btn-danger">修改密码</a>
+				  <a role="button" href="users" class="btn btn-danger active">用户管理</a>
+				  <a role="button" href="upload" class="btn btn-danger">上传报表</a>
 				  <!--
 				  <button type="button" class="btn btn-danger">用户管理</button>
 				  <button type="button" class="btn btn-danger">上传报表</button>
@@ -92,25 +73,3 @@
 		  </table>
 
 		  </main>
-
-		  <footer>
-		  </footer>
-
-	  </div>
-	  <!-- js placed at the end of the document so the pages load faster -->
-	  <script src=""></script>
-
-	  <!--common script for all pages-->
-	  <script src="tt.js"></script>
-
-	  <!--script for this page-->
-	  <script src=""></script>
-
-	  <noscript></noscript>
-  </body>
-</html>
-
-<!--
-	vim:ft=html
--->
-

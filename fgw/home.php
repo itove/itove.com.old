@@ -1,22 +1,3 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>茅箭区资产投资管理平台</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Custom styles for this template -->
-    <link href="tt.css" rel="stylesheet">
-  </head>
-
   <body>
 
     <div class="container" id="index">
@@ -64,7 +45,7 @@
 					  <h5 class="card-title">重点项目进度汇报</h5>
 					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 				  </div>
-				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="projects.html">去更新进度</a></div>
+				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="projects">去更新进度</a></div>
 			  </div>
 		  </div>
 		  <div class="col-sm-6">
@@ -86,7 +67,7 @@
 					  <h5 class="card-title">设 置</h5>
 					  <p class="card-text">修改密码、添加用户、上传报表...</p>
 				  </div>
-				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="setting.html">修改设置</a></div>
+				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="setting">修改设置</a></div>
 			  </div>
 		  </div>
 	  </div>
@@ -119,7 +100,3 @@
 	  <footer class="footer">
 		  <p>&copy; 团团网络 2018</p>
 	  </footer>
-
-	</div> <!-- /container -->
-  </body>
-</html>

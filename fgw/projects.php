@@ -1,28 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>茅箭区资产投资管理平台</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="tt.css" rel="stylesheet">
-  </head>
-
   <body>
 
 	  <div class="container" id="projects">
 		  <nav aria-label="breadcrumb" class="">
 			  <div class="">
 				  <ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="index.html">茅箭区资产投资管理平台</a></li>
+					  <li class="breadcrumb-item"><a href="./">茅箭区资产投资管理平台</a></li>
 					  <li class="breadcrumb-item active" aria-current="page">我的重点项目</li>
 				  </ol>
 			  </div>
@@ -77,25 +59,3 @@
 		  </table>
 
 		  </main>
-
-		  <footer>
-		  </footer>
-
-	  </div>
-	  <!-- js placed at the end of the document so the pages load faster -->
-	  <script src=""></script>
-
-	  <!--common script for all pages-->
-	  <script src="tt.js"></script>
-
-	  <!--script for this page-->
-	  <script src=""></script>
-
-	  <noscript></noscript>
-  </body>
-</html>
-
-<!--
-	vim:ft=html
--->
-
