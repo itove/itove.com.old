@@ -31,6 +31,9 @@ for(var i=0;i<dropdownitem.length;i++){
 var s=document.querySelector('#search');
 if(s) s.addEventListener('keyup', search);
 
+// addEvnetListener to upload
+var u=document.querySelector('#upload input');
+if(u) u.addEventListener('change', chname);
 
 
 // click on projects entries to progress page
@@ -39,7 +42,11 @@ function progressPage(){
 }
 // click on users entries to passwd page
 function passwd(){
+	var user=this.querySelector('td').innerText;
+	console.log(user);
 	location.href='setting';
+	var user1=document.querySelector('input').innerText;
+	console.log(user1);
 }
 
 // close alerts
@@ -91,4 +98,8 @@ function search(){
 	}
 
 
+}
+
+function chname(){
+	u.nextElementSibling.innerText=u.value;
 }

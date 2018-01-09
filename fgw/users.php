@@ -1,5 +1,14 @@
+<?php
+$mysqli=new mysqli('localhost','root','dot','fgw');
+$mysqli->set_charset('utf8');
+$sql="select uid,username,organization.oname,date from users join organization on organization.oid=users.oid";
+$res=$mysqli->query($sql);
+$numrows=$res->num_rows;
+$rows=$res->fetch_all(MYSQLI_ASSOC);
+$res->free();
+$mysqli->close();
+?>
   <body>
-
 	  <div class="container" id="setting">
 		  <nav aria-label="breadcrumb" class="position-relative">
 			  <ol class="breadcrumb">
@@ -20,11 +29,17 @@
 		  <main>
 		  <div class="row mb-3 position-relative">
 			  <form class="form-row col-6">
-				  <div class="col-5">
+				  <div class="col-4">
 					  <input type="text" class="form-control" placeholder="用户名">
 				  </div>
-				  <div class="col-5">
+				  <div class="col-4">
 					  <input type="password" class="form-control" placeholder="密 码">
+				  </div>
+				  <div class="col-3">
+					  <select class="form-control" id="exampleFormControlSelect1">
+			<option selected>一级管理员</option>
+			<option>普通管理员</option>
+					  </select>
 				  </div>
 				  <div class="col-1">
 					  <button type="submit" class="btn btn-success">添加用户</button>
@@ -41,10 +56,11 @@
 					  <th scope="col">#</th>
 					  <th scope="col">用户名</th>
 					  <th scope="col">机 构</th>
-					  <th scope="col">Handle</th>
+					  <th scope="col">创建时间</th>
 				  </tr>
 			  </thead>
 			  <tbody>
+<!--
 				  <tr>
 					  <th scope="row">1</th>
 					  <td>Mark</td>
@@ -69,7 +85,15 @@
 					  <td>Otto</td>
 					  <td>@mdo</td>
 				  </tr>
+-->
+<?php foreach($rows as $v): ?>
+				  <tr>
+				  <th scope="row"><?= $v['uid'] ?></th>
+					  <td><?= $v['username'] ?></td>
+					  <td><?= $v['oname'] ?></td>
+					  <td><?= $v['date'] ?></td>
+				  </tr>
+<?php endforeach; ?>
 			  </tbody>
 		  </table>
-
 		  </main>

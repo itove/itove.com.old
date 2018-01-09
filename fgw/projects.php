@@ -1,3 +1,13 @@
+<?php
+$mysqli=new mysqli('localhost','root','dot','fgw');
+$mysqli->set_charset('utf8');
+$sql="select pid,pname,b,g from projects";
+$res=$mysqli->query($sql);
+$numrows=$res->num_rows;
+$rows=$res->fetch_all(MYSQLI_ASSOC);
+$res->free();
+$mysqli->close();
+?>
   <body>
 
 	  <div class="container" id="projects">
@@ -26,11 +36,12 @@
 				  <tr>
 					  <th scope="col">#</th>
 					  <th scope="col">项目名称</th>
-					  <th scope="col">Last</th>
-					  <th scope="col">Handle</th>
+					  <th scope="col">总投资</th>
+					  <th scope="col">责任单位</th>
 				  </tr>
 			  </thead>
 			  <tbody>
+<!--
 				  <tr class="bg-success">
 					  <th scope="row">1</th>
 					  <td>Mark</td>
@@ -55,6 +66,20 @@
 					  <td>Otto</td>
 					  <td>@mdo</td>
 				  </tr>
+-->
+
+<?php foreach($rows as $v): ?>
+<?php
+$i=rand(1,4);
+$a=['','bg-danger','bg-warning','bg-success'];
+?>
+	<tr class="<?= $a[$i] ?>">
+				  <th scope="row"><?= $v['pid'] ?></th>
+					  <td><?= $v['pname'] ?></td>
+					  <td><?= $v['b'] ?></td>
+					  <td><?= $v['g'] ?></td>
+				  </tr>
+<?php endforeach; ?>
 			  </tbody>
 		  </table>
 

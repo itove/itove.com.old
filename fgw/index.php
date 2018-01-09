@@ -6,6 +6,9 @@
  * @todo
  */
 
+require 'vendor/autoload.php';
+//use Dotcra/
+
 $root="./";
 $inc="./";
 $static="./";

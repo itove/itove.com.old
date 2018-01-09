@@ -6,9 +6,9 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Reader\Xls;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
-//$inputFileName = __DIR__ . '/helloworld.xlsx';
 $type='Xls';
-$inputFileName = __DIR__ . '/fgw.xls';
+//$inputFileName = __DIR__ . '/fgw.xls';
+$inputFileName = $file;
 $sheetname='工业 ';
 
 $reader = IOFactory::createReader($type);
@@ -16,9 +16,9 @@ $reader->setLoadSheetsOnly($sheetname);
 $spreadsheet = $reader->load($inputFileName);
 
 $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
-echo $spreadsheet->getSheetCount();
+//echo $spreadsheet->getSheetCount();
 $loadedSheetNames = $spreadsheet->getSheetNames();
-var_dump($loadedSheetNames);
+//var_dump($loadedSheetNames);
 //var_dump($sheetData);
 
 // database;
