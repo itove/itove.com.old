@@ -1,12 +1,15 @@
 <?php
 $mysqli=new mysqli('localhost','root','dot','fgw');
-$mysqli->set_charset('utf8');
-$sql="select pid,pname,b,g from projects";
-$res=$mysqli->query($sql);
-$numrows=$res->num_rows;
-$rows=$res->fetch_all(MYSQLI_ASSOC);
-$res->free();
-$mysqli->close();
+if(!$mysqli->connect_errno){
+	$mysqli->set_charset('utf8');
+	$sql="select pid,pname,b,g from projects";
+	if($res=$mysqli->query($sql)){
+		$numrows=$res->num_rows;
+		$rows=$res->fetch_all(MYSQLI_ASSOC);
+		$res->free();
+		$mysqli->close();
+	}
+}
 ?>
   <body>
 

@@ -3,11 +3,12 @@ $mysqli=new mysqli('localhost','root','dot','fgw');
 if(!$mysqli->connect_errno){
 	$mysqli->set_charset('utf8');
 	$sql="select uid,username,organization.oname,date from users join organization on organization.oid=users.oid";
-	$res=$mysqli->query($sql);
-	$numrows=$res->num_rows;
-	$rows=$res->fetch_all(MYSQLI_ASSOC);
-	$res->free();
-	$mysqli->close();
+	if($res=$mysqli->query($sql)){
+		$numrows=$res->num_rows;
+		$rows=$res->fetch_all(MYSQLI_ASSOC);
+		$res->free();
+		$mysqli->close();
+	}
 }
 ?>
   <body>
