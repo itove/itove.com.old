@@ -21,13 +21,13 @@ $mysqli->close();
 		  </nav>
 
 		  <main>
-		  <div class="row mb-3 position-relative">
+		  <div class="row mb-3">
 			  <div class="col">
 				  <span class="badge badge-success">已完成</span>
 				  <span class="badge badge-warning">数据与上月雷同</span>
 				  <span class="badge badge-danger">上个月未提交</span>
 			  </div>
-			  <form class="form-row col-3 position-absolute" id="search">
+			  <form class="form-row col-3" id="search">
 				  <input class="col form-control mr-sm-2" type="text" placeholder="搜索项目" aria-label="Search">
 			  </form>
 		  </div>

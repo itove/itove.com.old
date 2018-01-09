@@ -27,26 +27,26 @@ $mysqli->close();
 		  </nav>
 
 		  <main>
-		  <div class="row mb-3 position-relative">
-			  <form class="form-row col-6">
-				  <div class="col-4">
+		  <div class="row mb-3">
+			  <form class="form-row col">
+				  <div class="col-3">
 					  <input type="text" class="form-control" placeholder="用户名">
 				  </div>
-				  <div class="col-4">
+				  <div class="col-3">
 					  <input type="password" class="form-control" placeholder="密 码">
 				  </div>
-				  <div class="col-3">
+				  <div class="col-2">
 					  <select class="form-control" id="exampleFormControlSelect1">
-			<option selected>一级管理员</option>
-			<option>普通管理员</option>
+						<option selected>一级管理员</option>
+						<option>普通管理员</option>
 					  </select>
 				  </div>
-				  <div class="col-1">
+				  <div class="col">
 					  <button type="submit" class="btn btn-success">添加用户</button>
 				  </div>
 			  </form>
 
-			  <form class="form-row col-3 position-absolute" id="search">
+			  <form class="form-row col-3" id="search">
 				  <input class="col form-control mr-sm-2" type="text" placeholder="搜索用户" aria-label="Search">
 			  </form>
 		  </div>
