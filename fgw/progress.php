@@ -1,3 +1,16 @@
+<?php
+$mysqli=new mysqli('localhost','root','dot','fgw');
+if(!$mysqli->connect_errno){
+	$mysqli->set_charset('utf8');
+	$sql="select pname from projects where pid=$page";
+	if($res=$mysqli->query($sql)){
+		$numrows=$res->num_rows;
+		$row=$res->fetch_assoc();
+		$res->free();
+		$mysqli->close();
+	}
+}
+?>
   <body>
 
 	  <div class="container" id="progress">
@@ -5,7 +18,7 @@
 				  <ol class="breadcrumb">
 					  <li class="breadcrumb-item"><a href="./">茅箭区资产投资管理平台</a></li>
 					  <li class="breadcrumb-item"><a href="projects">我的重点项目</a></li>
-					  <li class="breadcrumb-item active" aria-current="page">路灯安装</li>
+					  <li class="breadcrumb-item active" aria-current="page"><?= $row['pname'] ?></li>
 				  </ol>
 				  <div class="dropdown position-absolute" id="dates">
 					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

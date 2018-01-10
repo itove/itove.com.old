@@ -19,8 +19,8 @@
 			  <div class="card text-white bg-info mb-3">
 				  <div class="card-header"><i class="fa fa-bell-o" aria-hidden="true"></i></div>
 				  <div class="card-body">
-					  <h5 class="card-title">通 知</h5>
-					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <h5 class="card-title">公告通知</h5>
+					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="">查看通知</a></div>
 			  </div>
@@ -29,8 +29,8 @@
 			  <div class="card text-white bg-success mb-3">
 				  <div class="card-header"><i class="fa fa-sun-o" aria-hidden="true"></i></div>
 				  <div class="card-body">
-					  <h5 class="card-title">Secondary card title</h5>
-					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <h5 class="card-title">固定资产投资</h5>
+					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="">查看通知</a></div>
 			  </div>
@@ -43,7 +43,7 @@
 				  <div class="card-header"><i class="fa fa-cubes" aria-hidden="true"></i></div>
 				  <div class="card-body">
 					  <h5 class="card-title">重点项目进度汇报</h5>
-					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="projects">去更新进度</a></div>
 			  </div>
@@ -53,7 +53,7 @@
 				  <div class="card-header"><i class="fa fa-cube" aria-hidden="true"></i></div>
 				  <div class="card-body">
 					  <h5 class="card-title">储备项目汇报</h5>
-					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="">去更新进度</a></div>
 			  </div>

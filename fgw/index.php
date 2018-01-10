@@ -18,5 +18,10 @@ $page=ltrim($page, '/');
 $page ? : $page='home';
 
 require $inc . "header.php";
-require $inc . $page . ".php";
+if(is_numeric($page)){
+	require $inc . "progress.php";
+}
+else {
+	require $inc . $page . ".php";
+}
 require $inc . "footer.php";

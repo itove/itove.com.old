@@ -38,7 +38,8 @@ if(u) u.addEventListener('change', chname);
 
 // click on projects entries to progress page
 function progressPage(){
-	location.href='progress';
+	var pid=this.querySelector('th').innerText;
+	location.href=pid;
 }
 // click on users entries to passwd page
 function passwd(){
@@ -75,6 +76,26 @@ function dropdownmenu(){
 	}
 	this.classList.add('active');
 	this.parentElement.previousElementSibling.innerText=this.innerText;
+	var input=document.querySelectorAll('input, textarea');
+	var submit=document.querySelector('button[type=submit]');
+	if(this!==document.getElementById('dates').querySelector('.dropdown-menu').firstElementChild){
+		//console.log(this);
+		// disable inputs
+		for(var i=0;i<input.length;i++){
+			input[i].setAttribute("disabled","");
+		}
+		// remove submit
+		submit.classList.add("d-none");
+
+	}
+	else {
+		// enable inputs
+		for(var i=0;i<input.length;i++){
+			input[i].removeAttribute("disabled");
+		}
+		// add submit
+		submit.classList.remove("d-none");
+	}
 }
 
 // search
