@@ -8,30 +8,21 @@
 
 class page{
 	function load(){
-		$inc = 'inc';
-		$pages=['product0','faq0','more','contact','signin','signup'];
-		$t = $_GET['t'];
-
-		if($t=='signin'){
-			require 'signin.php';
-			return $t;
-		}
-
-		if($t=='signup'){
-			require 'inc/signup.inc';
-			return $t;
-		}
+		$inc = 'inc/';
+		$pages=['product','faq','more','contact','signin','signup'];
+		$page=$_SERVER['PATH_INFO'];
+		$page=ltrim($page, '/');
+		echo $page;
 
 		require $inc . '/header.inc';
 
-		if(in_array($t, $pages))
-			require $inc.'/'.$t.'.inc';
+		if(in_array($page, $pages))
+			require $inc . $page.'.inc';
 		else
-			require $inc.'/index.inc';
+			require $inc . 'index.inc';
 
-		require $inc . '/footer.inc';
+		require $inc . 'footer.inc';
 
-		return $t;
 	}
 
 	function __construct(){

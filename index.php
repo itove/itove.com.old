@@ -7,4 +7,4 @@
 
 require 'autoload.php';
 
-$page = page::load();
+page::load();
