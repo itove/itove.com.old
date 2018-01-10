@@ -12,7 +12,6 @@ class page{
 		$pages=['product','faq','more','contact','signin','signup'];
 		$page=$_SERVER['PATH_INFO'];
 		$page=ltrim($page, '/');
-		echo $page;
 
 		require $inc . '/header.inc';
 
@@ -32,5 +31,3 @@ class page{
 	}
 
 }
-
-//page::load();
