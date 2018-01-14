@@ -9,6 +9,7 @@
 			  <div id="settings" class="btn-group btn-group-sm position-absolute" role="group" aria-label="Basic example">
 				  <a role="button" href="setting" class="btn btn-danger active">修改密码</a>
 				  <a role="button" href="users" class="btn btn-danger">用户管理</a>
+				  <a role="button" href="stat" class="btn btn-danger">统计报表</a>
 				  <a role="button" href="upload" class="btn btn-danger">上传报表</a>
 				  <!--
 				  <button type="button" class="btn btn-danger">用户管理</button>

@@ -63,262 +63,99 @@ if(!$mysqli->connect_errno){
 			  <table class="table table-bordered">
 				  <tbody>
 					  <thead class="">
-						  <th colspan="6">项目基本信息</th>
+						  <th colspan="6">项目信息</th>
 					  </thead>
 					  <tr>
-						  <th class="table-warning" scope="row">审批监管平台代码</th>
+						  <th scope="row">建设内容</th>
+						  <td colspan="6">
+							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="ooksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfksdafsafsaasg asdfsafasf sadfsa saf asf" readonly></textarea>
+						  </td>
+					  </tr>
+					  <tr>
+						  <th scope="row">编 号</th>
+						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+						  <th scope="row">项目名称</th>
+						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+						  <th scope="row">建设性质</th>
+						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+					  </tr>
+					  <tr>
+						  <th class="table-warning" scope="row">建设阶段</th>
 						  <td class="table-warning">
 							  <input placeholder="abc" type="text" class="form-control">
 						  </td>
-						  <th scope="row">项目类型</th>
+						  <th scope="row">开工时间</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
+							  <input placeholder="abc" type="text" class="form-control" readonly>
 						  </td>
-						  <th scope="row">所属领域</th>
+						  <th scope="row">拟竣工时间</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">项目名称</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">详细地址</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">项目(法人)单位</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
+							  <input placeholder="abc" type="text" class="form-control" readonly>
 						  </td>
 					  </tr>
 					  <tr>
-						  <th scope="row">所属行业</th>
+						  <th scope="row">总投资</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
+							  <input placeholder="abc" type="text" class="form-control" readonly>
 						  </td>
-						  <th scope="row">拟开工年月</th>
+						  <th scope="row">2018年计划投资</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
+							  <input placeholder="abc" type="text" class="form-control" readonly>
 						  </td>
-						  <th scope="row">主要建设规模</th>
+						  <th scope="row">累计投资</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
+							  <input placeholder="abc" type="text" class="form-control" readonly>
 						  </td>
 					  </tr>
 					  <tr>
-						  <th scope="row">建设地点</th>
+						  <th scope="row">填报情况</th>
 						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+						  <th class="table-warning" scope="row">填报人</th>
+						  <td class="table-warning">
 							  <input placeholder="abc" type="text" class="form-control">
 						  </td>
-						  <th scope="row">审批监管平台代码</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">审批监管平台代码</th>
-						  <td>
+						  <th class="table-warning" scope="row">联系电话</th>
+						  <td class="table-warning">
 							  <input placeholder="abc" type="text" class="form-control">
 						  </td>
 					  </tr> 
+					  <tr>
+						  <th scope="row">责任单位</th>
+						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+						  <th scope="row">实施单位</th>
+						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+						  <th scope="row">包联领导</th>
+						  <td>
+							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  </td>
+					  </tr> 
+					  <tr class="table-warning">
+						  <th scope="row">本月进展</th>
+						  <td colspan="6">
+							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="abcaf sdaf asdf sadfas"></textarea>
+						  </td>
+					  </tr>
+					  <tr class="table-warning">
+						  <th scope="row">困难和问题</th>
+						  <td colspan="6">
+							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="dsafas fsadf sadfaf asdfd"></textarea>
+						  </td>
+					  </tr>
 				  </tbody>
 			  </table>
 
-			  <table class="table table-bordered bg-danger">
-				  <tbody>
-					  <thead>
-						  <th colspan="6">入库依据</th>
-					  </thead>
-					  <tr>
-						  <th scope="row">开户银行</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">主办银行</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">是否申请省预算内资金</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">所属规划</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">所属重大战略</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">所属政府投资方向</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">日常监管直接责任单位</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">联系人</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">联系电话</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">来源部门</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">来源处</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">abc</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-				  </tbody>
-			  </table>
-			  <table class="table table-bordered">
-				  <tbody>
-					  <thead>
-						  <th colspan="6">项目负责人</th>
-					  </thead>
-					  <tr>
-						  <th scope="row">姓名</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">手机</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">微信账号</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">固话</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">邮箱</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">责任人公司</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-				  </tbody>
-			  </table>
-			  <table class="table table-bordered">
-				  <tbody>
-					  <thead>
-						  <th colspan="6">项目联系人一</th>
-					  </thead>
-					  <tr>
-						  <th scope="row">姓名</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">手机</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">微信账号</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">固话</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">邮箱</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">责任人公司</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-				  </tbody>
-			  </table>
-			  <table class="table table-bordered">
-				  <tbody>
-					  <thead>
-						  <th colspan="6">项目联系人二</th>
-					  </thead>
-					  <tr>
-						  <th scope="row">姓名</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">手机</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">微信账号</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">固话</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">邮箱</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">责任人公司</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-				  </tbody>
-			  </table>
-			  <table class="table table-bordered">
-				  <tbody>
-					  <thead>
-						  <th colspan="6">审核辅助标识</th>
-					  </thead>
-					  <tr>
-						  <th scope="row">审核辅助标识01</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">审核辅助标识02</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">审核辅助标识03</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">备注</th>
-						  <td colspan="6">
-							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-						  </td>
-					  </tr>
-				  </tbody>
-			  </table>
 			  <button type="submit" class="btn btn-success">提 交</button>
 		  </form>
 
