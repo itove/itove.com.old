@@ -1,17 +1,8 @@
 <?php
-$mysqli=new mysqli('localhost','root','dot','fgw');
-if(!$mysqli->connect_errno){
-	$mysqli->set_charset('utf8');
-	$sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$page";
-	if($res=$mysqli->query($sql)){
-		$numrows=$res->num_rows;
-		$row=$res->fetch_assoc();
-		$res->free();
-		$mysqli->close();
-	}
-}
+$sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$page";
+$row=(new Db)->query($sql);
 $uid=10;
-$uid != $row['uid'] ? $disabled='disabled' : $display="";
+$uid != $row['uid'] ? $disabled='disabled' : $disabled="";
 ?>
   <body>
 

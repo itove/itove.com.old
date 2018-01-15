@@ -1,15 +1,6 @@
 <?php
-$mysqli=new mysqli('localhost','root','dot','fgw');
-if(!$mysqli->connect_errno){
-	$mysqli->set_charset('utf8');
-	$sql="select pid,uid,pname,investment,o_incharge,p_incharge,property from projects";
-	if($res=$mysqli->query($sql)){
-		$numrows=$res->num_rows;
-		$rows=$res->fetch_all(MYSQLI_ASSOC);
-		$res->free();
-		$mysqli->close();
-	}
-}
+$sql="select pid,uid,pname,investment,o_incharge,p_incharge,property from projects";
+$rows=(new Db)->query($sql);
 $uid=10;
 ?>
   <body>

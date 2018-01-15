@@ -7,7 +7,7 @@
  */
 
 require 'vendor/autoload.php';
-//use Dotcra/
+require 'Db.php';
 
 $root="./";
 $inc="./";

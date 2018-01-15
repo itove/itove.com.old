@@ -1,15 +1,6 @@
 <?php
-$mysqli=new mysqli('localhost','root','dot','fgw');
-if(!$mysqli->connect_errno){
-	$mysqli->set_charset('utf8');
-	$sql="select uid,username,organization.oname,date from users join organization on organization.oid=users.oid";
-	if($res=$mysqli->query($sql)){
-		$numrows=$res->num_rows;
-		$rows=$res->fetch_all(MYSQLI_ASSOC);
-		$res->free();
-		$mysqli->close();
-	}
-}
+$sql="select users.uid,username,organization.oname,date from users join organization on organization.oid=users.oid";
+$rows=(new Db)->query($sql);
 ?>
   <body>
 	  <div class="container" id="setting">
@@ -63,32 +54,6 @@ if(!$mysqli->connect_errno){
 				  </tr>
 			  </thead>
 			  <tbody>
-<!--
-				  <tr>
-					  <th scope="row">1</th>
-					  <td>Mark</td>
-					  <td>路灯管理处</td>
-					  <td>@mdo</td>
-				  </tr>
-				  <tr>
-					  <th scope="row">2</th>
-					  <td>Jacob</td>
-					  <td>Thornton</td>
-					  <td>@fat</td>
-				  </tr>
-				  <tr>
-					  <th scope="row">1</th>
-					  <td>Mark</td>
-					  <td>Otto</td>
-					  <td>@mdo</td>
-				  </tr>
-				  <tr>
-					  <th scope="row">1</th>
-					  <td>Mark</td>
-					  <td>Otto</td>
-					  <td>@mdo</td>
-				  </tr>
--->
 <?php foreach($rows as $v): ?>
 				  <tr>
 				  <th scope="row"><?= $v['uid'] ?></th>
