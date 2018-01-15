@@ -55,7 +55,7 @@ $uid=10;
 <?php
 $i=rand(1,4);
 $a=['','bg-danger','bg-warning','bg-success'];
-$v['uid'] != $uid ? $display=" d-none" : $display="";
+$v['uid'] == $uid ? $display=" searchable" : $display=" d-none";
 ?>
 	<tr class="<?= $a[$i] . $display ?>" data-uid="<?= $v['uid'] ?>">
 				  <th scope="row"><?= $v['pid'] ?></th>

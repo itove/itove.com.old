@@ -109,7 +109,7 @@ function search(){
 	// value of input
 	var v=this.firstElementChild.value;
 
-	var tr=document.querySelectorAll('table tbody tr');
+	var tr=document.querySelectorAll('.searchable');
 
 	// search v in every tr
 	for(var i=0;i<tr.length;i++){
@@ -139,8 +139,14 @@ function searchmy(){
 
 	// search uid in every tr's data-uid
 	for(var i=0;i<tr.length;i++){
-		if(this.classList.contains('btn-primary')) tr[i].classList.add('d-none');
-		else tr[i].classList.remove('d-none');
+		if(this.classList.contains('btn-primary')){
+			tr[i].classList.add('d-none');
+			tr[i].classList.remove('searchable');
+		}
+		else{
+			tr[i].classList.remove('d-none');
+			tr[i].classList.add('searchable');
+		}
 	}
 }
 
