@@ -3,7 +3,7 @@
 	  <script src=""></script>
 
 	  <!--common script for all pages-->
-	  <script src="tt.js"></script>
+	  <script src="<?= $root ?>/tt.js"></script>
 
 	  <!--script for this page-->
 	  <script src=""></script>

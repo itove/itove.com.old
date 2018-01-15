@@ -43,13 +43,13 @@ if(u) u.addEventListener('change', chname);
 // click on projects entries to progress page
 function progressPage(){
 	var pid=this.querySelector('th').innerText;
-	location.href=pid;
+	location.href=location.href + "/" + pid;
 }
 // click on users entries to passwd page
 function passwd(){
 	var user=this.querySelector('td').innerText;
 	console.log(user);
-	location.href='setting';
+	location.href=location.href + '/../chpwd/' + user;
 	var user1=document.querySelector('input').innerText;
 	console.log(user1);
 }

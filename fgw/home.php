@@ -45,7 +45,7 @@
 					  <h5 class="card-title">重点项目进度汇报</h5>
 					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
-				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="projects">去更新进度</a></div>
+				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="project">去更新进度</a></div>
 			  </div>
 		  </div>
 		  <div class="col-sm-6">
@@ -65,9 +65,9 @@
 				  <div class="card-header"><i class="fa fa-cog" aria-hidden="true"></i></div>
 				  <div class="card-body">
 					  <h5 class="card-title">设 置</h5>
-					  <p class="card-text">修改密码、添加用户、上传报表...</p>
+					  <p class="card-text">修改密码、添加用户、报表...</p>
 				  </div>
-				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="setting">修改设置</a></div>
+				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="<?= $root ?>/setting/chpwd">修改设置</a></div>
 			  </div>
 		  </div>
 	  </div>

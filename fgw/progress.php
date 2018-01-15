@@ -1,5 +1,5 @@
 <?php
-$sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$page";
+$sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$pid";
 $row=(new Db)->query($sql);
 $uid=10;
 $uid != $row['uid'] ? $disabled='disabled' : $disabled="";
@@ -9,8 +9,8 @@ $uid != $row['uid'] ? $disabled='disabled' : $disabled="";
 	  <div class="container" id="progress">
 		  <nav aria-label="breadcrumb" class="position-relative">
 				  <ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="./">首 页</a></li>
-					  <li class="breadcrumb-item"><a href="projects">我的重点项目</a></li>
+				  <li class="breadcrumb-item"><a href="<?= $root ?>">首 页</a></li>
+				  <li class="breadcrumb-item"><a href="<?= $root . "/project" ?>">我的重点项目</a></li>
 					  <li class="breadcrumb-item active" aria-current="page"><?= $row['pname'] ?></li>
 				  </ol>
 				  <div class="dropdown position-absolute" id="dates">

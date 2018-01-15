@@ -9,7 +9,7 @@ $uid=10;
 		  <nav aria-label="breadcrumb" class="">
 			  <div class="">
 				  <ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="./">首 页</a></li>
+				  <li class="breadcrumb-item"><a href="<?= $root ?>">首 页</a></li>
 					  <li class="breadcrumb-item active" aria-current="page">我的重点项目</li>
 				  </ol>
 			  </div>
