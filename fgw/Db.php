@@ -18,7 +18,7 @@ class Db{
 		if($this->mysqli->connect_errno){
 			echo $this->mysqli->connect_errno. "\n";
 			echo $this->mysqli->connect_error. "\n";
-			exit;
+			//exit;
 		}
 		else{
 			//echo "success\n";
