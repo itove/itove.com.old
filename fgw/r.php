@@ -31,7 +31,7 @@ $mysqli->set_charset('utf8');
 
 for($i=5;$i<=46;$i++){
 	//echo $sheetData[$i]['D'];
-	$sql="insert into projects (pid,pname,oid,a,b,c,d,e,f,g,h,i) values(
+	$sql="insert into projects (pid,pname,property,intro,investment,invest_plan,start,finish,invest_type,o_incharge,p_incharge) values(
 		" . "\"" .  $sheetData[$i]['A'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['B'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['C'] ."\""  . ",
@@ -42,8 +42,7 @@ for($i=5;$i<=46;$i++){
 		" . "\"" .  $sheetData[$i]['H'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['I'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['J'] ."\""  . ",
-		" . "\"" .  $sheetData[$i]['K'] ."\""  . ",
-		" . "\"" .  $sheetData[$i]['L'] ."\""  . ")";
+		" . "\"" .  $sheetData[$i]['K'] ."\""  . ")";
 
 	//echo $sql;
 

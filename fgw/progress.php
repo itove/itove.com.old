@@ -2,7 +2,7 @@
 $mysqli=new mysqli('localhost','root','dot','fgw');
 if(!$mysqli->connect_errno){
 	$mysqli->set_charset('utf8');
-	$sql="select pname from projects where pid=$page";
+	$sql="select * from projects where pid=$page";
 	if($res=$mysqli->query($sql)){
 		$numrows=$res->num_rows;
 		$row=$res->fetch_assoc();
@@ -10,13 +10,15 @@ if(!$mysqli->connect_errno){
 		$mysqli->close();
 	}
 }
+$uid=10;
+$uid != $row['uid'] ? $disabled='disabled' : $display="";
 ?>
   <body>
 
 	  <div class="container" id="progress">
 		  <nav aria-label="breadcrumb" class="position-relative">
 				  <ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="./">茅箭区资产投资管理平台</a></li>
+					  <li class="breadcrumb-item"><a href="./">首 页</a></li>
 					  <li class="breadcrumb-item"><a href="projects">我的重点项目</a></li>
 					  <li class="breadcrumb-item active" aria-current="page"><?= $row['pname'] ?></li>
 				  </ol>
@@ -62,101 +64,99 @@ if(!$mysqli->connect_errno){
 		  <form>
 			  <table class="table table-bordered">
 				  <tbody>
-					  <thead class="">
-						  <th colspan="6">项目信息</th>
-					  </thead>
 					  <tr>
 						  <th scope="row">建设内容</th>
 						  <td colspan="6">
-							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="ooksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfoksdafsafsaasg asdfsafasf sadfsa saf asfksdafsafsaasg asdfsafasf sadfsa saf asf" readonly></textarea>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="<?= $row['intro'] ?>" disabled></textarea>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">编 号</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  <input placeholder="<?= $row['pid'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">项目名称</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+						  <input placeholder="<?= $row['pname'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">建设性质</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
-						  </td>
-					  </tr>
-					  <tr>
-						  <th class="table-warning" scope="row">建设阶段</th>
-						  <td class="table-warning">
-							  <input placeholder="abc" type="text" class="form-control">
-						  </td>
-						  <th scope="row">开工时间</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
-						  </td>
-						  <th scope="row">拟竣工时间</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
-						  </td>
-					  </tr>
-					  <tr>
-						  <th scope="row">总投资</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
-						  </td>
-						  <th scope="row">2018年计划投资</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
-						  </td>
-						  <th scope="row">累计投资</th>
-						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+							  <input placeholder="<?= $row['property'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">填报情况</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
-						  <th class="table-warning" scope="row">填报人</th>
-						  <td class="table-warning">
-							  <input placeholder="abc" type="text" class="form-control">
+						  <th scope="row">开工时间</th>
+						  <td>
+							  <input placeholder="<?= $row['start'] ?>" type="text" class="form-control" disabled>
 						  </td>
-						  <th class="table-warning" scope="row">联系电话</th>
-						  <td class="table-warning">
-							  <input placeholder="abc" type="text" class="form-control">
+						  <th scope="row">拟竣工时间</th>
+						  <td>
+							  <input placeholder="<?= $row['finish'] ?>" type="text" class="form-control" disabled>
 						  </td>
-					  </tr> 
+					  </tr>
+					  <tr>
+						  <th scope="row">总投资</th>
+						  <td>
+							  <input placeholder="<?= $row['investment'] ?>" type="text" class="form-control" disabled>
+						  </td>
+						  <th scope="row">2018年计划投资</th>
+						  <td>
+							  <input placeholder="<?= $row['invest_plan'] ?>" type="text" class="form-control" disabled>
+						  </td>
+						  <th scope="row">累计投资</th>
+						  <td>
+							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
+						  </td>
+					  </tr>
 					  <tr>
 						  <th scope="row">责任单位</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+							  <input placeholder="<?= $row['o_incharge'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">实施单位</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">包联领导</th>
 						  <td>
-							  <input placeholder="abc" type="text" class="form-control" readonly>
+							  <input placeholder="<?= $row['p_incharge'] ?>" type="text" class="form-control" disabled>
+						  </td>
+					  </tr> 
+					  <tr>
+						  <th class="table-warning" scope="row">建设阶段</th>
+						  <td class="table-warning">
+						  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" <?= $disabled ?>>
+						  </td>
+						  <th class="table-warning" scope="row">填报人</th>
+						  <td class="table-warning">
+							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" <?= $disabled ?>>
+						  </td>
+						  <th class="table-warning" scope="row">联系电话</th>
+						  <td class="table-warning">
+							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr class="table-warning">
 						  <th scope="row">本月进展</th>
 						  <td colspan="6">
-							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="abcaf sdaf asdf sadfas"></textarea>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['z'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 					  <tr class="table-warning">
 						  <th scope="row">困难和问题</th>
 						  <td colspan="6">
-							  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="dsafas fsadf sadfaf asdfd"></textarea>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['z'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 				  </tbody>
 			  </table>
-
+<?php if($uid==$row['uid']): ?>
 			  <button type="submit" class="btn btn-success">提 交</button>
+<?php endif ?>
 		  </form>
 
 		  </main>

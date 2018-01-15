@@ -2,7 +2,7 @@
 $mysqli=new mysqli('localhost','root','dot','fgw');
 if(!$mysqli->connect_errno){
 	$mysqli->set_charset('utf8');
-	$sql="select pid,pname,b,g from projects";
+	$sql="select pid,uid,pname,investment,o_incharge,p_incharge,property from projects";
 	if($res=$mysqli->query($sql)){
 		$numrows=$res->num_rows;
 		$rows=$res->fetch_all(MYSQLI_ASSOC);
@@ -10,6 +10,7 @@ if(!$mysqli->connect_errno){
 		$mysqli->close();
 	}
 }
+$uid=10;
 ?>
   <body>
 
@@ -17,7 +18,7 @@ if(!$mysqli->connect_errno){
 		  <nav aria-label="breadcrumb" class="">
 			  <div class="">
 				  <ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="./">茅箭区资产投资管理平台</a></li>
+					  <li class="breadcrumb-item"><a href="./">首 页</a></li>
 					  <li class="breadcrumb-item active" aria-current="page">我的重点项目</li>
 				  </ol>
 			  </div>
@@ -31,7 +32,7 @@ if(!$mysqli->connect_errno){
 				  <span class="badge badge-danger">上个月未提交</span>
 			  </div>
 			  <div class="col-2">
-				  <button id="myproject" type="button" class="btn btn-outline-primary">我的项目</span>
+			  <button id="myproject" type="button" class="btn btn-primary" data-uid="<?= $uid ?>">我的项目</span>
 			  </div>
 			  <form class="form-row col-3" id="search">
 				  <input class="col form-control mr-sm-2" type="text" placeholder="搜索项目" aria-label="Search">
@@ -54,12 +55,15 @@ if(!$mysqli->connect_errno){
 <?php
 $i=rand(1,4);
 $a=['','bg-danger','bg-warning','bg-success'];
+$v['uid'] != $uid ? $display=" d-none" : $display="";
 ?>
-	<tr class="<?= $a[$i] ?>">
+	<tr class="<?= $a[$i] . $display ?>" data-uid="<?= $v['uid'] ?>">
 				  <th scope="row"><?= $v['pid'] ?></th>
 					  <td><?= $v['pname'] ?></td>
-					  <td><?= $v['b'] ?></td>
-					  <td><?= $v['g'] ?></td>
+					  <td><?= $v['investment'] ?></td>
+					  <td><?= $v['o_incharge'] ?></td>
+					  <td><?= $v['p_incharge'] ?></td>
+					  <td><?= $v['property'] ?></td>
 				  </tr>
 <?php endforeach; ?>
 			  </tbody>
