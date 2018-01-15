@@ -2,7 +2,7 @@
 $mysqli=new mysqli('localhost','root','dot','fgw');
 if(!$mysqli->connect_errno){
 	$mysqli->set_charset('utf8');
-	$sql="select * from projects where pid=$page";
+	$sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$page";
 	if($res=$mysqli->query($sql)){
 		$numrows=$res->num_rows;
 		$row=$res->fetch_assoc();
@@ -87,7 +87,7 @@ $uid != $row['uid'] ? $disabled='disabled' : $display="";
 					  <tr>
 						  <th scope="row">填报情况</th>
 						  <td>
-							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $row['fill_state'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">开工时间</th>
 						  <td>
@@ -129,27 +129,27 @@ $uid != $row['uid'] ? $disabled='disabled' : $display="";
 					  <tr>
 						  <th class="table-warning" scope="row">建设阶段</th>
 						  <td class="table-warning">
-						  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" <?= $disabled ?>>
+						  <input placeholder="<?= $row['phase'] ?>" type="text" class="form-control" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">填报人</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" <?= $disabled ?>>
+							  <input placeholder="<?= $row['fillby'] ?>" type="text" class="form-control" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">联系电话</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" <?= $disabled ?>>
+							  <input placeholder="<?= $row['phone'] ?>" type="text" class="form-control" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr class="table-warning">
 						  <th scope="row">本月进展</th>
 						  <td colspan="6">
-						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['z'] ?>" <?= $disabled ?>></textarea>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['progress'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 					  <tr class="table-warning">
 						  <th scope="row">困难和问题</th>
 						  <td colspan="6">
-						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['z'] ?>" <?= $disabled ?>></textarea>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['problem'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 				  </tbody>

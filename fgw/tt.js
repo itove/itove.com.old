@@ -107,7 +107,7 @@ function dropdownmenu(){
 // search
 function search(){
 	// value of input
-	var v=this.firstElementChild.value;
+	var v=s.firstElementChild.value;
 
 	var tr=document.querySelectorAll('.searchable');
 
@@ -146,6 +146,7 @@ function searchmy(){
 		else{
 			tr[i].classList.remove('d-none');
 			tr[i].classList.add('searchable');
+			search(); // to filter
 		}
 	}
 }
