@@ -17,21 +17,19 @@ $uid=10;
 
 		  <main>
 		  <div class="row mb-3">
-			  <div class="col">
+			  <div class="col-sm">
 				  <!--
 				  <span class="badge badge-success">已完成</span>
 				  -->
 				  <span class="badge badge-warning">数据与上月雷同</span>
 				  <span class="badge badge-danger">上个月未提交</span>
 			  </div>
-			  <div class="col-2">
+			  <div class="col-auto col-sm-2">
 			  <button id="myproject" type="button" class="btn btn-primary" data-uid="<?= $uid ?>">我的项目</span>
 			  </div>
-				  <input class="col-3 form-control mr-sm-2" id="search" type="text" placeholder="搜索项目" aria-label="Search">
-<!--
-			  <form class="form-row col-3" id="search">
-			  </form>
--->
+			  <div class="col col-sm-3">
+				  <input class="form-control" id="search" type="text" placeholder="搜索项目" aria-label="Search">
+			  </div>
 		  </div>
 		  <table class="table table-hover">
 			  <thead>

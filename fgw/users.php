@@ -4,7 +4,7 @@ $rows=(new Db)->query($sql);
 ?>
 		  <main>
 		  <div class="row mb-3">
-			  <form class="form-row col">
+			  <form class="form-row col-sm">
 				  <div class="col-3">
 					  <input type="text" class="form-control" placeholder="用户名">
 				  </div>
@@ -12,21 +12,19 @@ $rows=(new Db)->query($sql);
 					  <input type="password" class="form-control" placeholder="密 码">
 				  </div>
 				  <div class="col-2">
-					  <select class="form-control" id="exampleFormControlSelect1">
+					  <select class="form-control">
 						<option selected>一级管理员</option>
 						<option>普通管理员</option>
 					  </select>
 				  </div>
-				  <div class="col">
+				  <div class="col-auto">
 					  <button type="submit" class="btn btn-success">添加用户</button>
 				  </div>
 			  </form>
 
-				  <input class="col-3 form-control mr-sm-2" id="search" type="text" placeholder="搜索用户" aria-label="Search">
-<!--
-			  <form class="form-row col-3" id="search">
-			  </form>
--->
+			  <div class="col-sm-3">
+				  <input class="form-control" id="search" type="text" placeholder="搜索用户" aria-label="Search">
+			  </div>
 		  </div>
 		  <table class="table table-striped table-hover">
 			  <thead>
