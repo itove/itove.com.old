@@ -35,5 +35,11 @@ update projects set oid=11,uid=11 where o_incharge like "%发改局%";
 
 truncate progress;
 insert into progress (pid) select pid from projects;
-
 update progress set fill_state="abc", phase="开工", fillby="王晓明", phone="13507280000", progress="正在装修", problem="暂无";
+
+truncate setting;
+INSERT INTO `setting` (`id`, `s_key`, `value`, `name`) VALUES
+(1, 'lockday', '25', '锁定日期'),
+(2, 'a', 'aa', 'aaa'),
+(3, 'b', 'bb', 'bbb'),
+(4, 'c', 'cc', 'ccc');

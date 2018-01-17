@@ -1,8 +1,11 @@
 <?php
 $sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$pid";
 $row=(new Db)->query($sql);
+$sql="select value from setting where s_key='lockday'";
+$lockday=(new Db)->query($sql)['value'];
+$dayleft=$lockday - date('d');
 $uid=10;
-$uid != $row['uid'] ? $disabled='disabled' : $disabled="";
+$uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 ?>
   <body>
 
@@ -15,22 +18,12 @@ $uid != $row['uid'] ? $disabled='disabled' : $disabled="";
 				  </ol>
 				  <div class="dropdown position-absolute" id="dates">
 					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  2018年1月
+						  <?= date('Y年n月') ?>
 					  </button>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						  <a class="dropdown-item active" href="#">2018年1月</a>
-						  <a class="dropdown-item" href="#">2017年12月</a>
-						  <a class="dropdown-item" href="#">2017年11月</a>
-						  <a class="dropdown-item" href="#">2017年10月</a>
-						  <a class="dropdown-item" href="#">2017年9月</a>
-						  <a class="dropdown-item" href="#">2017年8月</a>
-						  <a class="dropdown-item" href="#">2017年7月</a>
-						  <a class="dropdown-item" href="#">2017年6月</a>
-						  <a class="dropdown-item" href="#">2017年5月</a>
-						  <a class="dropdown-item" href="#">2017年4月</a>
-						  <a class="dropdown-item" href="#">2017年3月</a>
-						  <a class="dropdown-item" href="#">2017年2月</a>
-						  <a class="dropdown-item" href="#">2017年1月</a>
+<?php for($i=date('n'); date('n') - $i < 12; $i--): ?>
+						<a class="dropdown-item <?php if(date('n') == $i) echo 'active' ?>" href="#"><?= date('Y年n月', mktime(0,0,0,$i)) ?></a>
+<?php endfor ?>
 					  </div>
 				  </div>
 		  </nav>
@@ -39,12 +32,14 @@ $uid != $row['uid'] ? $disabled='disabled' : $disabled="";
 		  <div class="alert alert-warning alert-dismissible fade show" role="alert">
 			  默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。
 		  </div>
+<?php if($dayleft < 5 && $dayleft > 0): ?>
 		  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-			  <strong>即将锁定！</strong> 请及时完善本月数据！每月25日锁定，届时将无法再修改。
+		  <strong>即将锁定！</strong> 请及时完善本月数据！每月<?= $lockday ?>日锁定，届时将无法再修改。
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 			  </button>
 		  </div>
+<?php endif ?>
 		  <div class="alert bg-danger alert-dismissible fade show" role="alert">
 			  <strong>您上月的数据未提交！</strong> 
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -145,7 +140,7 @@ $uid != $row['uid'] ? $disabled='disabled' : $disabled="";
 					  </tr>
 				  </tbody>
 			  </table>
-<?php if($uid==$row['uid']): ?>
+<?php if($uid == $row['uid'] && date('d') < $lockday): ?>
 			  <button type="submit" class="btn btn-success">提 交</button>
 <?php endif ?>
 		  </form>

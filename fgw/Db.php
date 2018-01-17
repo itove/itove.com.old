@@ -29,17 +29,26 @@ class Db{
 
 	function query($sql){
 		if($res=$this->mysqli->query($sql)){
-			$numrows=$res->num_rows;
-			if($numrows>1){
-				$row=$res->fetch_all(MYSQLI_ASSOC);
+			if(is_bool($res)){
+				return;
 			}
-			else $row=$res->fetch_assoc();
+			else{
+				$numrows=$res->num_rows;
+				if($numrows>1){
+					$row=$res->fetch_all(MYSQLI_ASSOC);
+				}
+				else $row=$res->fetch_assoc();
 
-			$res->free();
+				$res->free();
 
-			//echo $numrows . "\n";
+				//echo $numrows . "\n";
 
-			return $row;
+				return $row;
+			}
+		}
+		else{
+			echo $this->mysqli->errno . "\n";
+			echo $this->mysqli->error. "\n";
 		}
 
 	}

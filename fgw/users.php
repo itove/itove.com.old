@@ -22,9 +22,11 @@ $rows=(new Db)->query($sql);
 				  </div>
 			  </form>
 
+				  <input class="col-3 form-control mr-sm-2" id="search" type="text" placeholder="搜索用户" aria-label="Search">
+<!--
 			  <form class="form-row col-3" id="search">
-				  <input class="col form-control mr-sm-2" type="text" placeholder="搜索用户" aria-label="Search">
 			  </form>
+-->
 		  </div>
 		  <table class="table table-striped table-hover">
 			  <thead>

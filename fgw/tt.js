@@ -107,7 +107,8 @@ function dropdownmenu(){
 // search
 function search(){
 	// value of input
-	var v=s.firstElementChild.value;
+	//var v=s.firstElementChild.value;
+	var v=s.value;
 
 	var tr=document.querySelectorAll('.searchable');
 
