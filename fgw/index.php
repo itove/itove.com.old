@@ -14,7 +14,6 @@ $inc="./";
 $static="./";
 
 $path = explode("/", $_SERVER['PATH_INFO']);
-//var_dump($path);
 $controller=$path[1];
 $method=$path[2];
 $parameter=$path[3];
