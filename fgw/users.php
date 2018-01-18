@@ -1,11 +1,17 @@
 <?php
-if(!empty($_GET)){
-	//var_dump($_GET);
-	foreach($_GET as $v){
-		//var_dump($v);
+if(!empty($_POST)){
+	//var_dump($_POST);
+	foreach($_POST as $v){
+		if(empty($v)){
+			$v=0;
+			break;
+		}
 	}
-	if(1){
-		$sql="insert into users () values()";
+	// if anyone in $_POST is empty, not do this
+	if($v){
+		$sql="insert into users (uname, passwd, oid, rid) values(" . '"' . $_POST['uname']  . '", "' . $_POST['passwd'] . '", "' . $_POST['oid'] . '", "' . $_POST['rid'] . '")';
+		//echo $sql;
+		(new Db)->query($sql);
 	}
 }
 
@@ -20,7 +26,7 @@ $rows=(new Db)->query($sql);
 ?>
 		  <main>
 		  <div class="row mb-3">
-			  <form class="form-row col-sm" method="get">
+			  <form class="form-row col-sm" method="post">
 				  <div class="col-sm">
 					  <input type="text" class="form-control" name="uname" placeholder="用户名">
 				  </div>
