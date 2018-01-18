@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>茅箭区资产投资管理平台</title>
+    <title>茅箭区投资和项目直报平台</title>
 
     <!-- Bootstrap core CSS -->
 	<link type="text/css" href="<?= $root ?>/bootstrap.min.css" rel="stylesheet">

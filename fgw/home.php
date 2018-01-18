@@ -9,7 +9,7 @@
             </li>
           </ul>
 		  </nav>
-        <h3 class="text-muted">茅箭区资产投资管理平台</h3>
+        <h3 class="text-muted">茅箭区投资和项目直报平台</h3>
       </header>
 
 	  <main role="main">
@@ -42,7 +42,7 @@
 			  <div class="card text-white bg-danger mb-3">
 				  <div class="card-header"><i class="fa fa-cubes" aria-hidden="true"></i></div>
 				  <div class="card-body">
-					  <h5 class="card-title">重点项目进度汇报</h5>
+					  <h5 class="card-title">重点项目进度</h5>
 					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="project">去更新进度</a></div>
@@ -52,7 +52,7 @@
 			  <div class="card text-white bg-secondary mb-3">
 				  <div class="card-header"><i class="fa fa-cube" aria-hidden="true"></i></div>
 				  <div class="card-body">
-					  <h5 class="card-title">储备项目汇报</h5>
+					  <h5 class="card-title">项目两库建设</h5>
 					  <p class="card-text">默认显示前一次提交的数据，以供参考。内容与上月相同的单元格以黄色背景提醒。</p>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-light btn-block" href="">去更新进度</a></div>

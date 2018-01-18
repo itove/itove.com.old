@@ -13,11 +13,11 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 		  <nav aria-label="breadcrumb" class="position-relative">
 				  <ol class="breadcrumb">
 				  <li class="breadcrumb-item"><a href="<?= $root ?>">首 页</a></li>
-				  <li class="breadcrumb-item"><a href="<?= $root . "/project" ?>">我的重点项目</a></li>
+				  <li class="breadcrumb-item"><a href="<?= $root . "/project" ?>">重点项目</a></li>
 					  <li class="breadcrumb-item active" aria-current="page"><?= $row['pname'] ?></li>
 				  </ol>
 				  <div class="dropdown position-absolute" id="dates">
-					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						  <?= date('Y年n月') ?>
 					  </button>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -53,7 +53,7 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 					  <tr>
 						  <th scope="row">建设内容</th>
 						  <td colspan="6">
-						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="<?= $row['intro'] ?>" disabled></textarea>
+						  <textarea class="form-control" rows="5" placeholder="<?= $row['intro'] ?>" disabled></textarea>
 						  </td>
 					  </tr>
 					  <tr>
@@ -67,33 +67,40 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 						  </td>
 						  <th scope="row">建设性质</th>
 						  <td>
-							  <input placeholder="<?= $row['property'] ?>" type="text" class="form-control" disabled>
+							<select class="custom-select" name="" disabled>
+								<option value="">新建</option>
+								<option value="">续建</option>
+							</select>
 						  </td>
 					  </tr>
 					  <tr>
-						  <th scope="row">填报情况</th>
-						  <td>
-							  <input placeholder="<?= $row['fill_state'] ?>" type="text" class="form-control" disabled>
-						  </td>
 						  <th scope="row">实际开工时间</th>
 						  <td>
 							  <input placeholder="<?= $row['start'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">拟竣工时间</th>
 						  <td>
-							  <input placeholder="<?= $row['finish'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $row['finish'] ?>" type="text" class="form-control" >
 						  </td>
-					  </tr>
-					  <tr>
 						  <th scope="row">总投资</th>
 						  <td>
 							  <input placeholder="<?= $row['investment'] ?>" type="text" class="form-control" disabled>
 						  </td>
-						  <th scope="row">2018年计划投资</th>
+					  </tr>
+					  <tr>
+						  <th scope="row">投资主体</th>
+						  <td>
+						  <select class="custom-select" name="" disabled>
+								<option value="">市级政府</option>
+								<option value="">区级政府</option>
+								<option value="">企业</option>
+							</select>
+						  </td>
+						  <th scope="row">今年计划投资</th>
 						  <td>
 							  <input placeholder="<?= $row['invest_plan'] ?>" type="text" class="form-control" disabled>
 						  </td>
-						  <th scope="row">累计投资</th>
+						  <th scope="row">今年累计完成投资</th>
 						  <td>
 							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
@@ -113,9 +120,25 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 						  </td>
 					  </tr> 
 					  <tr>
+						  <th scope="row">项目类型</th>
+						  <td>
+						  <select class="custom-select" name="" disabled>
+								<option value="">基建</option>
+								<option value="">工业</option>
+								<option value="">商业</option>
+							</select>
+						  </td>
+						  <th class="" colspan="4" scope="row"></th>
+						  </td>
+					  </tr> 
+					  <tr>
 						  <th class="table-warning" scope="row">建设阶段</th>
 						  <td class="table-warning">
-						  <input placeholder="<?= $row['phase'] ?>" type="text" class="form-control" <?= $disabled ?>>
+						  <select class="custom-select" name="" <?= $disabled ?>>
+								<option value="">开工</option>
+								<option value="">前期准备</option>
+								<option value="">完工</option>
+							</select>
 						  </td>
 						  <th class="table-warning" scope="row">填报人</th>
 						  <td class="table-warning">
@@ -126,16 +149,30 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 							  <input placeholder="<?= $row['phone'] ?>" type="text" class="form-control" <?= $disabled ?>>
 						  </td>
 					  </tr> 
+					  <tr>
+						  <th class="table-warning" scope="row">建设期限</th>
+						  <td class="table-warning">
+						  <input placeholder="<?= $row['phase'] ?>" type="text" class="form-control pickmonth" <?= $disabled ?>>
+						  </td>
+						  <th class="table-warning" scope="row">至</th>
+						  <td class="table-warning">
+							  <input placeholder="<?= $row['fillby'] ?>" type="text" class="form-control pickmonth" <?= $disabled ?>>
+						  </td>
+						  <th class="table-warning" scope="row">本月完成投资</th>
+						  <td class="table-warning">
+							  <input placeholder="<?= $row['fillby'] ?>" type="text" class="form-control" <?= $disabled ?>>
+						  </td>
+					  </tr> 
 					  <tr class="table-warning">
 						  <th scope="row">本月进展</th>
 						  <td colspan="6">
-						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['progress'] ?>" <?= $disabled ?>></textarea>
+						  <textarea class="form-control" rows="3" placeholder="<?= $row['progress'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 					  <tr class="table-warning">
-						  <th scope="row">困难和问题</th>
+						  <th scope="row">存在的困难和问题以及下一步工作建议和安排</th>
 						  <td colspan="6">
-						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="<?= $row['problem'] ?>" <?= $disabled ?>></textarea>
+						  <textarea class="form-control" rows="6" placeholder="<?= $row['problem'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 				  </tbody>
@@ -144,5 +181,37 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 			  <button type="submit" class="btn btn-success">提 交</button>
 <?php endif ?>
 		  </form>
-
 		  </main>
+
+
+<div class="d-none" id="monthpicker">
+    <div>
+        <select class="custom-select">
+            <option>2015</option>
+            <option>2014</option>
+            <option selected>2013</option>
+            <option>2012</option>
+            <option>2011</option>
+        </select>
+    </div>
+	<table class="table border rounded mb-0">
+	  <tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	  </tr>
+	  <tr>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+	  </tr>
+	  <tr>
+		<td>9</td>
+		<td>10</td>
+		<td>11</td>
+		<td>12</td>
+	  </tr>
+	</table>
+</div>

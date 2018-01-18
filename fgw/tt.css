@@ -124,3 +124,32 @@ tbody th{
 #setting main .input-group-text{
 	width:100%;
 }
+#progress th{
+	width:8%;
+}
+.monthpicker{
+	max-width: 17%;
+}
+.monthpicker td{
+	border-radius: .25rem;
+	border: none;
+	width: 25%;
+	cursor: pointer;
+}
+.monthpicker td:hover{
+	background-color: #e9ecef;
+	border-top: none;
+}
+#monthpicker{
+	max-width: 25%;
+}
+#monthpicker td{
+	border-radius: .25rem;
+	border-top: none;
+	width: 25%;
+	cursor: pointer;
+}
+#monthpicker td:hover{
+	background-color: #e9ecef;
+	border-top: none;
+}

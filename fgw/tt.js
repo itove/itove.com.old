@@ -39,6 +39,14 @@ if(m) m.addEventListener('click', searchmy);
 var u=document.querySelector('#upload input');
 if(u) u.addEventListener('change', chname);
 
+// addEvnetListener to monthpicker
+var m=document.querySelectorAll('.pickmonth');
+for(var i=0;i<m.length;i++){
+	m[i].addEventListener("click", pickmonth);
+	m[i].addEventListener("blur", pickmonth);
+}
+
+
 
 // click on projects entries to progress page
 function progressPage(){
@@ -154,4 +162,14 @@ function searchmy(){
 
 function chname(){
 	u.nextElementSibling.innerText=u.value;
+}
+
+
+function pickmonth(j){
+	if(! this.hasAttribute('readonly') && ! this.nextElementSibling){
+		var html=document.getElementById('monthpicker').cloneNode(true);
+		html.className="position-absolute monthpicker";
+		html.removeAttribute('id');
+		this.parentElement.appendChild(html);
+	}
 }
