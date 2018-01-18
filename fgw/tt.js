@@ -43,7 +43,7 @@ if(u) u.addEventListener('change', chname);
 var m=document.querySelectorAll('.pickmonth');
 for(var i=0;i<m.length;i++){
 	m[i].addEventListener("click", pickmonth);
-	m[i].addEventListener("blur", pickmonth);
+	m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
 }
 
 
@@ -165,11 +165,21 @@ function chname(){
 }
 
 
-function pickmonth(j){
-	if(! this.hasAttribute('readonly') && ! this.nextElementSibling){
-		var html=document.getElementById('monthpicker').cloneNode(true);
-		html.className="position-absolute monthpicker";
-		html.removeAttribute('id');
-		this.parentElement.appendChild(html);
+function pickmonth(i, m){
+	if(i===1){
+		console.log(m);
+		//m.nextElementSibling.classList.add('d-none');
+		return;
+	}
+	if(! this.hasAttribute('readonly')){
+		if(! this.nextElementSibling){
+			var html=document.getElementById('monthpicker').cloneNode(true);
+			html.className="position-absolute monthpicker";
+			html.removeAttribute('id');
+			this.parentElement.appendChild(html);
+		}
+		else{
+			this.nextElementSibling.classList.remove('d-none');
+		}
 	}
 }
