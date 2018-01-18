@@ -75,7 +75,7 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 						  <td>
 							  <input placeholder="<?= $row['fill_state'] ?>" type="text" class="form-control" disabled>
 						  </td>
-						  <th scope="row">开工时间</th>
+						  <th scope="row">实际开工时间</th>
 						  <td>
 							  <input placeholder="<?= $row['start'] ?>" type="text" class="form-control" disabled>
 						  </td>

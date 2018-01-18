@@ -1,6 +1,6 @@
 		  <main id="upload">
 <form enctype="multipart/form-data" action="" method="POST">
-		  <div class="custom-file mb-3 col-5 d-block mx-auto">
+		  <div class="custom-file mb-3 col-sm-5 d-block mx-auto">
 			  <input type="file" class="custom-file-input" id="customFile" name="file" required>
 			  <label class="custom-file-label" for="customFile">点击选择文件上传</label>
 		  </div>
