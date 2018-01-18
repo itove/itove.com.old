@@ -202,7 +202,7 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 		<td>4</td>
 	  </tr>
 	  <tr>
-		<td>5</td>
+		<td class="bg-secondary">5</td>
 		<td>6</td>
 		<td>7</td>
 		<td>8</td>

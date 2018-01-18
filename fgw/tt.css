@@ -140,9 +140,6 @@ tbody th{
 	background-color: #e9ecef;
 	border-top: none;
 }
-.monthpicker td.active{
-	background-color: #e9ecef;
-}
 #monthpicker{
 	max-width: 25%;
 }
