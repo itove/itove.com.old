@@ -43,7 +43,7 @@ update progress set fill_state="abc", phase="开工", fillby="王晓明", phone=
 truncate setting;
 INSERT INTO `setting` (`sid`, `s_key`, `value`, `sname`) VALUES
 (1, 'lockday', '25', '锁定日期'),
-(2, 'a', 'aa', 'aaa'),
+(2, 'sitename', '茅箭区投资和项目直报平台', '网站名称'),
 (3, 'b', 'bb', 'bbb'),
 (4, 'c', 'cc', 'ccc');
 
