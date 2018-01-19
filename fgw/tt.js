@@ -43,7 +43,7 @@ if(u) u.addEventListener('change', chname);
 var m=document.querySelectorAll('.pickmonth');
 for(var i=0;i<m.length;i++){
 	m[i].addEventListener("click", pickmonth);
-	m[i].addEventListener("focusout", function(){ pickmonth(1, m[i]); });
+	m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
 }
 
 

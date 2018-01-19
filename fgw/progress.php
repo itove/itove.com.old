@@ -184,34 +184,34 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 		  </main>
 
 
-<div class="d-none" id="monthpicker">
-    <div class="month">
-        <select class="custom-select">
-            <option>2015</option>
-            <option>2014</option>
-            <option selected>2013</option>
-            <option>2012</option>
-            <option>2011</option>
-        </select>
-    </div>
-	<table class="table border rounded mb-0 date">
-	  <tr>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-	  </tr>
-	  <tr>
-		<td class="bg-secondary">5</td>
-		<td>6</td>
-		<td>7</td>
-		<td>8</td>
-	  </tr>
-	  <tr>
-		<td>9</td>
-		<td>10</td>
-		<td>11</td>
-		<td>12</td>
-	  </tr>
-	</table>
-</div>
+			<div class="d-none" id="monthpicker">
+				<div class="month">
+					<select class="custom-select">
+						<option>2015</option>
+						<option>2014</option>
+						<option selected>2013</option>
+						<option>2012</option>
+						<option>2011</option>
+					</select>
+				</div>
+				<table class="table border rounded mb-0 date">
+				  <tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+				  </tr>
+				  <tr>
+					<td class="bg-secondary">5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+				  </tr>
+				  <tr>
+					<td>9</td>
+					<td>10</td>
+					<td>11</td>
+					<td>12</td>
+				  </tr>
+				</table>
+			</div>
