@@ -43,7 +43,7 @@ if(u) u.addEventListener('change', chname);
 var m=document.querySelectorAll('.pickmonth');
 for(var i=0;i<m.length;i++){
 	m[i].addEventListener("click", pickmonth);
-	m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
+	m[i].addEventListener("focusout", function(){ pickmonth(1, m[i]); });
 }
 
 
@@ -165,10 +165,15 @@ function chname(){
 }
 
 
-function pickmonth(i, m){
+function pickmonth(i){
 	if(i===1){
-		console.log(m);
+		var m=document.querySelectorAll('.pickmonth');
+		//console.log(this);
+		//console.log(m);
 		//m.nextElementSibling.classList.add('d-none');
+		var m=document.getElementsByClassName('monthpicker');
+		for(var i=0; i<m.length; i++)
+			m[i].classList.add('d-none');
 		return;
 	}
 	if(! this.hasAttribute('readonly')){
