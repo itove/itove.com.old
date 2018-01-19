@@ -3,7 +3,6 @@ $sql="select pid,uid,pname,investment,o_incharge,p_incharge,property from projec
 $rows=(new Db)->query($sql);
 $uid=10;
 ?>
-  <body>
 
 	  <div class="container" id="projects">
 		  <nav aria-label="breadcrumb" class="">
@@ -61,5 +60,5 @@ $v['uid'] == $uid ? $display=" searchable" : $display=" d-none";
 <?php endforeach; ?>
 			  </tbody>
 		  </table>
-
 		  </main>
+		</div>

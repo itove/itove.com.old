@@ -1,5 +1,3 @@
-  <body>
-
     <div class="container" id="index">
       <header class="header clearfix">
 		  <nav>
@@ -13,7 +11,6 @@
       </header>
 
 	  <main role="main">
-
 	  <div class="row">
 		  <div class="col-sm-6">
 			  <div class="card text-white bg-info mb-3">
@@ -94,9 +91,9 @@
 			  <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 		  </div>
 	  </div>
-
 	  </main>
+	</div>
 
-	  <footer class="footer">
+	  <footer class="footer container">
 		  <p>&copy; 团团网络 2018</p>
 	  </footer>

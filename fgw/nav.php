@@ -1,5 +1,3 @@
-  <body>
-
 	  <div class="container" id="setting">
 		  <nav aria-label="breadcrumb" class="position-relative">
 			  <ol class="breadcrumb">

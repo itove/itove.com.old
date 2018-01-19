@@ -77,3 +77,4 @@ $rows=(new Db)->query($sql);
 			  </tbody>
 		  </table>
 		  </main>
+		</div>

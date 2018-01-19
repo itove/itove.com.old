@@ -16,3 +16,4 @@
     <!-- Custom styles for this template -->
 	<link type="text/css" href="<?= $root ?>/tt.css" rel="stylesheet">
   </head>
+  <body>

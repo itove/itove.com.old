@@ -29,6 +29,4 @@ $rows=(new Db)->query($sql);
 		  <button type="submit" class="btn btn-success d-block mx-auto">提 交</button>
 			</form>
 		  </main>
-
-<?php
-?>
+		</div>

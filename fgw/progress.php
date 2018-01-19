@@ -7,7 +7,6 @@ $dayleft=$lockday - date('d');
 $uid=10;
 $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 ?>
-  <body>
 
 	  <div class="container" id="progress">
 		  <nav aria-label="breadcrumb" class="position-relative">
@@ -215,3 +214,4 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 				  </tr>
 				</table>
 			</div>
+		  </div>
