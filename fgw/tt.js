@@ -167,13 +167,14 @@ function chname(){
 
 function pickmonth(i){
 	if(i===1){
-		var m=document.querySelectorAll('.pickmonth');
+		//var m=document.querySelectorAll('.pickmonth');
 		//console.log(this);
 		//console.log(m);
 		//m.nextElementSibling.classList.add('d-none');
-		var m=document.getElementsByClassName('monthpicker');
-		for(var i=0; i<m.length; i++)
-			m[i].classList.add('d-none');
+		//var m=document.getElementsByClassName('monthpicker');
+		//for(var i=0; i<m.length; i++)
+		//	m[i].classList.add('d-none');
+		console.log(this);
 		return;
 	}
 	if(! this.hasAttribute('readonly')){

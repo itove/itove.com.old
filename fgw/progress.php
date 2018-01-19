@@ -185,7 +185,7 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 
 
 <div class="d-none" id="monthpicker">
-    <div>
+    <div class="month">
         <select class="custom-select">
             <option>2015</option>
             <option>2014</option>
@@ -194,7 +194,7 @@ $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
             <option>2011</option>
         </select>
     </div>
-	<table class="table border rounded mb-0">
+	<table class="table border rounded mb-0 date">
 	  <tr>
 		<td>1</td>
 		<td>2</td>
