@@ -1,3 +1,7 @@
+<?php
+$sql="select value from setting where s_key='sitename'";
+$row=(new Db)->query($sql);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>茅箭区投资和项目直报平台</title>
+	<title><?= $row['value'] ?></title>
 
     <!-- Bootstrap core CSS -->
 	<link type="text/css" href="<?= $root ?>/bootstrap.min.css" rel="stylesheet">

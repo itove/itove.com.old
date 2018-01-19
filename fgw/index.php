@@ -18,21 +18,28 @@ $controller=$path[1];
 $method=$path[2];
 $parameter=$path[3];
 
-$controller ? : $controller='home';
 
 require $inc . "header.php";
 
-if($controller=='project' && is_numeric($method)){
-	$pid=$method;
-	require $inc . "progress.php";
-}
-else if($controller=='setting') {
-	require $inc . "nav.php";
-	$method ? : $method='chpwd';
-	require $inc . $method. ".php";
+if(1){
+	$controller = 'login';
+	require $inc . $controller . ".php";
 }
 else{
-	require $inc . $controller . ".php";
+	$controller ? : $controller='home';
+
+	if($controller=='project' && is_numeric($method)){
+		$pid=$method;
+		require $inc . "progress.php";
+	}
+	else if($controller=='setting') {
+		require $inc . "nav.php";
+		$method ? : $method='chpwd';
+		require $inc . $method. ".php";
+	}
+	else{
+		require $inc . $controller . ".php";
+	}
 }
 
 require $inc . "footer.php";

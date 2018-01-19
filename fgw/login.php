@@ -1,9 +1,8 @@
     <div class="container">
-
-      <form class="form-signin">
-        <h4 class="form-signin-heading text-muted">茅箭区资产投资管理平台</h4>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" class="form-control mb-3" placeholder="用户名" name="uname" required autofocus>
+      <form class="form-signin" method="post">
+	  	<h4 class="form-signin-heading text-muted"><?= $row['value'] ?></h4>
+        <label for="inputUsername" class="sr-only">Email address</label>
+        <input type="text" id="inputUsername" class="form-control mb-3" placeholder="用户名" name="uname" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control mb-3" placeholder="密  码" name="passwd" required>
 		<div class="custom-control custom-checkbox">
