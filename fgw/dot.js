@@ -46,6 +46,9 @@ for(var i=0;i<m.length;i++){
 	m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
 }
 
+// addEvnetListener to login password
+var p=document.getElementById('inputPassword');
+if(p) p.addEventListener("keyup", encrytpass);
 
 
 // click on projects entries to progress page
@@ -188,4 +191,11 @@ function pickmonth(i){
 			this.nextElementSibling.classList.remove('d-none');
 		}
 	}
+}
+
+
+function  encrytpass(){
+	console.log(md5('1'));
+	console.log(p.value);
+	p.value=(md5(p.value));
 }

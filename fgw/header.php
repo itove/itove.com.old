@@ -18,6 +18,6 @@ $row=(new Db)->query($sql);
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-	<link type="text/css" href="<?= $root ?>/tt.css" rel="stylesheet">
+	<link type="text/css" href="<?= $root ?>/dot.css" rel="stylesheet">
   </head>
   <body>
