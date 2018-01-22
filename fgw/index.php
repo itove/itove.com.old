@@ -21,7 +21,7 @@ $parameter=$path[3];
 
 require $inc . "header.php";
 
-if(1){
+if(0){
 	$controller = 'login';
 	require $inc . $controller . ".php";
 }
@@ -39,6 +39,7 @@ else{
 	}
 	else{
 		require $inc . $controller . ".php";
+		//require $inc . "404.php";
 	}
 }
 

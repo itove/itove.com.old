@@ -75,12 +75,12 @@ CREATE TABLE `progress` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pid` int(11) NOT NULL,
   `date` date NOT NULL DEFAULT current_timestamp(),
-  `fill_state` varchar(50) NOT NULL,
-  `phase` varchar(50) NOT NULL COMMENT 'phase of construction',
-  `fillby` varchar(50) NOT NULL COMMENT 'filled in by who',
-  `phone` varchar(50) NOT NULL,
-  `progress` varchar(50) NOT NULL,
-  `problem` varchar(50) NOT NULL,
+  `fill_state` varchar(50) DEFAULT NULL,
+  `phase` varchar(50) DEFAULT NULL COMMENT 'phase of construction',
+  `fillby` varchar(50) DEFAULT NULL COMMENT 'filled in by who',
+  `phone` varchar(50) DEFAULT NULL,
+  `progress` varchar(50) DEFAULT NULL,
+  `problem` varchar(50) DEFAULT NULL,
   `g` varchar(50) DEFAULT NULL,
   `h` varchar(50) DEFAULT NULL,
   `i` varchar(50) DEFAULT NULL,
@@ -274,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-18 11:52:56
+-- Dump completed on 2018-01-22 18:06:16

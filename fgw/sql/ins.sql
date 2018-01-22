@@ -1,17 +1,17 @@
 truncate users;
 insert into users (uname, passwd, oid, rid) values
-	('fagai',		'123',1,1),
-	('caizheng',	'123',2,1),
-	('jiaoyu',		'123',3,1),
-	('nongye',		'123',4,1),
-	('jiaotong',	'123',5,1),
-	('wujia',		'123',6,1),
-	('zhaoshang',	'123',7,1),
-	('jingxin',		'123',8,1),
-	('keji',		'123',9,1),
-	('shangwu',		'123',10,1),
-	('ludeng',		'123',11,1),
-	('tongji',		'123',12,1);
+	('fagai',		'202cb962ac59075b964b07152d234b70',1,1),
+	('caizheng',	'202cb962ac59075b964b07152d234b70',2,1),
+	('jiaoyu',		'202cb962ac59075b964b07152d234b70',3,1),
+	('nongye',		'202cb962ac59075b964b07152d234b70',4,1),
+	('jiaotong',	'202cb962ac59075b964b07152d234b70',5,1),
+	('wujia',		'202cb962ac59075b964b07152d234b70',6,1),
+	('zhaoshang',	'202cb962ac59075b964b07152d234b70',7,1),
+	('jingxin',		'202cb962ac59075b964b07152d234b70',8,1),
+	('keji',		'202cb962ac59075b964b07152d234b70',9,1),
+	('shangwu',		'202cb962ac59075b964b07152d234b70',10,1),
+	('ludeng',		'202cb962ac59075b964b07152d234b70',11,1),
+	('tongji',		'202cb962ac59075b964b07152d234b70',12,1);
 
 truncate organization;
 insert into organization (oname,uid) values

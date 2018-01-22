@@ -195,7 +195,7 @@ function pickmonth(i){
 
 
 function  encrytpass(){
-	console.log(md5('1'));
-	console.log(p.value);
-	p.value=(md5(p.value));
+	//console.log(md5('1'));
+	//console.log(p.value);
+	//p.value=(md5(p.value));
 }
