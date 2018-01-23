@@ -21,8 +21,9 @@ $r_rows=(new Db)->query($sql);
 $sql="select oid,oname from organization";
 $o_rows=(new Db)->query($sql);
 
-$sql="select users.uid,uname,organization.oname,role.rname from users join (organization,role) on (organization.oid=users.oid and users.rid=role.rid)";
+$sql="select users.uid,uname,organization.oname,role.rname from users join (organization,role) on (organization.oid=users.oid and users.rid=role.rid) order by uid";
 $rows=(new Db)->query($sql);
+//var_dump($rows);
 ?>
 		  <main>
 		  <div class="row mb-3">

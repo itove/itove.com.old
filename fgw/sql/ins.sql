@@ -49,6 +49,6 @@ INSERT INTO `setting` (`sid`, `s_key`, `value`, `sname`) VALUES
 
 truncate role;
 INSERT INTO `role` (`rid`, `role`, `rname`) VALUES
-(1, 'user', '用户'),
-(2, 'admin', '管理'),
-(4, 'super', '超级');
+(1, 'user', '填报'),
+(2, 'admin', '检阅'),
+(3, 'super', '管理');
