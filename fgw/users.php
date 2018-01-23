@@ -9,7 +9,7 @@ if(!empty($_POST)){
 	}
 	// if anyone in $_POST is empty, not do this
 	if($v){
-		$sql="insert into users (uname, passwd, oid, rid) values(" . '"' . $_POST['uname']  . '", "' . $_POST['passwd'] . '", "' . $_POST['oid'] . '", "' . $_POST['rid'] . '")';
+		$sql="insert into users (uname, passwd, oid, rid) values(" . '"' . $_POST['uname']  . '", "' . md5($_POST['passwd']) . '", "' . $_POST['oid'] . '", "' . $_POST['rid'] . '")';
 		//echo $sql;
 		(new Db)->query($sql);
 	}

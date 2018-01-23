@@ -15,7 +15,7 @@ insert into users (uname, passwd, oid, rid) values
 
 truncate organization;
 insert into organization (oname,uid) values
-	('发改局',		1),
+	('发改委',		1),
 	('财政局',		2),
 	('教育局',		3),
 	('农业局',		4),
