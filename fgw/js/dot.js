@@ -42,8 +42,8 @@ if(u) u.addEventListener('change', chname);
 // addEvnetListener to monthpicker
 var m=document.querySelectorAll('.pickmonth');
 for(var i=0;i<m.length;i++){
-	m[i].addEventListener("click", pickmonth);
-	m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
+	//m[i].addEventListener("click", pickmonth);
+	//m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
 }
 
 // addEvnetListener to login password
@@ -94,26 +94,27 @@ function dropdownmenu(){
 	}
 	this.classList.add('active');
 	this.parentElement.previousElementSibling.innerText=this.innerText;
-	var input=document.querySelectorAll('input, textarea');
+	//var input=document.querySelectorAll('input, textarea, select');
+	var input=document.querySelectorAll('.writable');
 	var submit=document.querySelector('button[type=submit]');
 	if(this!==document.getElementById('dates').querySelector('.dropdown-menu').firstElementChild){
 		//console.log(this);
 		// disable inputs
 		for(var i=0;i<input.length;i++){
-			//input[i].setAttribute("disabled","");
-			input[i].setAttribute("readonly","");
+			input[i].setAttribute("disabled","");
+			//input[i].setAttribute("readonly","");
 		}
-		// remove submit
+		// hide submit
 		if(submit) submit.classList.add("d-none");
 
 	}
 	else {
 		// enable inputs
 		for(var i=0;i<input.length;i++){
-			//input[i].removeAttribute("disabled");
-			input[i].removeAttribute("readonly");
+			input[i].removeAttribute("disabled");
+			//input[i].removeAttribute("readonly");
 		}
-		// add submit
+		// show submit
 		if(submit) submit.classList.remove("d-none");
 	}
 }
@@ -206,3 +207,10 @@ function logout(){
 	document.cookie = 'SID' + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	location.href='/fgw';
 }
+
+$('.pickmonth').datepicker({
+	format: 'yyyy.mm',
+    minViewMode: 1,
+    language: "zh-CN",
+	autoclose: true
+});

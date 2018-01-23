@@ -44,7 +44,7 @@ truncate setting;
 INSERT INTO `setting` (`sid`, `s_key`, `value`, `sname`) VALUES
 (1, 'lockday', '25', '锁定日期'),
 (2, 'sitename', '茅箭区投资和项目直报平台', '网站名称'),
-(3, 'b', 'bb', 'bbb'),
+(3, 'remind_days', '5', '提醒天数'),
 (4, 'c', 'cc', 'ccc');
 
 truncate role;

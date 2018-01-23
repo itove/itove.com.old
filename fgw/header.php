@@ -14,10 +14,11 @@ $row=(new Db)->query($sql);
 	<title><?= $row['value'] ?></title>
 
     <!-- Bootstrap core CSS -->
-	<link type="text/css" href="<?= $root ?>/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="<?= $root ?>/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?= $root ?>/vendor/fortawesome/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?= $root ?>/css/bootstrap-datepicker3.css">
 
     <!-- Custom styles for this template -->
-	<link type="text/css" href="<?= $root ?>/dot.css" rel="stylesheet">
+	<link type="text/css" href="<?= $root ?>/css/dot.css" rel="stylesheet">
   </head>
   <body>
