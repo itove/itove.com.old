@@ -16,6 +16,7 @@ if(!empty($_POST)){
 		//var_dump($_SESSION);
 
 		// cookies
+		setcookie('user',$_SESSION['uname']);
 
 		require 'home.php';
 		require 'footer.php';
