@@ -15,7 +15,7 @@ $row=(new Db)->query($sql);
 
     <!-- Bootstrap core CSS -->
 	<link type="text/css" href="<?= $root ?>/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?= $root ?>/vendor/fortawesome/font-awesome/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
 	<link type="text/css" href="<?= $root ?>/dot.css" rel="stylesheet">

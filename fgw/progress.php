@@ -4,7 +4,10 @@ $row=(new Db)->query($sql);
 $sql="select value from setting where s_key='lockday'";
 $lockday=(new Db)->query($sql)['value'];
 $dayleft=$lockday - date('d');
-$uid=10;
+
+session_name('SID');
+session_start();
+$uid=$_SESSION['uid'];
 $uid != $row['uid'] || $dayleft <= 0 ? $disabled='disabled' : $disabled="";
 ?>
 

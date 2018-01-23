@@ -50,6 +50,9 @@ for(var i=0;i<m.length;i++){
 var p=document.getElementById('inputPassword');
 if(p) p.addEventListener("keyup", encrytpass);
 
+// addEvnetListener to logout
+var l=document.querySelector('.logout');
+if(l) l.addEventListener('click', logout);
 
 // click on projects entries to progress page
 function progressPage(){
@@ -193,9 +196,13 @@ function pickmonth(i){
 	}
 }
 
-
 function  encrytpass(){
 	//console.log(md5('1'));
 	//console.log(p.value);
 	//p.value=(md5(p.value));
+}
+
+function logout(){
+	document.cookie = 'SID' + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	location.href='/fgw';
 }

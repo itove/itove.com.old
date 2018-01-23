@@ -87,7 +87,7 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin .custom-checkbox{
+.form-signin .custom-checkbox, .form-signin .alert{
 	text-align: left;
 }
 

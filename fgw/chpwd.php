@@ -1,8 +1,12 @@
 <?php
 if($parameter){
-	$username=$parameter;
+	$uname=$parameter;
 }
-else $username='shangwu';
+else {
+	session_name('SID');
+	session_start();
+	$uname=$_SESSION['uname'];
+}
 ?>
 		  <main>
 		  <form method="post">
@@ -10,7 +14,7 @@ else $username='shangwu';
 			  <div class="input-group-prepend">
 				  <span class="input-group-text">用户名</span>
 			  </div>
-			  <input type="text" placeholder="<?= $username ?>" disabled class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			  <input type="text" placeholder="<?= $uname ?>" disabled class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 		  </div>
 		  <div class="input-group mb-3 col-sm-5 mx-auto">
 			  <div class="input-group-prepend">

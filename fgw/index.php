@@ -7,7 +7,7 @@
  */
 
 require 'vendor/autoload.php';
-require 'Db.php';
+require 'autoload.php';
 
 $root="/fgw";
 $inc="./";
@@ -18,14 +18,11 @@ $controller=$path[1];
 $method=$path[2];
 $parameter=$path[3];
 
-
 require $inc . "header.php";
 
-if(0){
-	$controller = 'login';
-	require $inc . $controller . ".php";
-}
-else{
+$login=Sign::check();
+
+if($login){
 	$controller ? : $controller='home';
 
 	if($controller=='project' && is_numeric($method)){
@@ -34,13 +31,38 @@ else{
 	}
 	else if($controller=='setting') {
 		require $inc . "nav.php";
-		$method ? : $method='chpwd';
-		require $inc . $method. ".php";
+
+		session_name('SID');
+		session_start();
+		$rid=$_SESSION['rid'];
+
+		if(empty($method) || $method == 'chpwd'){
+			require $inc . $method. ".php";
+		}
+		else if(is_readable($inc . $method. '.php')){
+				if($rid==3){
+					require $inc . $method. ".php";
+				}
+				else{
+					require $inc . '404.php';
+				}
+			}
+		else{
+			require $inc . '404.php';
+		}
 	}
 	else{
-		require $inc . $controller . ".php";
-		//require $inc . "404.php";
+		if(is_readable($inc . $controller . '.php')){
+			require $inc . $controller . '.php';
+		}
+		else{
+		require $inc . "404.php";
+		}
 	}
+}
+else{
+	$controller = 'login';
+	require $inc . $controller . ".php";
 }
 
 require $inc . "footer.php";

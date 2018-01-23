@@ -1,6 +1,6 @@
 truncate users;
 insert into users (uname, passwd, oid, rid) values
-	('fagai',		'202cb962ac59075b964b07152d234b70',1,1),
+	('fagai',		'202cb962ac59075b964b07152d234b70',1,3),
 	('caizheng',	'202cb962ac59075b964b07152d234b70',2,1),
 	('jiaoyu',		'202cb962ac59075b964b07152d234b70',3,1),
 	('nongye',		'202cb962ac59075b964b07152d234b70',4,1),

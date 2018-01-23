@@ -1,9 +1,17 @@
+<?php
+session_name('SID');
+session_start();
+$uname=$_SESSION['uname'];
+?>
     <div class="container" id="index">
       <header class="header clearfix">
 		  <nav>
 		  <ul class="nav float-right">
             <li class="nav-item">
-              <a class="nav-link text-muted" href="#">退 出</a>
+				<a class="nav-link"><?= $uname ?>,</a>
+            </li>
+            <li class="nav-item logout">
+				<a class="nav-link text-muted" href="#">退 出</a>
             </li>
           </ul>
 		  </nav>
