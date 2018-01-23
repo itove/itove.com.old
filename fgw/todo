@@ -11,3 +11,5 @@ submit form
 deny submit after lockday
 js md5
 add user check unique
+
+chpwd
