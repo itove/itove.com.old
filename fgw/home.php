@@ -8,14 +8,14 @@ $uname=$_SESSION['uname'];
 		  <nav>
 		  <ul class="nav float-right">
             <li class="nav-item">
-				<a class="nav-link"><?= $uname ?>,</a>
+				<a class="nav-link">你好，<?= $uname ?></a>
             </li>
             <li class="nav-item logout">
 				<a class="nav-link text-muted" href="#">退 出</a>
             </li>
           </ul>
 		  </nav>
-        <h3 class="text-muted">茅箭区投资和项目直报平台</h3>
+		  <h3 class="text-muted"><?= $row['value'] ?></h3>
       </header>
 
 	  <main role="main">
