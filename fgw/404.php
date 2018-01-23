@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container px-0">
 <div class="jumbotron">
   <h1 class="display-4">404</h1>
   <p class="lead">您访问的页面不存在!</p>
