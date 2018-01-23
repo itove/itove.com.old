@@ -39,7 +39,7 @@ if(!empty($_POST)){
 		</div>
 <?php endif ?>
         <label for="inputUsername" class="sr-only">uname</label>
-        <input type="text" id="inputUsername" class="form-control mb-3" placeholder="用户名" name="uname" required autofocus>
+		<input type="text" id="inputUsername" class="form-control mb-3" placeholder="用户名" name="uname" value="<?= $_COOKIE['user'] ?>" required autofocus>
         <label for="inputPassword" class="sr-only">passwd</label>
         <input type="password" id="inputPassword" class="form-control mb-3" placeholder="密  码" name="passwd" required>
 		<div class="custom-control custom-checkbox">
