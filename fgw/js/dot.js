@@ -146,14 +146,14 @@ function searchmy(){
 	this.classList.toggle('btn-outline-secondary');
 	this.classList.toggle('btn-primary');
 
-	var uid=this.getAttribute('data-uid');
+	var oid=this.getAttribute('data-oid');
 
-	// tr(s) that "data-uid" attribute NOT equal to uid
-	var selector='table tbody tr:not([data-uid="' + uid + '"])';
+	// tr(s) that "data-oid" attribute NOT equal to oid
+	var selector='table tbody tr:not([data-oid="' + oid + '"])';
 	var tr=document.querySelectorAll(selector);
 	//console.log(tr);
 
-	// search uid in every tr's data-uid
+	// search oid in every tr's data-oid
 	for(var i=0;i<tr.length;i++){
 		if(this.classList.contains('btn-primary')){
 			tr[i].classList.add('d-none');

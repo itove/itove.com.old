@@ -1,10 +1,10 @@
 <?php
-$sql="select pid,uid,pname,investment,o_incharge,p_incharge,property from projects";
+$sql="select pid,oid,pname,investment,o_incharge,p_incharge,property from projects";
 $rows=(new Db)->query($sql);
 
 session_name('SID');
 session_start();
-$uid=$_SESSION['uid'];
+$oid=$_SESSION['oid'];
 $rid=$_SESSION['rid'];
 $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';
 ?>
@@ -29,7 +29,7 @@ $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';
 				  <span class="badge badge-danger">上个月未提交</span>
 			  </div>
 			  <div class="col-auto col-sm-2">
-			  <button id="myproject" type="button" class="btn <?= $myproj_btn ?>" data-uid="<?= $uid ?>">我的项目</span>
+			  <button id="myproject" type="button" class="btn <?= $myproj_btn ?>" data-oid="<?= $oid ?>">我的项目</span>
 			  </div>
 			  <div class="col col-sm-3">
 				  <input class="form-control" id="search" type="text" placeholder="搜索项目" aria-label="Search">
@@ -53,14 +53,14 @@ $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';
 $a=['','bg-danger','bg-warning'];
 $i=rand(1,4);
 
-if($v['uid'] == $uid || $rid == 3){
-	$display=" searchable";
+if($v['oid'] == $oid || $rid == 3){
+	$class=" searchable";
 }
 else{
-	if($rid!=3) $display=" d-none";
+	if($rid!=3) $class=" d-none";
 }
 ?>
-	<tr class="<?= $a[$i] . $display ?>" data-uid="<?= $v['uid'] ?>">
+	<tr class="<?= $a[$i] . $class ?>" data-oid="<?= $v['oid'] ?>">
 				  <th scope="row"><?= $v['pid'] ?></th>
 					  <td><?= $v['pname'] ?></td>
 					  <td><?= $v['investment'] ?></td>

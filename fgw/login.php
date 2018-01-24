@@ -3,7 +3,7 @@ if(!empty($_POST)){
 	//var_dump($_POST);
 	$uname=$_POST['uname'];
 	$passwd=md5($_POST['passwd']);
-	$sql='select uid,uname,passwd,rid from users where uname=' . '"' . $uname. '" and passwd=' . '"' . $passwd .'"';
+	$sql='select uid,uname,passwd,oid,rid from users where uname=' . '"' . $uname. '" and passwd=' . '"' . $passwd .'"';
 	//echo $sql;
 	$user_row = (new Db)->query($sql);
 	if($user_row){
