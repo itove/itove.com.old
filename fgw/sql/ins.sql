@@ -3,7 +3,7 @@ insert into users (uname, passwd, oid, rid) values
 	('zhong',		'202cb962ac59075b964b07152d234b70',1,3),
 	('gong',		'202cb962ac59075b964b07152d234b70',1,3),
 	('tou',			'202cb962ac59075b964b07152d234b70',1,3),
-	('lingdao',		'202cb962ac59075b964b07152d234b70',1,3),
+	('lingdao',		'202cb962ac59075b964b07152d234b70',1,2),
 	('nong',		'202cb962ac59075b964b07152d234b70',1,3),
 	('ban',			'202cb962ac59075b964b07152d234b70',1,3),
 	('jiao',		'202cb962ac59075b964b07152d234b70',1,3),
