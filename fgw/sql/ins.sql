@@ -1,6 +1,14 @@
 truncate users;
 insert into users (uname, passwd, oid, rid) values
-	('fagai',		'202cb962ac59075b964b07152d234b70',1,3),
+	('zhong',		'202cb962ac59075b964b07152d234b70',1,3),
+	('gong',		'202cb962ac59075b964b07152d234b70',1,3),
+	('tou',			'202cb962ac59075b964b07152d234b70',1,3),
+	('lingdao',		'202cb962ac59075b964b07152d234b70',1,3),
+	('nong',		'202cb962ac59075b964b07152d234b70',1,3),
+	('ban',			'202cb962ac59075b964b07152d234b70',1,3),
+	('jiao',		'202cb962ac59075b964b07152d234b70',1,3),
+	('she',			'202cb962ac59075b964b07152d234b70',1,3),
+	('diqu',		'202cb962ac59075b964b07152d234b70',1,3),
 	('caizheng',	'202cb962ac59075b964b07152d234b70',2,1),
 	('jiaoyu',		'202cb962ac59075b964b07152d234b70',3,1),
 	('nongye',		'202cb962ac59075b964b07152d234b70',4,1),
