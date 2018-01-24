@@ -18,7 +18,6 @@ $parameter=$path[3];
 require $inc . "header.php";
 
 $login=Sign::check();
-$login=1;
 
 if($login){
 	$controller ? : $controller='home';
