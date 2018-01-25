@@ -57,15 +57,28 @@ if(l) l.addEventListener('click', logout);
 // click on projects entries to progress page
 function progressPage(){
 	var pid=this.querySelector('th').innerText;
-	location.href=location.href + "/" + pid;
+	var href=location.pathname.replace(/\/+$/, '') + "/" + pid;
+	//console.log(href);
+	if(parent===window){
+		location.pathname = href;
+	}
+	else{
+		chParentHref(href.replace('/fgw',''));
+	}
 }
 // click on users entries to passwd page
 function passwd(){
 	var user=this.querySelector('td').innerText;
-	console.log(user);
-	location.href=location.href + '/../chpwd/' + user;
-	var user1=document.querySelector('input').innerText;
-	console.log(user1);
+	var href = location.pathname + '/../chpwd/' + user;
+	//console.log(href);
+	if(parent===window){
+		location.pathname = href;
+	}
+	else{
+		chParentHref(href.replace('/fgw',''));
+	}
+	//var user1=document.querySelector('input').innerText;
+	//console.log(user1);
 }
 
 // close alerts
@@ -214,3 +227,21 @@ $('.pickmonth').datepicker({
     language: "zh-CN",
 	autoclose: true
 });
+
+var a = document.getElementsByTagName('a');
+for(var i=0; i<a.length; i++){
+	if(a[i].href!==0){
+		//a[i].addEventListener('click', callParent);
+	}
+}
+
+function callParent(){
+	//parent.postMessage(location.pathname, '*');
+	var h=this.href;
+	var hh=h.slice(h.indexOf('fgw')+3);
+	console.log(hh);
+	parent.postMessage(hh, '*');
+}
+function chParentHref(path){
+	parent.postMessage(path, '*');
+}
