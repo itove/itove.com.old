@@ -2,30 +2,26 @@
 $month = date('Y-m');
 
 // handle form submission
-if(!$_POST){
+if($_POST){
+	foreach($_POST as $k => $v){
+		if($_POST[$k]){
+			$cols .= "$k='$v',";
+		}
+	}
 	$sql = "select * from progress where pid='$pid' and date like '${month}%'";
 	$prog = (new Db)->query($sql);
-	// if already have data of this month
-	if($prog){
-		echo $sql='update progress';
+	// if not have any data of this month yet, copy it from previous month
+	if(!$prog){
+		$sql="insert into progress (pid,fill_state,phase,fillby,phone,progress,problem) select pid,fill_state,phase,fillby,phone,progress,problem from progress where pid='$pid' order by date desc limit 1";
+		(new Db)->query($sql);
 	}
-	else{
-		foreach($_POST as $k => $v){
-			if($_POST[$k]){
-				$col .= $k;
-				$value .= $v;
-			}
-		}
-		if($col){
-			echo $sql='insert into progress';
-		}
-		else{
-			echo $sql="insert into progress (pid,fill_state,phase,fillby,phone,progress,problem) select pid,fill_state,phase,fillby,phone,progress,problem from progress where pid='$pid' order by date desc limit 1";
-		}
+
+	if($cols){
+		$cols = rtrim($cols, ',');
+		$sql="update progress set $cols where pid='$pid' and date like '${month}%'";
+		(new Db)->query($sql);
 	}
 	
-}
-else{
 }
 
 // prepare data
@@ -33,8 +29,8 @@ $sql = "select * from projects where projects.pid='$pid'";
 $pj_row=(new Db)->query($sql);
 
 //$sql = "select * from progress where pid='$pid' and date like '${month}%'";
-$sql = "select * from progress where pid='$pid' order by date DESC LIMIT 1";
-$pg_row=(new Db)->query($sql);
+$sql = "select * from progress where pid='$pid' order by date DESC LIMIT 2";
+$pg_rows=(new Db)->query($sql);
 
 $sql="select value from setting where s_key='lockday' or s_key='remind_days'";
 $s_row=(new Db)->query($sql);
@@ -194,47 +190,95 @@ else{
 
 <!-- data from table progress start-->
 					  <tr>
-						  <th class="table-warning" scope="row">建设阶段</th>
-						  <td class="table-warning">
+<?php
+if($pg_rows[0]['phone']==$pg_rows[1]['phone'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+						  <th class="<?= $tdclass ?>" scope="row">建设阶段</th>
+						  <td class="<?= $tdclass ?>">
 						  <select class="custom-select <?= $class ?>" name="phase" <?= $disabled ?>>
 								<option value="">开工</option>
 								<option value="">前期准备</option>
 								<option value="">完工</option>
 							</select>
 						  </td>
-						  <th class="table-warning" scope="row">填报人</th>
-						  <td class="table-warning">
-							  <input id="fillby" name="fillby" placeholder="<?= $pg_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+<?php
+if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+						  <th class="<?= $tdclass ?>" scope="row">填报人</th>
+						  <td class="<?= $tdclass ?>">
+							  <input id="fillby" name="fillby" placeholder="<?= $pg_rows[0]['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
-						  <th class="table-warning" scope="row">联系电话</th>
-						  <td class="table-warning">
-							  <input id="phone" name="phone" placeholder="<?= $pg_row['phone'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+<?php
+if($pg_rows[0]['phone']==$pg_rows[1]['phone'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+						  <th class="<?= $tdclass ?>" scope="row">联系电话</th>
+						  <td class="<?= $tdclass ?>">
+							  <input id="phone" name="phone" placeholder="<?= $pg_rows[0]['phone'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr>
-						  <th class="table-warning" scope="row">建设期限</th>
-						  <td class="table-warning">
-						  <input name="" placeholder="<?= $pg_row['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+<?php
+if($pg_rows[0]['phase']==$pg_rows[1]['phase'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+						  <th class="<?= $tdclass ?>" scope="row">建设期限</th>
+						  <td class="<?= $tdclass ?>">
+						  <input name="" placeholder="<?= $pg_rows[0]['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
-						  <th class="table-warning" scope="row">至</th>
-						  <td class="table-warning">
-							  <input name="" placeholder="<?= $pg_row['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+<?php
+if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+						  <th class="<?= $tdclass ?>" scope="row">至</th>
+						  <td class="<?= $tdclass ?>">
+							  <input name="" placeholder="<?= $pg_rows[0]['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
-						  <th class="table-warning" scope="row">本月完成投资</th>
-						  <td class="table-warning">
-							  <input name="" placeholder="<?= $pg_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+<?php
+if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+						  <th class="<?= $tdclass ?>" scope="row">本月完成投资</th>
+						  <td class="<?= $tdclass ?>">
+							  <input name="" placeholder="<?= $pg_rows[0]['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
-					  <tr class="table-warning">
+<?php
+if($pg_rows[0]['progress']==$pg_rows[1]['progress'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+					  <tr class="<?= $tdclass ?>">
 						  <th scope="row">本月进展</th>
 						  <td colspan="6">
-						  <textarea id="prog" class="form-control <?= $class ?>" name="progress" rows="3" placeholder="<?= $pg_row['progress'] ?>" <?= $disabled ?>></textarea>
+						  <textarea id="prog" class="form-control <?= $class ?>" name="progress" rows="3" placeholder="<?= $pg_rows[0]['progress'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
-					  <tr class="table-warning">
+<?php
+if($pg_rows[0]['problem']==$pg_rows[1]['problem'])
+	$tdclass='table-warning';
+else
+	$tdclass='';
+?>
+					  <tr class="<?= $tdclass ?>">
 						  <th scope="row">存在的困难和问题以及下一步工作建议和安排</th>
 						  <td colspan="6">
-						  <textarea id="problem" class="form-control <?= $class ?>" name="problem" rows="6" placeholder="<?= $pg_row['problem'] ?>" <?= $disabled ?>></textarea>
+						  <textarea id="problem" class="form-control <?= $class ?>" name="problem" rows="6" placeholder="<?= $pg_rows[0]['problem'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 <!-- data from table progress end-->
