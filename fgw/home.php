@@ -15,7 +15,7 @@ $uname=$_SESSION['uname'];
             </li>
           </ul>
 		  </nav>
-		  <h3 class="text-muted"><?= $row['value'] ?></h3>
+		  <h3 class="text-muted"><?= $sitename ?></h3>
       </header>
 
 	  <main role="main">

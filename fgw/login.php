@@ -4,7 +4,6 @@ if(!empty($_POST)){
 	$uname=$_POST['uname'];
 	$passwd=md5($_POST['passwd']);
 	$sql='select uid,uname,passwd,oid,rid from users where uname=' . '"' . $uname. '" and passwd=' . '"' . $passwd .'"';
-	//echo $sql;
 	$user_row = (new Db)->query($sql);
 	if($user_row){
 		// session 
@@ -29,7 +28,7 @@ if(!empty($_POST)){
 ?>
     <div class="container">
       <form class="form-signin" method="post">
-	  	<h4 class="form-signin-heading text-muted"><?= $row['value'] ?></h4>
+	  	<h4 class="form-signin-heading text-muted"><?= $sitename ?></h4>
 <?php if($wrong): ?>
 		<div class="alert alert-danger">
 			用户名或密码错误！

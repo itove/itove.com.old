@@ -12,13 +12,13 @@ if(!empty($_POST)){
 }
 
 $sql='select * from setting';
-$rows=(new Db)->query($sql);
+$s_rows=(new Db)->query($sql);
 ?>
 
 
 		  <main>
 			<form method="post" action="">
-<?php foreach($rows as $row): ?>
+<?php foreach($s_rows as $row): ?>
 		  <div class="input-group mb-3 col-sm-6 mx-auto">
 			  <div class="input-group-prepend">
 			  <span class="input-group-text"><?= $row['sname'] ?></span>

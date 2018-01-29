@@ -1,6 +1,6 @@
 <?php
 $sql="select pid,oid,pname,investment,o_incharge,p_incharge,property from projects";
-$rows=(new Db)->query($sql);
+$p_rows=(new Db)->query($sql);
 
 session_name('SID');
 session_start();
@@ -48,25 +48,25 @@ $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';
 			  </thead>
 			  <tbody>
 
-<?php foreach($rows as $v): ?>
+<?php foreach($p_rows as $row): ?>
 <?php
 $a=['','bg-danger','bg-warning'];
 $i=rand(1,4);
 
-if($v['oid'] == $oid || $rid == 3){
+if($row['oid'] == $oid || $rid == 3){
 	$class=" searchable";
 }
 else{
 	if($rid!=3) $class=" d-none";
 }
 ?>
-	<tr class="<?= $a[$i] . $class ?>" data-oid="<?= $v['oid'] ?>">
-				  <th scope="row"><?= $v['pid'] ?></th>
-					  <td><?= $v['pname'] ?></td>
-					  <td><?= $v['investment'] ?></td>
-					  <td><?= $v['o_incharge'] ?></td>
-					  <td><?= $v['p_incharge'] ?></td>
-					  <td><?= $v['property'] ?></td>
+	<tr class="<?= $a[$i] . $class ?>" data-oid="<?= $row['oid'] ?>">
+				  <th scope="row"><?= $row['pid'] ?></th>
+					  <td><?= $row['pname'] ?></td>
+					  <td><?= $row['investment'] ?></td>
+					  <td><?= $row['o_incharge'] ?></td>
+					  <td><?= $row['p_incharge'] ?></td>
+					  <td><?= $row['property'] ?></td>
 				  </tr>
 <?php endforeach; ?>
 			  </tbody>

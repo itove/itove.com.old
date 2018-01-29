@@ -1,6 +1,7 @@
 <?php
 $sql="select value from setting where s_key='sitename'";
-$row=(new Db)->query($sql);
+$s_row=(new Db)->query($sql);
+$sitename = $s_row['value'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,7 +12,7 @@ $row=(new Db)->query($sql);
     <meta name="author" content="">
     <link rel="icon" href="">
 
-	<title><?= $row['value'] ?></title>
+	<title><?= $sitename ?></title>
 
     <!-- Bootstrap core CSS -->
 	<link type="text/css" href="<?= $root ?>/css/bootstrap.min.css" rel="stylesheet">

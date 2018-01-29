@@ -1,16 +1,19 @@
 <?php
-$sql="select * from projects join progress on progress.pid=projects.pid where projects.pid=$pid";
-$row=(new Db)->query($sql);
+$month = date('Y-m-01');
+$sql = "select * from projects join progress on progress.pid=projects.pid where projects.pid='$pid' and date > '$month'";
+$p_row=(new Db)->query($sql);
 $sql="select value from setting where s_key='lockday' or s_key='remind_days'";
-$rows=(new Db)->query($sql);
-$lockday=$rows[0]['value'];
-$remind_days=$rows[1]['value'];
+$s_row=(new Db)->query($sql);
+$lockday=$s_row[0]['value'];
+$remind_days=$s_row[1]['value'];
 $dayleft=$lockday - date('d');
+
 
 session_name('SID');
 session_start();
-$uid=$_SESSION['uid'];
-if($uid != $row['uid'] || $dayleft <= 0){
+//$uid=$_SESSION['uid'];
+$oid=$_SESSION['oid'];
+if($oid != $p_row['oid'] || $dayleft <= 0){
 	$disabled='disabled';
 	$class='';
 }
@@ -25,15 +28,15 @@ else{
 				  <ol class="breadcrumb">
 				  <li class="breadcrumb-item"><a href="<?= $root ?>">首 页</a></li>
 				  <li class="breadcrumb-item"><a href="<?= $root . "/project" ?>">重点项目</a></li>
-					  <li class="breadcrumb-item active" aria-current="page"><?= $row['pname'] ?></li>
+					  <li class="breadcrumb-item active" aria-current="page"><?= $p_row['pname'] ?></li>
 				  </ol>
 				  <div class="dropdown position-absolute" id="dates">
 					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  <?= date('Y年n月') ?>
+						  <?= date('Y-m') ?>
 					  </button>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 <?php for($i=date('n'); date('n') - $i < 12; $i--): ?>
-						<a class="dropdown-item <?php if(date('n') == $i) echo 'active' ?>" href="#"><?= date('Y年n月', mktime(0,0,0,$i)) ?></a>
+						<a class="dropdown-item <?php if(date('n') == $i) echo 'active' ?>" href="#"><?= date('Y-m', mktime(0,0,0,$i,1)) ?></a>
 <?php endfor ?>
 					  </div>
 				  </div>
@@ -52,6 +55,13 @@ else{
 		  </div>
 <?php endif ?>
 
+		  <div id="nodata" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+			  没有数据！
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+			  </button>
+		  </div>
+
 <?php if(0): ?>
 		  <div class="alert bg-danger alert-dismissible fade show" role="alert">
 			  <strong>您上月的数据未提交！</strong> 
@@ -67,17 +77,17 @@ else{
 					  <tr>
 						  <th scope="row">建设内容</th>
 						  <td colspan="6">
-						  <textarea class="form-control" rows="5" placeholder="<?= $row['intro'] ?>" disabled></textarea>
+						  <textarea class="form-control" rows="5" placeholder="<?= $p_row['intro'] ?>" disabled></textarea>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">编 号</th>
 						  <td>
-						  <input placeholder="<?= $row['pid'] ?>" type="text" class="form-control" disabled>
+						  <input id="pid" placeholder="<?= $p_row['pid'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">项目名称</th>
 						  <td>
-						  <input placeholder="<?= $row['pname'] ?>" type="text" class="form-control" disabled>
+						  <input placeholder="<?= $p_row['pname'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">建设性质</th>
 						  <td>
@@ -90,15 +100,15 @@ else{
 					  <tr>
 						  <th scope="row">实际开工时间</th>
 						  <td>
-							  <input placeholder="<?= $row['start'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['start'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">拟竣工时间</th>
 						  <td>
-							  <input placeholder="<?= $row['finish'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['finish'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">总投资</th>
 						  <td>
-							  <input placeholder="<?= $row['investment'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['investment'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr>
 					  <tr>
@@ -112,25 +122,25 @@ else{
 						  </td>
 						  <th scope="row">今年计划投资</th>
 						  <td>
-							  <input placeholder="<?= $row['invest_plan'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['invest_plan'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">今年累计完成投资</th>
 						  <td>
-							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">责任单位</th>
 						  <td>
-							  <input placeholder="<?= $row['o_incharge'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['o_incharge'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">实施单位</th>
 						  <td>
-							  <input placeholder="<?= $row['z'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">包联领导</th>
 						  <td>
-							  <input placeholder="<?= $row['p_incharge'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $p_row['p_incharge'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr> 
 					  <tr>
@@ -155,43 +165,43 @@ else{
 							</select>
 						  </td>
 						  <th class="table-warning" scope="row">填报人</th>
-						  <td class="table-warning" id="fuck">
-							  <input placeholder="<?= $row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+						  <td class="table-warning">
+							  <input id="fillby" placeholder="<?= $p_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">联系电话</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $row['phone'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input id="phone" placeholder="<?= $p_row['phone'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr>
 						  <th class="table-warning" scope="row">建设期限</th>
 						  <td class="table-warning">
-						  <input placeholder="<?= $row['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+						  <input placeholder="<?= $p_row['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">至</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $row['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+							  <input placeholder="<?= $p_row['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">本月完成投资</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input placeholder="<?= $p_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr class="table-warning">
 						  <th scope="row">本月进展</th>
 						  <td colspan="6">
-						  <textarea class="form-control <?= $class ?>" rows="3" placeholder="<?= $row['progress'] ?>" <?= $disabled ?>></textarea>
+						  <textarea id="prog" class="form-control <?= $class ?>" rows="3" placeholder="<?= $p_row['progress'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 					  <tr class="table-warning">
 						  <th scope="row">存在的困难和问题以及下一步工作建议和安排</th>
 						  <td colspan="6">
-						  <textarea class="form-control <?= $class ?>" rows="6" placeholder="<?= $row['problem'] ?>" <?= $disabled ?>></textarea>
+						  <textarea id="problem" class="form-control <?= $class ?>" rows="6" placeholder="<?= $p_row['problem'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 				  </tbody>
 			  </table>
-<?php if($uid == $row['uid'] && date('d') < $lockday): ?>
+<?php if($oid == $p_row['oid'] && $dayleft > 0): ?>
 			  <button type="submit" class="btn btn-success">提 交</button>
 <?php endif ?>
 		  </form>

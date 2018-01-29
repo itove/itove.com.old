@@ -85,7 +85,8 @@ function passwd(){
 function closealert(){
 	this.parentElement.classList.remove('show');
 	var i=this.parentElement
-	setTimeout(function(){i.remove()}, 150);
+	//setTimeout(function(){i.remove()}, 150);
+	setTimeout(function(){i.classList.add('d-none')}, 150);
 	// set sth so this alert won't come out again when refresh
 }
 
@@ -107,7 +108,6 @@ function dropdownmenu(){
 	}
 	this.classList.add('active');
 	this.parentElement.previousElementSibling.innerText=this.innerText;
-	//var input=document.querySelectorAll('input, textarea, select');
 	var input=document.querySelectorAll('.writable');
 	var submit=document.querySelector('button[type=submit]');
 	if(this!==document.getElementById('dates').querySelector('.dropdown-menu').firstElementChild){
@@ -129,6 +129,41 @@ function dropdownmenu(){
 		}
 		// show submit
 		if(submit) submit.classList.remove("d-none");
+	}
+
+	// ajax data of selected month
+	var xhr =new XMLHttpRequest();
+	xhr.onreadystatechange = updateform;
+	xhr.open('POST', '/fgw/ajax.php');
+	xhr.responseType='json';
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.send("month=" + this.innerText + "&pid=" + document.getElementById('pid').placeholder);
+
+	function updateform(){
+		if(xhr.readyState === XMLHttpRequest.DONE){
+			if(xhr.status === 200){
+				var x = xhr.response;
+				//console.log(x);
+				if(x){
+					document.getElementById('fillby').placeholder=x.fillby;
+					document.getElementById('phone').placeholder=x.phone;
+					document.getElementById('problem').placeholder=x.problem;
+					document.getElementById('prog').placeholder=x.progress;
+				}
+				else{
+					// alert 'don't have data of selected month'
+					var nodata = document.getElementById('nodata');
+					console.log(this);
+					//nodata.firstChild.textContent='没有' + this.innerText + '的数据';
+					nodata.classList.remove('d-none');
+					nodata.classList.add('show');
+
+				}
+			}
+			else{
+			}
+		}
+
 	}
 }
 
@@ -222,7 +257,7 @@ function logout(){
 }
 
 $('.pickmonth').datepicker({
-	format: 'yyyy.mm',
+	format: 'yyyy-mm',
     minViewMode: 1,
     language: "zh-CN",
 	autoclose: true

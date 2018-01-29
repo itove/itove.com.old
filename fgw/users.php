@@ -22,8 +22,7 @@ $sql="select oid,oname from organization";
 $o_rows=(new Db)->query($sql);
 
 $sql="select users.uid,uname,organization.oname,role.rname from users join (organization,role) on (organization.oid=users.oid and users.rid=role.rid) order by uid";
-$rows=(new Db)->query($sql);
-//var_dump($rows);
+$u_rows=(new Db)->query($sql);
 ?>
 		  <main>
 		  <div class="row mb-3">
@@ -67,12 +66,12 @@ $rows=(new Db)->query($sql);
 				  </tr>
 			  </thead>
 			  <tbody>
-<?php foreach($rows as $v): ?>
+<?php foreach($u_rows as $row): ?>
 				  <tr class="searchable">
-				  <th scope="row"><?= $v['uid'] ?></th>
-					  <td><?= $v['uname'] ?></td>
-					  <td><?= $v['oname'] ?></td>
-					  <td><?= $v['rname'] ?></td>
+				  <th scope="row"><?= $row['uid'] ?></th>
+					  <td><?= $row['uname'] ?></td>
+					  <td><?= $row['oname'] ?></td>
+					  <td><?= $row['rname'] ?></td>
 				  </tr>
 <?php endforeach; ?>
 			  </tbody>

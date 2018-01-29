@@ -1,0 +1,12 @@
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-1-25', '2017.1填报人', '2017.1电话', '2017.1进度','2017.1问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-2-25', '2017.2填报人', '2017.2电话', '2017.2进度','2017.2问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-3-25', '2017.3填报人', '2017.3电话', '2017.3进度','2017.3问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-4-25', '2017.4填报人', '2017.4电话', '2017.4进度','2017.4问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-5-25', '2017.5填报人', '2017.5电话', '2017.5进度','2017.5问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-6-25', '2017.6填报人', '2017.6电话', '2017.6进度','2017.6问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-7-25', '2017.7填报人', '2017.7电话', '2017.7进度','2017.7问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-8-25', '2017.8填报人', '2017.8电话', '2017.8进度','2017.8问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-9-25', '2017.9填报人', '2017.9电话', '2017.9进度','2017.9问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-10-25', '2017.10填报人', '2017.10电话', '2017.10进度','2017.10问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-11-25', '2017.11填报人', '2017.11电话', '2017.11进度','2017.11问题');
+insert into progress (pid,date,fillby,phone,progress,problem) values('33', '2017-12-25', '2017.12填报人', '2017.12电话', '2017.12进度','2017.12问题');
