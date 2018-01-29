@@ -110,6 +110,8 @@ function dropdownmenu(){
 	this.parentElement.previousElementSibling.innerText=this.innerText;
 	var input=document.querySelectorAll('.writable');
 	var submit=document.querySelector('button[type=submit]');
+	var yellow=document.getElementsByClassName('dup');
+	console.log(yellow);
 	if(this!==document.getElementById('dates').querySelector('.dropdown-menu').firstElementChild){
 		//console.log(this);
 		// disable inputs
@@ -119,7 +121,10 @@ function dropdownmenu(){
 		}
 		// hide submit
 		if(submit) submit.classList.add("d-none");
-
+		// remove yellow color
+		for(var i=0;i<yellow.length;i++){
+			yellow[i].classList.remove('table-warning');
+		}
 	}
 	else {
 		// enable inputs
@@ -129,6 +134,10 @@ function dropdownmenu(){
 		}
 		// show submit
 		if(submit) submit.classList.remove("d-none");
+		// recover yellow color
+		for(var i=0;i<yellow.length;i++){
+			yellow[i].classList.add('table-warning');
+		}
 	}
 
 	// ajax data of selected month

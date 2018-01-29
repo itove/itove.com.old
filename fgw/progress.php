@@ -192,7 +192,7 @@ else{
 					  <tr>
 <?php
 if($pg_rows[0]['phone']==$pg_rows[1]['phone'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -206,7 +206,7 @@ else
 						  </td>
 <?php
 if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -216,7 +216,7 @@ else
 						  </td>
 <?php
 if($pg_rows[0]['phone']==$pg_rows[1]['phone'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -228,7 +228,7 @@ else
 					  <tr>
 <?php
 if($pg_rows[0]['phase']==$pg_rows[1]['phase'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -238,7 +238,7 @@ else
 						  </td>
 <?php
 if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -248,7 +248,7 @@ else
 						  </td>
 <?php
 if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -259,7 +259,7 @@ else
 					  </tr> 
 <?php
 if($pg_rows[0]['progress']==$pg_rows[1]['progress'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
@@ -271,7 +271,7 @@ else
 					  </tr>
 <?php
 if($pg_rows[0]['problem']==$pg_rows[1]['problem'])
-	$tdclass='table-warning';
+	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
