@@ -143,16 +143,18 @@ function dropdownmenu(){
 		if(xhr.readyState === XMLHttpRequest.DONE){
 			if(xhr.status === 200){
 				var x = xhr.response;
+				var nodata = document.getElementById('nodata');
 				//console.log(x);
 				if(x){
 					document.getElementById('fillby').placeholder=x.fillby;
 					document.getElementById('phone').placeholder=x.phone;
 					document.getElementById('problem').placeholder=x.problem;
 					document.getElementById('prog').placeholder=x.progress;
+					// hide alert 'don't have data of selected month'
+					nodata.classList.add('d-none');
 				}
 				else{
 					// alert 'don't have data of selected month'
-					var nodata = document.getElementById('nodata');
 					console.log(this);
 					//nodata.firstChild.textContent='没有' + this.innerText + '的数据';
 					nodata.classList.remove('d-none');

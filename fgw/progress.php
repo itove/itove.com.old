@@ -1,7 +1,30 @@
 <?php
-$month = date('Y-m-01');
-$sql = "select * from projects join progress on progress.pid=projects.pid where projects.pid='$pid' and date > '$month'";
-$p_row=(new Db)->query($sql);
+$month = date('Y-m');
+
+// handle form submission
+if(!$_POST){
+	// if already have data of the month
+	$sql = "select * from progress where pid='$pid' and date like '${month}%'";
+	$prog = (new Db)->query($sql);
+	if($prog){
+		echo $sql='update progress';
+	}
+	else{
+		echo $sql='insert into progress';
+	}
+	
+}
+else{
+}
+
+// prepare data
+$sql = "select * from projects where projects.pid='$pid'";
+$pj_row=(new Db)->query($sql);
+
+//$sql = "select * from progress where pid='$pid' and date like '${month}%'";
+$sql = "select * from progress where pid='$pid' order by date DESC LIMIT 1";
+$pg_row=(new Db)->query($sql);
+
 $sql="select value from setting where s_key='lockday' or s_key='remind_days'";
 $s_row=(new Db)->query($sql);
 $lockday=$s_row[0]['value'];
@@ -13,7 +36,7 @@ session_name('SID');
 session_start();
 //$uid=$_SESSION['uid'];
 $oid=$_SESSION['oid'];
-if($oid != $p_row['oid'] || $dayleft <= 0){
+if($oid != $pj_row['oid'] || $dayleft <= 0){
 	$disabled='disabled';
 	$class='';
 }
@@ -28,7 +51,7 @@ else{
 				  <ol class="breadcrumb">
 				  <li class="breadcrumb-item"><a href="<?= $root ?>">首 页</a></li>
 				  <li class="breadcrumb-item"><a href="<?= $root . "/project" ?>">重点项目</a></li>
-					  <li class="breadcrumb-item active" aria-current="page"><?= $p_row['pname'] ?></li>
+					  <li class="breadcrumb-item active" aria-current="page"><?= $pj_row['pname'] ?></li>
 				  </ol>
 				  <div class="dropdown position-absolute" id="dates">
 					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,27 +94,28 @@ else{
 		  </div>
 <?php endif ?>
 
-		  <form>
+		  <form method="post">
 			  <table class="table table-bordered">
 				  <tbody>
+<!-- data from table projects start-->
 					  <tr>
 						  <th scope="row">建设内容</th>
 						  <td colspan="6">
-						  <textarea class="form-control" rows="5" placeholder="<?= $p_row['intro'] ?>" disabled></textarea>
+						  <textarea class="form-control" rows="5" placeholder="<?= $pj_row['intro'] ?>" disabled></textarea>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">编 号</th>
 						  <td>
-						  <input id="pid" placeholder="<?= $p_row['pid'] ?>" type="text" class="form-control" disabled>
+						  <input id="pid" placeholder="<?= $pj_row['pid'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">项目名称</th>
 						  <td>
-						  <input placeholder="<?= $p_row['pname'] ?>" type="text" class="form-control" disabled>
+						  <input placeholder="<?= $pj_row['pname'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">建设性质</th>
 						  <td>
-							<select class="custom-select" name="" disabled>
+							<select class="custom-select" disabled>
 								<option value="">新建</option>
 								<option value="">续建</option>
 							</select>
@@ -100,21 +124,21 @@ else{
 					  <tr>
 						  <th scope="row">实际开工时间</th>
 						  <td>
-							  <input placeholder="<?= $p_row['start'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['start'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">拟竣工时间</th>
 						  <td>
-							  <input placeholder="<?= $p_row['finish'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['finish'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">总投资</th>
 						  <td>
-							  <input placeholder="<?= $p_row['investment'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['investment'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">投资主体</th>
 						  <td>
-						  <select class="custom-select" name="" disabled>
+						  <select class="custom-select" disabled>
 								<option value="">市级政府</option>
 								<option value="">区级政府</option>
 								<option value="">企业</option>
@@ -122,31 +146,31 @@ else{
 						  </td>
 						  <th scope="row">今年计划投资</th>
 						  <td>
-							  <input placeholder="<?= $p_row['invest_plan'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['invest_plan'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">今年累计完成投资</th>
 						  <td>
-							  <input placeholder="<?= $p_row['z'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">责任单位</th>
 						  <td>
-							  <input placeholder="<?= $p_row['o_incharge'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['o_incharge'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">实施单位</th>
 						  <td>
-							  <input placeholder="<?= $p_row['z'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['z'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">包联领导</th>
 						  <td>
-							  <input placeholder="<?= $p_row['p_incharge'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['p_incharge'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr> 
 					  <tr>
 						  <th scope="row">项目类型</th>
 						  <td>
-						  <select class="custom-select" name="" disabled>
+						  <select class="custom-select" disabled>
 								<option value="">基建</option>
 								<option value="">工业</option>
 								<option value="">商业</option>
@@ -155,10 +179,13 @@ else{
 						  <th class="" colspan="4" scope="row"></th>
 						  </td>
 					  </tr> 
+<!-- data from table projects end-->
+
+<!-- data from table progress start-->
 					  <tr>
 						  <th class="table-warning" scope="row">建设阶段</th>
 						  <td class="table-warning">
-						  <select class="custom-select <?= $class ?>" name="" <?= $disabled ?>>
+						  <select class="custom-select <?= $class ?>" name="phase" <?= $disabled ?>>
 								<option value="">开工</option>
 								<option value="">前期准备</option>
 								<option value="">完工</option>
@@ -166,43 +193,44 @@ else{
 						  </td>
 						  <th class="table-warning" scope="row">填报人</th>
 						  <td class="table-warning">
-							  <input id="fillby" placeholder="<?= $p_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input id="fillby" name="fillby" placeholder="<?= $pg_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">联系电话</th>
 						  <td class="table-warning">
-							  <input id="phone" placeholder="<?= $p_row['phone'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input id="phone" name="phone" placeholder="<?= $pg_row['phone'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr>
 						  <th class="table-warning" scope="row">建设期限</th>
 						  <td class="table-warning">
-						  <input placeholder="<?= $p_row['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+						  <input name="" placeholder="<?= $pg_row['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">至</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $p_row['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+							  <input name="" placeholder="<?= $pg_row['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 						  <th class="table-warning" scope="row">本月完成投资</th>
 						  <td class="table-warning">
-							  <input placeholder="<?= $p_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input name="" placeholder="<?= $pg_row['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 					  <tr class="table-warning">
 						  <th scope="row">本月进展</th>
 						  <td colspan="6">
-						  <textarea id="prog" class="form-control <?= $class ?>" rows="3" placeholder="<?= $p_row['progress'] ?>" <?= $disabled ?>></textarea>
+						  <textarea id="prog" class="form-control <?= $class ?>" name="progress" rows="3" placeholder="<?= $pg_row['progress'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
 					  <tr class="table-warning">
 						  <th scope="row">存在的困难和问题以及下一步工作建议和安排</th>
 						  <td colspan="6">
-						  <textarea id="problem" class="form-control <?= $class ?>" rows="6" placeholder="<?= $p_row['problem'] ?>" <?= $disabled ?>></textarea>
+						  <textarea id="problem" class="form-control <?= $class ?>" name="problem" rows="6" placeholder="<?= $pg_row['problem'] ?>" <?= $disabled ?>></textarea>
 						  </td>
 					  </tr>
+<!-- data from table progress end-->
 				  </tbody>
 			  </table>
-<?php if($oid == $p_row['oid'] && $dayleft > 0): ?>
-			  <button type="submit" class="btn btn-success">提 交</button>
+<?php if($oid == $pj_row['oid'] && $dayleft > 0): ?>
+			  <button type="submit" class="btn btn-success" name="submit">提 交</button>
 <?php endif ?>
 		  </form>
 		  </main>
