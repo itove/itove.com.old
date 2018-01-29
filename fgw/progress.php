@@ -3,14 +3,25 @@ $month = date('Y-m');
 
 // handle form submission
 if(!$_POST){
-	// if already have data of the month
 	$sql = "select * from progress where pid='$pid' and date like '${month}%'";
 	$prog = (new Db)->query($sql);
+	// if already have data of this month
 	if($prog){
 		echo $sql='update progress';
 	}
 	else{
-		echo $sql='insert into progress';
+		foreach($_POST as $k => $v){
+			if($_POST[$k]){
+				$col .= $k;
+				$value .= $v;
+			}
+		}
+		if($col){
+			echo $sql='insert into progress';
+		}
+		else{
+			echo $sql="insert into progress (pid,fill_state,phase,fillby,phone,progress,problem) select pid,fill_state,phase,fillby,phone,progress,problem from progress where pid='$pid' order by date desc limit 1";
+		}
 	}
 	
 }
