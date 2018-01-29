@@ -30,7 +30,7 @@ $pj_row=(new Db)->query($sql);
 
 //$sql = "select * from progress where pid='$pid' and date like '${month}%'";
 $sql = "select * from progress where pid='$pid' order by date DESC LIMIT 2";
-$pg_rows=(new Db)->query($sql);
+$pg_rows=(new Db)->query($sql, 1);
 
 $sql="select value from setting where s_key='lockday' or s_key='remind_days'";
 $s_row=(new Db)->query($sql);

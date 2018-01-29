@@ -27,14 +27,14 @@ class Db{
 	}
 
 
-	function query($sql){
+	function query($sql, $multi=0){
 		if($res=$this->mysqli->query($sql)){
 			if(is_bool($res)){
 				return;
 			}
 			else{
 				$numrows=$res->num_rows;
-				if($numrows>1){
+				if($numrows>1 || $multi){
 					$row=$res->fetch_all(MYSQLI_ASSOC);
 				}
 				else $row=$res->fetch_assoc();
