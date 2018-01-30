@@ -31,7 +31,7 @@ $mysqli->set_charset('utf8');
 
 for($i=5;$i<=46;$i++){
 	//echo $sheetData[$i]['D'];
-	$sql="insert into projects (pid,pname,property,intro,investment,invest_plan,start,finish,invest_type,o_incharge,p_incharge) values(
+	$sql="insert into projects (pid,pname,property,intro,investment,invest_plan,start,finish,investby,o_incharge,p_incharge) values(
 		" . "\"" .  $sheetData[$i]['A'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['B'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['C'] ."\""  . ",

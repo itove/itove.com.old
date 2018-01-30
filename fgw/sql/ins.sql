@@ -40,10 +40,10 @@ insert into organization (oname,uid) values
 -- table `projects` inserted by uploading spreadsheet
 --
 source sql/projects.sql; -- or source this
-update projects set oid=8 /*,uid=8*/ where o_incharge like "%经信局%";
-update projects set oid=9 /*,uid=9*/ where o_incharge like "%科技局%";
-update projects set oid=10 /*,uid=10*/ where o_incharge like "%商务局%";
-update projects set oid=1 /*,uid=1*/ where o_incharge like "%发改局%";
+update projects set oid=8 where o_incharge like "%经信局%";
+update projects set oid=9 where o_incharge like "%科技局%";
+update projects set oid=10 where o_incharge like "%商务局%";
+update projects set oid=1 where o_incharge like "%发改局%";
 
 truncate progress;
 insert into progress (pid) select pid from projects;

@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.2.9-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.2.10-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: fgw
 -- ------------------------------------------------------
--- Server version	10.2.9-MariaDB
+-- Server version	10.2.10-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,31 +26,6 @@ CREATE TABLE `organization` (
   `oid` int(11) NOT NULL AUTO_INCREMENT,
   `oname` varchar(20) NOT NULL,
   `uid` int(11) NOT NULL,
-  `b` varchar(50) DEFAULT NULL,
-  `c` varchar(50) DEFAULT NULL,
-  `d` varchar(50) DEFAULT NULL,
-  `e` varchar(50) DEFAULT NULL,
-  `f` varchar(50) DEFAULT NULL,
-  `g` varchar(50) DEFAULT NULL,
-  `h` varchar(50) DEFAULT NULL,
-  `i` varchar(50) DEFAULT NULL,
-  `j` varchar(50) DEFAULT NULL,
-  `k` varchar(50) DEFAULT NULL,
-  `l` varchar(50) DEFAULT NULL,
-  `m` varchar(50) DEFAULT NULL,
-  `n` varchar(50) DEFAULT NULL,
-  `o` varchar(50) DEFAULT NULL,
-  `p` varchar(50) DEFAULT NULL,
-  `q` varchar(50) DEFAULT NULL,
-  `r` varchar(50) DEFAULT NULL,
-  `s` varchar(50) DEFAULT NULL,
-  `t` varchar(50) DEFAULT NULL,
-  `u` varchar(50) DEFAULT NULL,
-  `v` varchar(50) DEFAULT NULL,
-  `w` varchar(50) DEFAULT NULL,
-  `x` varchar(50) DEFAULT NULL,
-  `y` varchar(50) DEFAULT NULL,
-  `z` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`oid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -81,26 +56,9 @@ CREATE TABLE `progress` (
   `phone` varchar(50) DEFAULT NULL,
   `progress` varchar(50) DEFAULT NULL,
   `problem` varchar(50) DEFAULT NULL,
-  `g` varchar(50) DEFAULT NULL,
-  `h` varchar(50) DEFAULT NULL,
-  `i` varchar(50) DEFAULT NULL,
-  `j` varchar(50) DEFAULT NULL,
-  `k` varchar(50) DEFAULT NULL,
-  `l` varchar(50) DEFAULT NULL,
-  `m` varchar(50) DEFAULT NULL,
-  `n` varchar(50) DEFAULT NULL,
-  `o` varchar(50) DEFAULT NULL,
-  `p` varchar(50) DEFAULT NULL,
-  `q` varchar(50) DEFAULT NULL,
-  `r` varchar(50) DEFAULT NULL,
-  `s` varchar(50) DEFAULT NULL,
-  `t` varchar(50) DEFAULT NULL,
-  `u` varchar(50) DEFAULT NULL,
-  `v` varchar(50) DEFAULT NULL,
-  `w` varchar(50) DEFAULT NULL,
-  `x` varchar(50) DEFAULT NULL,
-  `y` varchar(50) DEFAULT NULL,
-  `z` varchar(50) DEFAULT NULL,
+  `invest_mon` varchar(50) DEFAULT NULL,
+  `limit_start` varchar(50) DEFAULT NULL,
+  `limit_end` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -130,27 +88,11 @@ CREATE TABLE `projects` (
   `invest_plan` varchar(50) NOT NULL COMMENT 'this year',
   `start` varchar(50) NOT NULL,
   `finish` varchar(50) NOT NULL,
-  `invest_type` varchar(50) NOT NULL,
-  `o_incharge` varchar(50) NOT NULL COMMENT 'organization in charge',
+  `investby` varchar(50) NOT NULL,
+  `o_incharge` varchar(50) NOT NULL COMMENT 'organization in charge. we actually use oid. keep it here just for xls import purpose',
   `p_incharge` varchar(50) NOT NULL COMMENT 'people in charge',
-  `uid` int(11) DEFAULT NULL,
   `oid` int(11) DEFAULT NULL,
-  `inplementor` varchar(50) DEFAULT NULL,
-  `l` varchar(50) DEFAULT NULL,
-  `m` varchar(50) DEFAULT NULL,
-  `n` varchar(50) DEFAULT NULL,
-  `o` varchar(50) DEFAULT NULL,
-  `p` varchar(50) DEFAULT NULL,
-  `q` varchar(50) DEFAULT NULL,
-  `r` varchar(50) DEFAULT NULL,
-  `s` varchar(50) DEFAULT NULL,
-  `t` varchar(50) DEFAULT NULL,
-  `u` varchar(50) DEFAULT NULL,
-  `v` varchar(50) DEFAULT NULL,
-  `w` varchar(50) DEFAULT NULL,
-  `x` varchar(50) DEFAULT NULL,
-  `y` varchar(50) DEFAULT NULL,
-  `z` varchar(50) DEFAULT NULL,
+  `implementor` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -227,31 +169,6 @@ CREATE TABLE `users` (
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `oid` int(11) NOT NULL,
   `rid` int(11) NOT NULL,
-  `b` varchar(50) DEFAULT NULL,
-  `c` varchar(50) DEFAULT NULL,
-  `d` varchar(50) DEFAULT NULL,
-  `e` varchar(50) DEFAULT NULL,
-  `f` varchar(50) DEFAULT NULL,
-  `g` varchar(50) DEFAULT NULL,
-  `h` varchar(50) DEFAULT NULL,
-  `i` varchar(50) DEFAULT NULL,
-  `j` varchar(50) DEFAULT NULL,
-  `k` varchar(50) DEFAULT NULL,
-  `l` varchar(50) DEFAULT NULL,
-  `m` varchar(50) DEFAULT NULL,
-  `n` varchar(50) DEFAULT NULL,
-  `o` varchar(50) DEFAULT NULL,
-  `p` varchar(50) DEFAULT NULL,
-  `q` varchar(50) DEFAULT NULL,
-  `r` varchar(50) DEFAULT NULL,
-  `s` varchar(50) DEFAULT NULL,
-  `t` varchar(50) DEFAULT NULL,
-  `u` varchar(50) DEFAULT NULL,
-  `v` varchar(50) DEFAULT NULL,
-  `w` varchar(50) DEFAULT NULL,
-  `x` varchar(50) DEFAULT NULL,
-  `y` varchar(50) DEFAULT NULL,
-  `z` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -274,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-22 18:06:16
+-- Dump completed on 2018-01-30 17:36:32
