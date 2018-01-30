@@ -116,6 +116,11 @@ tbody th{
 #progress th{
 	width:8%;
 }
+#progress td .img-fluid{
+	width: 55px;
+	max-height: 38px;
+	cursor: pointer;
+}
 .monthpicker{
 	max-width: 17%;
 }

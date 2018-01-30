@@ -183,8 +183,12 @@ else{
 								<option value="">商业</option>
 							</select>
 						  </td>
-						  <th class="" colspan="4" scope="row"></th>
+						  <th scope="row">施工照片</th>
+						  <td>
+							<img src="/fgw/p1.png" class="img-fluid rounded float-left mr-1" alt="...">
+							<img src="/fgw/p2.jpg" class="img-fluid rounded float-left mr-1" alt="...">
 						  </td>
+						  <th class="" colspan="4" scope="row"></th>
 					  </tr> 
 <!-- data from table projects end-->
 
