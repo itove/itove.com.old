@@ -18,21 +18,21 @@
 					  <tr>
 						  <th scope="row">建设内容</th>
 						  <td colspan="6">
-						  <textarea class="form-control" rows="5"></textarea>
+						  <textarea class="form-control" name="intro" rows="5"></textarea>
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">编 号</th>
 						  <td>
-						  <input id="pid" type="text" class="form-control">
+						  <input id="pid" type="text" class="form-control" name="pid" placeholder="55">
 						  </td>
 						  <th scope="row">项目名称</th>
 						  <td>
-						  <input type="text" class="form-control">
+						  <input type="text" class="form-control" name="pname">
 						  </td>
 						  <th scope="row">建设性质</th>
 						  <td>
-							<select class="custom-select">
+							<select class="custom-select" name="property">
 								<option value="">新建</option>
 								<option value="">续建</option>
 							</select>
@@ -41,53 +41,53 @@
 					  <tr>
 						  <th scope="row">实际开工时间</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="start">
 						  </td>
 						  <th scope="row">拟竣工时间</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="finish">
 						  </td>
 						  <th scope="row">总投资</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="investment">
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">投资主体</th>
 						  <td>
-						  <select class="custom-select">
-								<option value="">市级政府</option>
-								<option value="">区级政府</option>
-								<option value="">企业</option>
+						  <select class="custom-select" name="investby">
+								<option value="1">市级政府</option>
+								<option value="2">区级政府</option>
+								<option value="3">企业</option>
 							</select>
 						  </td>
 						  <th scope="row">今年计划投资</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="invest_plan">
 						  </td>
 						  <th scope="row">今年累计完成投资</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="">
 						  </td>
 					  </tr>
 					  <tr>
 						  <th scope="row">责任单位</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="oname">
 						  </td>
 						  <th scope="row">实施单位</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="implementor">
 						  </td>
 						  <th scope="row">包联领导</th>
 						  <td>
-							  <input type="text" class="form-control">
+							  <input type="text" class="form-control" name="p_incharge">
 						  </td>
 					  </tr> 
 					  <tr>
 						  <th scope="row">项目类型</th>
 						  <td>
-						  <select class="custom-select">
+						  <select class="custom-select" name="">
 								<option value="">基建</option>
 								<option value="">工业</option>
 								<option value="">商业</option>
@@ -129,15 +129,15 @@
 					  <tr>
 						  <th scope="row">实际建设期限</th>
 						  <td>
-						  <input name="" type="text" class="form-control pickmonth">
+						  <input name="" type="text" class="form-control pickmonth" name="limit_start">
 						  </td>
 						  <th scope="row">至</th>
 						  <td>
-							  <input name="" type="text" class="form-control pickmonth">
+							  <input name="" type="text" class="form-control pickmonth" name="limit_end">
 						  </td>
 						  <th scope="row">本月完成投资</th>
 						  <td>
-							  <input name="" type="text" class="form-control">
+							  <input name="" type="text" class="form-control" name="invest_mon">
 						  </td>
 					  </tr> 
 <!-- data write to table progress end-->
