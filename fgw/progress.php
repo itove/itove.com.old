@@ -295,9 +295,12 @@ else
 		  </main>
 
 <!-- click and popup image start-->
+			<div id="layer" class="d-none position-fixed w-100 h-100 fade show">
+			</div>
+
 			<div id="popimg" class="w-75 position-fixed d-none fade show">
 			  <img src="" class="rounded">
-			  <button type="button" class="close position-absolute" aria-label="Close">
+			  <button type="button" class="close position-absolute" id="popimgclose" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 			  </button>
 			</div>

@@ -61,8 +61,12 @@ for(var i=0;i<thumb.length;i++){
 }
 
 // addEvnetListener to pop image
-var img=document.getElementById('popimg');
-//if(img) img.addEventListener('focusout', function(){ console.log('aaaaaaaaaa');});
+var popimgclose=document.getElementById('popimgclose');
+if(popimgclose) popimgclose.addEventListener('click', closelayer);
+
+// addEvnetListener to layer
+var layer=document.getElementById('layer');
+if(layer) layer.addEventListener('click', closelayer);
 
 // click on projects entries to progress page
 function progressPage(){
@@ -95,7 +99,6 @@ function passwd(){
 function closealert(){
 	var i=this.parentElement
 	i.classList.remove('show');
-	//setTimeout(function(){i.remove()}, 150);
 	setTimeout(function(){i.classList.add('d-none')}, 150);
 	// set sth so this alert won't come out again when refresh
 }
@@ -307,5 +310,13 @@ function showImg(){
 	d.firstElementChild.src=this.src;
 	d.classList.remove('d-none');
 	d.classList.add('show');
+	layer.classList.remove('d-none');
+	layer.classList.add('show');
 	d.setAttribute('style', 'margin-left: ' + -d.clientWidth/2 +'px; margin-top:' + -d.clientHeight/2 + 'px;');
+}
+
+function closelayer(){
+	layer.classList.remove('show');
+	setTimeout(function(){layer.classList.add('d-none')}, 150);
+	popimgclose.click();
 }
