@@ -47,7 +47,7 @@ update projects set oid=11,uid=11 where o_incharge like "%发改局%";
 
 truncate progress;
 insert into progress (pid) select pid from projects;
-update progress set fill_state="abc", phase="开工", fillby="王晓明", phone="13507280000", progress="正在装修", problem="暂无";
+update progress set fill_state="abc", phase="开工", fillby="一八年一月", phone="13920180001", progress="2018年1月进度进度进度进度进度进度进度", problem="2018年1月问题问题问题问题问题问题问题问题";
 
 truncate setting;
 INSERT INTO `setting` (`sid`, `s_key`, `value`, `sname`) VALUES

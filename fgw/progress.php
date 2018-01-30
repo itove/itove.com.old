@@ -187,6 +187,11 @@ else{
 						  <td>
 							<img src="/fgw/p1.png" class="img-fluid rounded float-left mr-1" alt="...">
 							<img src="/fgw/p2.jpg" class="img-fluid rounded float-left mr-1" alt="...">
+<!--
+							<button type="button" class="btn btn-outline-primary btn-sm">
+								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+							</button>
+-->
 						  </td>
 						  <th class="" colspan="4" scope="row"></th>
 					  </tr> 

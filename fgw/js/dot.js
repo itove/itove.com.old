@@ -3,71 +3,6 @@ var projects=document.querySelectorAll('#projects tbody tr');
 for(var i=0;i<projects.length;i++){
 	projects[i].addEventListener("click", progressPage);
 }
-// addEvnetListener to users list
-var projects=document.querySelectorAll('#setting tbody tr');
-for(var i=0;i<projects.length;i++){
-	projects[i].addEventListener("click", passwd);
-}
-
-// addEvnetListener to alertclosebtn
-var alertclosebtn=document.getElementsByClassName('close');
-for(var i=0;i<alertclosebtn.length;i++){
-	alertclosebtn[i].addEventListener("click", closealert);
-}
-
-// addEvnetListener to dropdownbtn
-var dropdownbtn=document.querySelectorAll('.dropdown button');
-for(var i=0;i<dropdownbtn.length;i++){
-	dropdownbtn[i].addEventListener("click", dropdown);
-	//dropdownbtn[i].addEventListener("focusout", dropdown);
-	dropdownbtn[i].addEventListener("blur", dropdown);
-}
-// addEvnetListener to dropdown-item
-var dropdownitem=document.querySelectorAll('.dropdown-menu .dropdown-item');
-for(var i=0;i<dropdownitem.length;i++){
-	dropdownitem[i].addEventListener("mousedown", dropdownmenu);
-}
-// addEvnetListener to search
-var s=document.querySelector('#search');
-if(s) s.addEventListener('keyup', search);
-
-// addEvnetListener to #myproject
-var m=document.getElementById('myproject');
-if(m) m.addEventListener('click', searchmy);
-
-// addEvnetListener to upload
-var u=document.querySelector('#upload input');
-if(u) u.addEventListener('change', chname);
-
-// addEvnetListener to monthpicker
-var m=document.querySelectorAll('.pickmonth');
-for(var i=0;i<m.length;i++){
-	//m[i].addEventListener("click", pickmonth);
-	//m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
-}
-
-// addEvnetListener to login password
-var p=document.getElementById('inputPassword');
-if(p) p.addEventListener("keyup", encrytpass);
-
-// addEvnetListener to logout
-var l=document.querySelector('.logout');
-if(l) l.addEventListener('click', logout);
-
-// addEvnetListener to img thumbnails
-var thumb=document.getElementsByClassName('img-fluid');
-for(var i=0;i<thumb.length;i++){
-	thumb[i].addEventListener("click", showImg);
-}
-
-// addEvnetListener to pop image
-var popimgclose=document.getElementById('popimgclose');
-if(popimgclose) popimgclose.addEventListener('click', closelayer);
-
-// addEvnetListener to layer
-var layer=document.getElementById('layer');
-if(layer) layer.addEventListener('click', closelayer);
-
 // click on projects entries to progress page
 function progressPage(){
 	var pid=this.querySelector('th').innerText;
@@ -79,6 +14,12 @@ function progressPage(){
 	else{
 		chParentHref(href.replace('/fgw',''));
 	}
+}
+
+// addEvnetListener to users list
+var projects=document.querySelectorAll('#setting tbody tr');
+for(var i=0;i<projects.length;i++){
+	projects[i].addEventListener("click", passwd);
 }
 // click on users entries to passwd page
 function passwd(){
@@ -95,6 +36,11 @@ function passwd(){
 	//console.log(user1);
 }
 
+// addEvnetListener to alertclosebtn
+var alertclosebtn=document.getElementsByClassName('close');
+for(var i=0;i<alertclosebtn.length;i++){
+	alertclosebtn[i].addEventListener("click", closealert);
+}
 // close alerts
 function closealert(){
 	var i=this.parentElement
@@ -103,6 +49,13 @@ function closealert(){
 	// set sth so this alert won't come out again when refresh
 }
 
+// addEvnetListener to dropdownbtn
+var dropdownbtn=document.querySelectorAll('.dropdown button');
+for(var i=0;i<dropdownbtn.length;i++){
+	dropdownbtn[i].addEventListener("click", dropdown);
+	//dropdownbtn[i].addEventListener("focusout", dropdown);
+	dropdownbtn[i].addEventListener("blur", dropdown);
+}
 // toggle dropdown menu
 function dropdown(){
 	// add class show to .dropdown
@@ -114,6 +67,11 @@ function dropdown(){
 	this.getAttribute('aria-expanded')=='true' ? this.setAttribute('aria-expanded', 'false') : this.setAttribute('aria-expanded', 'true');
 }
 
+// addEvnetListener to dropdown-item
+var dropdownitem=document.querySelectorAll('.dropdown-menu .dropdown-item');
+for(var i=0;i<dropdownitem.length;i++){
+	dropdownitem[i].addEventListener("mousedown", dropdownmenu);
+}
 // dropdown menu
 function dropdownmenu(){
 	for(var i=0;i<dropdownitem.length;i++){
@@ -191,6 +149,9 @@ function dropdownmenu(){
 	}
 }
 
+// addEvnetListener to search
+var s=document.querySelector('#search');
+if(s) s.addEventListener('keyup', search);
 // search
 function search(){
 	// value of input
@@ -213,6 +174,9 @@ function search(){
 	}
 }
 
+// addEvnetListener to #myproject
+var m=document.getElementById('myproject');
+if(m) m.addEventListener('click', searchmy);
 // searchmy
 function searchmy(){
 	this.classList.toggle('btn-outline-secondary');
@@ -239,11 +203,19 @@ function searchmy(){
 	}
 }
 
+// addEvnetListener to upload
+var u=document.querySelector('#upload input');
+if(u) u.addEventListener('change', chname);
 function chname(){
 	u.nextElementSibling.innerText=u.value;
 }
 
-
+// addEvnetListener to monthpicker
+var m=document.querySelectorAll('.pickmonth');
+for(var i=0;i<m.length;i++){
+	//m[i].addEventListener("click", pickmonth);
+	//m[i].addEventListener("blur", function(){ pickmonth(1, m[i]); });
+}
 function pickmonth(i){
 	if(i===1){
 		//var m=document.querySelectorAll('.pickmonth');
@@ -269,17 +241,52 @@ function pickmonth(i){
 	}
 }
 
+// addEvnetListener to login password
+var p=document.getElementById('inputPassword');
+if(p) p.addEventListener("keyup", encrytpass);
 function  encrytpass(){
 	//console.log(md5('1'));
 	//console.log(p.value);
 	//p.value=(md5(p.value));
 }
 
+// addEvnetListener to logout
+var l=document.querySelector('.logout');
+if(l) l.addEventListener('click', logout);
 function logout(){
 	document.cookie = 'SID' + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	location.href='/fgw';
 }
 
+// addEvnetListener to img thumbnails
+var thumb=document.getElementsByClassName('img-fluid');
+for(var i=0;i<thumb.length;i++){
+	thumb[i].addEventListener("click", showImg);
+}
+function showImg(){
+	var d = document.getElementById('popimg');
+	d.firstElementChild.src=this.src;
+	d.classList.remove('d-none');
+	d.classList.add('show');
+	layer.classList.remove('d-none');
+	layer.classList.add('show');
+	d.setAttribute('style', 'margin-left: ' + -d.clientWidth/2 +'px; margin-top:' + -d.clientHeight/2 + 'px;');
+}
+
+// addEvnetListener to pop image
+var popimgclose=document.getElementById('popimgclose');
+if(popimgclose) popimgclose.addEventListener('click', closelayer);
+// addEvnetListener to layer
+var layer=document.getElementById('layer');
+if(layer) layer.addEventListener('click', closelayer);
+// close opacity layer
+function closelayer(){
+	layer.classList.remove('show');
+	setTimeout(function(){layer.classList.add('d-none')}, 150);
+	popimgclose.click();
+}
+
+// some jquery
 $('.pickmonth').datepicker({
 	format: 'yyyy-mm',
     minViewMode: 1,
@@ -303,20 +310,4 @@ function callParent(){
 }
 function chParentHref(path){
 	parent.postMessage(path, '*');
-}
-
-function showImg(){
-	var d = document.getElementById('popimg');
-	d.firstElementChild.src=this.src;
-	d.classList.remove('d-none');
-	d.classList.add('show');
-	layer.classList.remove('d-none');
-	layer.classList.add('show');
-	d.setAttribute('style', 'margin-left: ' + -d.clientWidth/2 +'px; margin-top:' + -d.clientHeight/2 + 'px;');
-}
-
-function closelayer(){
-	layer.classList.remove('show');
-	setTimeout(function(){layer.classList.add('d-none')}, 150);
-	popimgclose.click();
 }
