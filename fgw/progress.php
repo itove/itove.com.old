@@ -1,8 +1,14 @@
 <?php
 $month = date('Y-m');
 
+$sql="select value from setting where s_key='lockday' or s_key='remind_days'";
+$s_row=(new Db)->query($sql);
+$lockday=$s_row[0]['value'];
+$remind_days=$s_row[1]['value'];
+$dayleft=$lockday - date('d');
+
 // handle form submission
-if($_POST){
+if($_POST && $dayleft > 0){
 	foreach($_POST as $k => $v){
 		if($_POST[$k]){
 			$cols .= "$k='$v',";
@@ -32,23 +38,17 @@ $pj_row=(new Db)->query($sql);
 $sql = "select * from progress where pid='$pid' order by date DESC LIMIT 2";
 $pg_rows=(new Db)->query($sql, 1);
 
-$sql="select value from setting where s_key='lockday' or s_key='remind_days'";
-$s_row=(new Db)->query($sql);
-$lockday=$s_row[0]['value'];
-$remind_days=$s_row[1]['value'];
-$dayleft=$lockday - date('d');
-
 
 session_name('SID');
 session_start();
 $oid=$_SESSION['oid'];
-if($oid != $pj_row['oid'] || $dayleft <= 0){
-	$disabled='disabled';
-	$class='';
-}
-else{
+if($oid == $pj_row['oid'] && $dayleft > 0){
 	$disabled="";
 	$class='writable';
+}
+else{
+	$disabled='disabled';
+	$class='';
 }
 ?>
 
