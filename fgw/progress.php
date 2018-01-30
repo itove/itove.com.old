@@ -25,10 +25,10 @@ if($_POST){
 }
 
 // prepare data
-$sql = "select * from projects where projects.pid='$pid'";
+$sql = "select projects.*,organization.oname from projects join organization on projects.oid=organization.oid where projects.pid='$pid'";
 $pj_row=(new Db)->query($sql);
 
-//$sql = "select * from progress where pid='$pid' and date like '${month}%'";
+// we need data of last two months for rendering yellow td background purpose
 $sql = "select * from progress where pid='$pid' order by date DESC LIMIT 2";
 $pg_rows=(new Db)->query($sql, 1);
 
@@ -41,7 +41,6 @@ $dayleft=$lockday - date('d');
 
 session_name('SID');
 session_start();
-//$uid=$_SESSION['uid'];
 $oid=$_SESSION['oid'];
 if($oid != $pj_row['oid'] || $dayleft <= 0){
 	$disabled='disabled';
@@ -163,7 +162,7 @@ else{
 					  <tr>
 						  <th scope="row">责任单位</th>
 						  <td>
-							  <input placeholder="<?= $pj_row['o_incharge'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $pj_row['oname'] ?>" type="text" class="form-control" disabled>
 						  </td>
 						  <th scope="row">实施单位</th>
 						  <td>
