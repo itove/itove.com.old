@@ -10,7 +10,7 @@ for(var i=0;i<projects.length;i++){
 }
 
 // addEvnetListener to alertclosebtn
-var alertclosebtn=document.querySelectorAll('.alert .close');
+var alertclosebtn=document.getElementsByClassName('close');
 for(var i=0;i<alertclosebtn.length;i++){
 	alertclosebtn[i].addEventListener("click", closealert);
 }
@@ -54,6 +54,16 @@ if(p) p.addEventListener("keyup", encrytpass);
 var l=document.querySelector('.logout');
 if(l) l.addEventListener('click', logout);
 
+// addEvnetListener to img thumbnails
+var thumb=document.getElementsByClassName('img-fluid');
+for(var i=0;i<thumb.length;i++){
+	thumb[i].addEventListener("click", showImg);
+}
+
+// addEvnetListener to pop image
+var img=document.getElementById('popimg');
+//if(img) img.addEventListener('focusout', function(){ console.log('aaaaaaaaaa');});
+
 // click on projects entries to progress page
 function progressPage(){
 	var pid=this.querySelector('th').innerText;
@@ -83,8 +93,8 @@ function passwd(){
 
 // close alerts
 function closealert(){
-	this.parentElement.classList.remove('show');
 	var i=this.parentElement
+	i.classList.remove('show');
 	//setTimeout(function(){i.remove()}, 150);
 	setTimeout(function(){i.classList.add('d-none')}, 150);
 	// set sth so this alert won't come out again when refresh
@@ -285,9 +295,17 @@ function callParent(){
 	//parent.postMessage(location.pathname, '*');
 	var h=this.href;
 	var hh=h.slice(h.indexOf('fgw')+3);
-	console.log(hh);
+	//console.log(hh);
 	parent.postMessage(hh, '*');
 }
 function chParentHref(path){
 	parent.postMessage(path, '*');
+}
+
+function showImg(){
+	var d = document.getElementById('popimg');
+	d.firstElementChild.src=this.src;
+	d.classList.remove('d-none');
+	d.classList.add('show');
+	d.setAttribute('style', 'margin-left: ' + -d.clientWidth/2 +'px; margin-top:' + -d.clientHeight/2 + 'px;');
 }

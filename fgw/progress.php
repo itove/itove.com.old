@@ -294,6 +294,14 @@ else
 		  </form>
 		  </main>
 
+<!-- click and popup image start-->
+			<div id="popimg" class="w-75 position-fixed d-none fade show">
+			  <img src="" class="rounded">
+			  <button type="button" class="close position-absolute" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+<!-- click and popup image end-->
 
 			<div class="d-none" id="monthpicker">
 				<div class="month">
