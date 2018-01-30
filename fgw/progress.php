@@ -241,7 +241,7 @@ if($pg_rows[0]['phase']==$pg_rows[1]['phase'])
 else
 	$tdclass='';
 ?>
-						  <th class="<?= $tdclass ?>" scope="row">建设期限</th>
+						  <th class="<?= $tdclass ?>" scope="row">实际建设期限</th>
 						  <td class="<?= $tdclass ?>">
 						  <input name="" placeholder="<?= $pg_rows[0]['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>

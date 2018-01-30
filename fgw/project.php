@@ -28,8 +28,13 @@ $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';
 				  <span class="badge badge-warning">数据与上月雷同</span>
 				  <span class="badge badge-danger">上个月未提交</span>
 			  </div>
+<?php if($rid == 3): ?>
 			  <div class="col-auto col-sm-2">
-			  <button id="myproject" type="button" class="btn <?= $myproj_btn ?>" data-oid="<?= $oid ?>">我的项目</span>
+				  <a id="newproject" role="button" class="btn btn-success" href="<?= $root ?>/newproject">新增项目</a>
+			  </div>
+<?php endif ?>
+			  <div class="col-auto col-sm-2">
+				  <button id="myproject" type="button" class="btn <?= $myproj_btn ?>" data-oid="<?= $oid ?>">我的项目</button>
 			  </div>
 			  <div class="col col-sm-3">
 				  <input class="form-control" id="search" type="text" placeholder="搜索项目" aria-label="Search">
