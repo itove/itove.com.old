@@ -265,7 +265,7 @@ for(var i=0;i<thumb.length;i++){
 }
 function showImg(){
 	var d = document.getElementById('popimg');
-	d.firstElementChild.src=this.src;
+	d.firstElementChild.src=this.src.replace('thumb/','');
 	d.classList.remove('d-none');
 	d.classList.add('show');
 	layer.classList.remove('d-none');
@@ -273,7 +273,7 @@ function showImg(){
 	d.setAttribute('style', 'margin-left: ' + -d.clientWidth/2 +'px; margin-top:' + -d.clientHeight/2 + 'px;');
 }
 
-// addEvnetListener to pop image
+// addEvnetListener to popimgclose btn
 var popimgclose=document.getElementById('popimgclose');
 if(popimgclose) popimgclose.addEventListener('click', closelayer);
 // addEvnetListener to layer

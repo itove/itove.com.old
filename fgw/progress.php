@@ -1,5 +1,6 @@
 <?php
 $month = date('Y-m');
+$year = date('Y');
 
 $sql="select value from setting where s_key='lockday' or s_key='remind_days'";
 $s_row=(new Db)->query($sql);
@@ -38,6 +39,8 @@ $pj_row=(new Db)->query($sql);
 $sql = "select * from progress where pid='$pid' order by date DESC LIMIT 2";
 $pg_rows=(new Db)->query($sql, 1);
 
+$sql = "select sum(invest_mon) as sum from progress where pid='$pid' and date like '$year%'";
+$sum_row = (new Db)->query($sql);
 
 session_name('SID');
 session_start();
@@ -156,7 +159,7 @@ else{
 						  </td>
 						  <th scope="row">今年累计完成投资</th>
 						  <td>
-							  <input placeholder="<?= $pj_row['z'] ?>" type="text" class="form-control" disabled>
+							  <input placeholder="<?= $sum_row['sum'] ?>" type="text" class="form-control" disabled>
 						  </td>
 					  </tr>
 					  <tr>
@@ -183,16 +186,27 @@ else{
 							</select>
 						  </td>
 						  <th scope="row">施工照片</th>
-						  <td>
-							<img src="/fgw/p1.jpg" class="img-fluid rounded float-left mr-1" alt="...">
-							<img src="/fgw/p2.jpg" class="img-fluid rounded float-left mr-1" alt="...">
+						  <td colspan="3">
+<?php
+//$imgdir="pic/thumb/$pid";
+$imgdir="pic/$pid";
+$imgs=scandir($imgdir);
+if(!$imgs[2]){ // if we don't find any image of this project
+	//$imgdir='pic/thumb/0';
+	$imgdir='pic/0';
+	$imgs=scandir($imgdir);
+}
+unset($imgs[0], $imgs[1]); // remove . and ..
+?>
+<?php foreach($imgs as $img): ?>
+							<img src="<?= "$root/$imgdir/$img" ?>" class="img-fluid rounded float-left mr-1" alt="...">
+<?php endforeach ?>
 <!--
 							<button type="button" class="btn btn-outline-primary btn-sm">
 								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
 							</button>
 -->
 						  </td>
-						  <th class="" colspan="4" scope="row"></th>
 					  </tr> 
 <!-- data from table projects end-->
 
@@ -242,7 +256,7 @@ else
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">实际建设期限</th>
 						  <td class="<?= $tdclass ?>">
-						  <input name="" placeholder="<?= $pg_rows[0]['phase'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+						  <input name="" placeholder="<?= $pg_rows[0]['limit_start'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 <?php
 if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
@@ -252,7 +266,7 @@ else
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">至</th>
 						  <td class="<?= $tdclass ?>">
-							  <input name="" placeholder="<?= $pg_rows[0]['fillby'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+							  <input name="" placeholder="<?= $pg_rows[0]['limit_end'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 <?php
 if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
@@ -262,7 +276,7 @@ else
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">本月完成投资</th>
 						  <td class="<?= $tdclass ?>">
-							  <input name="" placeholder="<?= $pg_rows[0]['fillby'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input name="" placeholder="<?= $pg_rows[0]['invest_mon'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 <?php

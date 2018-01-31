@@ -36,6 +36,7 @@ insert into organization (oname,uid) values
 	('路灯处',		11),
 	('统计局',		12);
 
+truncate projects;
 --
 -- table `projects` inserted by uploading spreadsheet
 --
@@ -47,7 +48,7 @@ update projects set oid=1 where o_incharge like "%发改局%";
 
 truncate progress;
 insert into progress (pid) select pid from projects;
-update progress set fill_state="abc", phase="开工", fillby="一八年一月", phone="13920180001", progress="2018年1月进度进度进度进度进度进度进度", problem="2018年1月问题问题问题问题问题问题问题问题";
+update progress set fill_state="abc", phase="开工", fillby="一八年一月", phone="13920180001", progress="2018年1月进度进度进度进度进度进度进度", problem="2018年1月问题问题问题问题问题问题问题问题", invest_mon="50000", limit_start="2017-2", limit_end="2019-8";
 
 truncate setting;
 INSERT INTO `setting` (`sid`, `s_key`, `value`, `sname`) VALUES
