@@ -118,11 +118,12 @@ function dropdownmenu(){
 	xhr.responseType='json';
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	xhr.send("month=" + this.innerText + "&pid=" + document.getElementById('pid').placeholder);
-	console.log(xhr);
+	console.log(xhr.response);
 
 	function updateform(){
 		if(xhr.readyState === XMLHttpRequest.DONE){
 			if(xhr.status === 200){
+				console.log(xhr.response);
 				var x = xhr.response;
 				var nodata = document.getElementById('nodata');
 				//console.log(x);
