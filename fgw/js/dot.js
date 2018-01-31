@@ -82,7 +82,7 @@ function dropdownmenu(){
 	var input=document.querySelectorAll('.writable');
 	var submit=document.querySelector('button[type=submit]');
 	var yellow=document.getElementsByClassName('dup');
-	console.log(yellow);
+	//console.log(yellow);
 	if(this!==document.getElementById('dates').querySelector('.dropdown-menu').firstElementChild){
 		//console.log(this);
 		// disable inputs
@@ -135,7 +135,7 @@ function dropdownmenu(){
 				}
 				else{
 					// alert 'don't have data of selected month'
-					console.log(this);
+					//console.log(this);
 					//nodata.firstChild.textContent='没有' + this.innerText + '的数据';
 					nodata.classList.remove('d-none');
 					nodata.classList.add('show');
@@ -225,7 +225,7 @@ function pickmonth(i){
 		//var m=document.getElementsByClassName('monthpicker');
 		//for(var i=0; i<m.length; i++)
 		//	m[i].classList.add('d-none');
-		console.log(this);
+		//console.log(this);
 		return;
 	}
 	if(! this.hasAttribute('readonly')){
