@@ -164,7 +164,7 @@ function search(){
 	for(var i=0;i<tr.length;i++){
 		// search v in every td
 		for(var j=tr[i].firstElementChild;j;j=j.nextElementSibling){
-			if(j.innerText.includes(v)){
+			if(j.innerText.indexOf(v) !== -1){
 				tr[i].classList.remove('d-none');
 				j=1; // if find any, j is no longer useful, so we can use it as a switch
 				break;
