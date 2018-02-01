@@ -1,5 +1,3 @@
-*.xls
-*.xlsx
 vendor/
 # Object files
 *.o
