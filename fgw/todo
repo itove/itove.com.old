@@ -2,11 +2,12 @@
 调整(新增，删除)项目?
 报表
 
-js md5
-validation
-add user check unique
+pic
+validation: newpass 
+admin chpwd don't need old pass and pass confirm
 
 chpwd
 导出报表
 
 单位列表
+js md5
