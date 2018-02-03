@@ -19,7 +19,8 @@ if($_POST && $dayleft > 0){
 	$prog = (new Db)->query($sql);
 	// if not have any data of this month yet, copy it from previous month
 	if(!$prog){
-		$sql="insert into progress (pid,fill_state,phase,fillby,phone,progress,problem) select pid,fill_state,phase,fillby,phone,progress,problem from progress where pid='$pid' order by date desc limit 1";
+		// we use 'order by date desc limt 1' instead of 'and where date like date('Y-m', strtotime('first day of last month'))%', because you don't know whether last month has data
+		$sql="insert into progress (pid,fill_state,phase,fillby,phone,progress,problem,invest_mon,limit_start,limit_end) select pid,fill_state,phase,fillby,phone,progress,problem,invest_mon,limit_start,limit_end from progress where pid='$pid' order by date desc limit 1";
 		(new Db)->query($sql);
 	}
 
@@ -221,9 +222,9 @@ else
 						  <th class="<?= $tdclass ?>" scope="row">建设阶段</th>
 						  <td class="<?= $tdclass ?>">
 						  <select class="custom-select <?= $class ?>" name="phase" <?= $disabled ?>>
-								<option value="">开工</option>
-								<option value="">前期准备</option>
-								<option value="">完工</option>
+								<option value="0">开工</option>
+								<option value="1">前期准备</option>
+								<option value="2">完工</option>
 							</select>
 						  </td>
 <?php
@@ -249,34 +250,34 @@ else
 					  </tr> 
 					  <tr>
 <?php
-if($pg_rows[0]['phase']==$pg_rows[1]['phase'])
+if($pg_rows[0]['limit_start']==$pg_rows[1]['limit_start'])
 	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">实际建设期限</th>
 						  <td class="<?= $tdclass ?>">
-						  <input name="" placeholder="<?= $pg_rows[0]['limit_start'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+						  <input name="limit_start" placeholder="<?= $pg_rows[0]['limit_start'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 <?php
-if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
+if($pg_rows[0]['limit_end']==$pg_rows[1]['limit_end'])
 	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">至</th>
 						  <td class="<?= $tdclass ?>">
-							  <input name="" placeholder="<?= $pg_rows[0]['limit_end'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
+							  <input name="limit_end" placeholder="<?= $pg_rows[0]['limit_end'] ?>" type="text" class="form-control pickmonth <?= $class ?>" <?= $disabled ?>>
 						  </td>
 <?php
-if($pg_rows[0]['fillby']==$pg_rows[1]['fillby'])
+if($pg_rows[0]['invest_mon']==$pg_rows[1]['invest_mon'])
 	$tdclass='table-warning dup';
 else
 	$tdclass='';
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">本月完成投资</th>
 						  <td class="<?= $tdclass ?>">
-							  <input name="" placeholder="<?= $pg_rows[0]['invest_mon'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input name="invest_mon" placeholder="<?= $pg_rows[0]['invest_mon'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 <?php
