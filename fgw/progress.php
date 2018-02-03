@@ -214,7 +214,7 @@ unset($imgs[0], $imgs[1]); // remove . and ..
 <!-- data from table progress start-->
 					  <tr>
 <?php
-if($pg_rows[0]['phone']==$pg_rows[1]['phone'])
+if($pg_rows[0]['phase']==$pg_rows[1]['phase'])
 	$tdclass='table-warning dup';
 else
 	$tdclass='';
@@ -222,9 +222,9 @@ else
 						  <th class="<?= $tdclass ?>" scope="row">建设阶段</th>
 						  <td class="<?= $tdclass ?>">
 						  <select class="custom-select <?= $class ?>" name="phase" <?= $disabled ?>>
-								<option value="0">开工</option>
-								<option value="1">前期准备</option>
-								<option value="2">完工</option>
+								<option value="开工" <?php if($pg_rows[0]['phase']=='开工') echo 'selected' ?>>开工</option>
+								<option value="前期准备" <?php if($pg_rows[0]['phase']=='前期准备') echo 'selected' ?>>前期准备</option>
+								<option value="完工" <?php if($pg_rows[0]['phase']=='完工') echo 'selected' ?>>完工</option>
 							</select>
 						  </td>
 <?php
