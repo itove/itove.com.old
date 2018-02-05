@@ -8,9 +8,8 @@ if(!empty($_POST)){
 	$user_row = (new Db)->query($sql);
 	if($user_row){
 		// session 
-		session_name('SID');
 		session_id(session_create_id());
-		session_start(['cookie_lifetime' => $cookielife, 'cookie_path' => $root]);
+		session_start(['name' => 'SID', 'cookie_lifetime' => $cookielife, 'cookie_path' => $root]);
 		foreach($user_row as $k => $v){
 			$_SESSION[$k] = $v;
 		}

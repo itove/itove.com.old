@@ -2,8 +2,7 @@
 $sql="select pid,oid,pname,investment,o_incharge,p_incharge,property from projects";
 $p_rows=(new Db)->query($sql);
 
-session_name('SID');
-session_start();
+session_start(['name' => 'SID']);
 $oid=$_SESSION['oid'];
 $rid=$_SESSION['rid'];
 $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';

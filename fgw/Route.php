@@ -29,8 +29,7 @@ if($login){
 	else if($controller=='setting') {
 		require $inc . "nav.php";
 
-		session_name('SID');
-		session_start();
+		session_start(['name' => 'SID']);
 		$rid=$_SESSION['rid'];
 
 		if(empty($method) || $method == 'chpwd'){

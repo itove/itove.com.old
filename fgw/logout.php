@@ -6,10 +6,9 @@
  * @todo
  */
 
-session_name('SID');
-session_start();
+session_start(['name' => 'SID']);
 session_unset();
 session_destroy();
 
-header("Location: /fgw");
+header("Location: $root");
 exit;

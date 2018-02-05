@@ -17,11 +17,6 @@ class Sign{
 	}
 
 	static function check(){
-		//session_name('SID');
-		//session_start();
-		//echo session_id();
-		//
-
 		if(is_readable(session_save_path() . '/sess_' . $_COOKIE['SID'])){
 			return 1;
 		}
