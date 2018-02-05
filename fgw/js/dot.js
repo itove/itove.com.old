@@ -251,12 +251,13 @@ function  encrytpass(){
 }
 
 // addEvnetListener to logout
-var l=document.querySelector('.logout');
-if(l) l.addEventListener('click', logout);
-function logout(){
-	document.cookie = 'SID' + '=;path=/fgw;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-	location.href='/fgw';
-}
+// since we use logout.php now, this snippet is useless
+//var l=document.querySelector('.logout');
+//if(l) l.addEventListener('click', logout);
+//function logout(){
+//	document.cookie = 'SID' + '=;path=/fgw;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+//	location.href='/fgw';
+//}
 
 // addEvnetListener to img thumbnails
 var thumb=document.getElementsByClassName('img-fluid');
