@@ -254,7 +254,7 @@ function  encrytpass(){
 var l=document.querySelector('.logout');
 if(l) l.addEventListener('click', logout);
 function logout(){
-	document.cookie = 'SID' + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	document.cookie = 'SID' + '=;path=/fgw;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	location.href='/fgw';
 }
 

@@ -10,8 +10,8 @@ $uname=$_SESSION['uname'];
             <li class="nav-item">
 				<a class="nav-link">你好，<?= $uname ?></a>
             </li>
-            <li class="nav-item logout">
-				<a class="nav-link text-muted" href="#">退 出</a>
+            <li class="nav-item">
+				<a class="nav-link text-muted" href="logout">退 出</a>
             </li>
           </ul>
 		  </nav>

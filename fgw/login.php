@@ -1,21 +1,22 @@
 <?php
 if(!empty($_POST)){
-	//var_dump($_POST);
 	$uname=$_POST['uname'];
 	$passwd=md5($_POST['passwd']);
-	$sql='select uid,uname,passwd,oid,rid from users where uname=' . '"' . $uname. '" and passwd=' . '"' . $passwd .'"';
+	($_POST['remember']==='on') ? $cookielife = 3600 * 24 * 365 : $cookielife = 0;
+	// so this is the authentication
+	$sql="select uid,uname,passwd,oid,rid from users where uname='$uname' and passwd='$passwd'";
 	$user_row = (new Db)->query($sql);
 	if($user_row){
 		// session 
 		session_name('SID');
-		session_start();
+		session_id(session_create_id());
+		session_start(['cookie_lifetime' => $cookielife, 'cookie_path' => $root]);
 		foreach($user_row as $k => $v){
 			$_SESSION[$k] = $v;
 		}
-		//var_dump($_SESSION);
 
 		// cookies
-		setcookie('user',$_SESSION['uname']);
+		setcookie('user',$_SESSION['uname'], time()+3600*24*365);
 
 		require 'home.php';
 		require 'footer.php';
@@ -43,7 +44,7 @@ if(!empty($_POST)){
         <input type="password" id="inputPassword" class="form-control mb-3" placeholder="密  码" name="passwd" required>
 		<div class="custom-control custom-checkbox">
 			<input type="checkbox" class="custom-control-input" name="remember" id="customCheck1" checked>
-			<label class="custom-control-label" for="customCheck1">记住我</label>
+			<label class="custom-control-label" for="customCheck1">记住密码</label>
 		</div>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">登 录</button>
 	  </form>

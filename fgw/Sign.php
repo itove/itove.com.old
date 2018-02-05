@@ -21,9 +21,8 @@ class Sign{
 		//session_start();
 		//echo session_id();
 		//
-		$sessiondir = session_save_path();
 
-		if(is_readable($sessiondir . '/sess_' . $_COOKIE['SID'])){
+		if(is_readable(session_save_path() . '/sess_' . $_COOKIE['SID'])){
 			return 1;
 		}
 		else{
