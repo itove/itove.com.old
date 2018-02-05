@@ -9,6 +9,7 @@
 $root="/fgw";
 $inc="./";
 $static="./";
+$sessionname='SID';
 
 $path = explode("/", $_SERVER['PATH_INFO']);
 $controller=$path[1];
