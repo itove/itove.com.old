@@ -132,6 +132,10 @@ tbody th{
 	top: 2%;
 	right: 2%;
 }
+#progress .addpic:hover{
+	color: #28a745 !important;
+	cursor: pointer;
+}
 .monthpicker{
 	max-width: 17%;
 }

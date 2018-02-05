@@ -201,6 +201,7 @@ unset($imgs[0], $imgs[1]); // remove . and ..
 <?php foreach($imgs as $img): ?>
 							<img src="<?= "$root/$imgdir/$img" ?>" class="img-fluid rounded float-left mr-1" alt="...">
 <?php endforeach ?>
+								<i class="fa fa-2x fa-plus-circle float-left text-muted addpic" aria-hidden="true"></i>
 <!--
 							<button type="button" class="btn btn-outline-primary btn-sm">
 								<i class="fa fa-cloud-upload" aria-hidden="true"></i>

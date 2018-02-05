@@ -95,13 +95,7 @@
 						  </td>
 						  <th scope="row">施工照片</th>
 						  <td>
-							<img src="/fgw/p1.jpg" class="img-fluid rounded float-left mr-1" alt="...">
-							<img src="/fgw/p2.jpg" class="img-fluid rounded float-left mr-1" alt="...">
-<!--
-							<button type="button" class="btn btn-outline-primary btn-sm">
-								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
-							</button>
--->
+							<i class="fa fa-2x fa-plus-circle float-left text-muted addpic" aria-hidden="true"></i>
 						  </td>
 						  <th class="" colspan="4" scope="row"></th>
 					  </tr> 
