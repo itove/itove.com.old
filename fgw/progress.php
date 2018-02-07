@@ -24,10 +24,13 @@ if($_POST && $dayleft > 0){
 		(new Db)->query($sql);
 	}
 
+	// if anything is submitted
 	if($cols){
 		$cols = rtrim($cols, ',');
 		$sql="update progress set $cols where pid='$pid' and date like '${month}%'";
 		(new Db)->query($sql);
+		header("Location: $root/$controller/$method");
+		exit;
 	}
 	
 }

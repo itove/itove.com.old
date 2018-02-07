@@ -11,24 +11,36 @@ if($_POST){
 	if($v){
 		// valiate uname
 		$newuser = $_POST['uname'];
-		$newpass = $_POST['passwd'];
+		$newpass = md5($_POST['passwd']);
 		$o = ['options' => ['regexp' => '/^[[:alpha:]]\w{2,9}$/']];
+		
+		session_start(['name' => 'SID']);
+		
+		// if username is valid
 		if(filter_var($newuser, FILTER_VALIDATE_REGEXP, $o)){
 			// we only allow lower case
 			$newuser = strtolower($newuser);
-			// if uname not duplicate
+			
+			// if username not duplicate
 			$sql = "select uname from users where uname='$newuser'";
 			if((new Db)->query($sql)==null){
-				$sql="insert into users (uname, passwd, oid, rid) values(" . '"' . $newuser  . '", "' . md5($_POST['passwd']) . '", "' . $_POST['oid'] . '", "' . $_POST['rid'] . '")';
+				$sql="insert into users (uname, passwd, oid, rid) values('$newuser', '$newpass', '${_POST['oid']}', '${_POST['rid']}')";
 				//echo $sql;
 				(new Db)->query($sql);
+				//header('Location: /fgw/setting/users');
+				header("Location: $root/$controller/$method");
+				exit;
 			}
 			else{
-				$alert = 2;
+				$_SESSION['alert'] = 2;
+				header("Location: $root/$controller/$method");
+				exit;
 			}
 		}
 		else{
-			$alert = 1;
+			$_SESSION['alert'] = 1;
+			header("Location: $root/$controller/$method");
+			exit;
 		}
 	}
 }
@@ -41,20 +53,23 @@ $o_rows=(new Db)->query($sql);
 
 $sql="select users.uid,uname,organization.oname,role.rname from users join (organization,role) on (organization.oid=users.oid and users.rid=role.rid) order by uid";
 $u_rows=(new Db)->query($sql);
+
+//var_dump($_SESSION);
 ?>
 		  <main>
-<?php if($alert): ?>
+<?php if($_SESSION['alert']): ?>
 		  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-<?php if($alert == 1): ?>
+<?php if($_SESSION['alert'] == 1): ?>
 		  用户名由字母和数字组成，不能包含特殊字符，长度3至10位。第一位不能是数字！
 <?php endif ?>
-<?php if($alert == 2): ?>
+<?php if($_SESSION['alert']== 2): ?>
 		  用户名<?= $newuser ?>已存在，试试别的！
 <?php endif ?>
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 			  </button>
 		  </div>
+<?php unset($_SESSION['alert']) ?>
 <?php endif ?>
 
 		  <div class="row mb-3">

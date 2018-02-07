@@ -17,8 +17,9 @@ if(!empty($_POST)){
 		// cookies
 		setcookie('user',$_SESSION['uname'], time()+3600*24*365);
 
-		require 'home.php';
-		require 'footer.php';
+		//require 'home.php';
+		//require 'footer.php';
+		header("Location: $root");
 		exit;
 	}
 	else{
