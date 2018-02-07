@@ -1,5 +1,4 @@
 <?php
-session_start(['name' => 'SID']);
 $uname=$_SESSION['uname'];
 ?>
     <div class="container" id="index">

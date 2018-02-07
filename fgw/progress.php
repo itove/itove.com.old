@@ -46,7 +46,6 @@ $pg_rows=(new Db)->query($sql, 1);
 $sql = "select sum(invest_mon) as sum from progress where pid='$pid' and date like '$year%'";
 $sum_row = (new Db)->query($sql);
 
-session_start(['name' => 'SID']);
 $oid=$_SESSION['oid'];
 if($oid == $pj_row['oid'] && $dayleft > 0){
 	$disabled="";

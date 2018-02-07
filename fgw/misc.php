@@ -7,7 +7,6 @@ if(!empty($_POST)){
 			$sql.="'". $v . "'" . " where s_key='" . $k . "'";
 			//echo $sql . "\n";
 			(new Db)->query($sql);
-			echo $method;
 			//header('Location: /fgw/setting/misc');
 			header("Location: $root/$controller/$method");
 			exit;

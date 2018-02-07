@@ -1,5 +1,4 @@
 <?php
-session_start(['name' => 'SID']);
 $rid=$_SESSION['rid'];
 ?>
 	  <div class="container" id="setting">

@@ -6,7 +6,6 @@
  * @todo
  */
 
-session_start(['name' => 'SID']);
 session_unset();
 session_destroy();
 

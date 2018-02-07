@@ -21,6 +21,8 @@ require $inc . "header.php";
 $login=Sign::check();
 
 if($login){
+	session_start(['name'=>'SID']);
+	var_dump($_SESSION);
 	$controller ? : $controller='home';
 
 	if($controller=='project' && is_numeric($method)){
@@ -29,9 +31,6 @@ if($login){
 	}
 	else if($controller=='setting') {
 		require $inc . "nav.php";
-
-		session_start(['name' => 'SID']);
-		$rid=$_SESSION['rid'];
 
 		if(empty($method) || $method == 'chpwd'){
 			require $inc . $method. ".php";

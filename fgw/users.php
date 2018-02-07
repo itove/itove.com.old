@@ -14,8 +14,6 @@ if($_POST){
 		$newpass = md5($_POST['passwd']);
 		$o = ['options' => ['regexp' => '/^[[:alpha:]]\w{2,9}$/']];
 		
-		session_start(['name' => 'SID']);
-		
 		// if username is valid
 		if(filter_var($newuser, FILTER_VALIDATE_REGEXP, $o)){
 			// we only allow lower case

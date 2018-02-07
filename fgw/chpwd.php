@@ -10,7 +10,6 @@ if($parameter){
 	$uname=$parameter;
 }
 else {
-	session_start(['name' => 'SID']);
 	$uname=$_SESSION['uname'];
 }
 ?>
