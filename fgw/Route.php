@@ -22,7 +22,7 @@ $login=Sign::check();
 
 if($login){
 	session_start(['name'=>'SID']);
-	var_dump($_SESSION);
+	//var_dump($_SESSION);
 	$controller ? : $controller='home';
 
 	if($controller=='project' && is_numeric($method)){
