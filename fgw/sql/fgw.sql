@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.2.10-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.2.12-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: fgw
 -- ------------------------------------------------------
--- Server version	10.2.10-MariaDB
+-- Server version	10.2.12-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -93,6 +93,7 @@ CREATE TABLE `projects` (
   `p_incharge` varchar(50) NOT NULL COMMENT 'people in charge',
   `oid` int(11) DEFAULT NULL,
   `implementor` varchar(50) DEFAULT NULL,
+  `alert` int(11) DEFAULT NULL,
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -191,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-30 17:36:32
+-- Dump completed on 2018-02-09 23:20:32

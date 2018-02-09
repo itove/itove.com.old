@@ -1,5 +1,5 @@
 <?php
-$sql="select pid,oid,pname,investment,o_incharge,p_incharge,property from projects";
+$sql="select pid,projects.oid,pname,investment,oname,p_incharge,property,alert from projects join organization on projects.oid=organization.oid";
 $p_rows=(new Db)->query($sql);
 
 $oid=$_SESSION['oid'];
@@ -53,21 +53,27 @@ $rid == 3 ? $myproj_btn = 'btn-outline-secondary' : $myproj_btn = 'btn-primary';
 
 <?php foreach($p_rows as $row): ?>
 <?php
-$a=['','bg-danger','bg-warning'];
-$i=rand(1,4);
-
 if($row['oid'] == $oid || $rid == 3){
-	$class=" searchable";
+	$class="searchable";
 }
 else{
-	if($rid!=3) $class=" d-none";
+	$class="d-none";
+}
+
+switch($row['alert']){
+case 1:
+	$class .=' bg-warning';
+	break;
+case 2:
+	$class .=' bg-danger';
+	break;
 }
 ?>
-	<tr class="<?= $a[$i] . $class ?>" data-oid="<?= $row['oid'] ?>">
+	<tr class="<?= $class ?>" data-oid="<?= $row['oid'] ?>">
 				  <th scope="row"><?= $row['pid'] ?></th>
 					  <td><?= $row['pname'] ?></td>
 					  <td><?= $row['investment'] ?></td>
-					  <td><?= $row['o_incharge'] ?></td>
+					  <td><?= $row['oname'] ?></td>
 					  <td><?= $row['p_incharge'] ?></td>
 					  <td><?= $row['property'] ?></td>
 				  </tr>
