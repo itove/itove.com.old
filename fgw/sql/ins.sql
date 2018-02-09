@@ -40,7 +40,7 @@ truncate projects;
 --
 -- table `projects` inserted by uploading spreadsheet
 --
-source sql/projects.sql; -- or source this
+source w/it/fgw/sql/projects.sql; -- or source this
 update projects set oid=8 where o_incharge like "%经信局%";
 update projects set oid=9 where o_incharge like "%科技局%";
 update projects set oid=10 where o_incharge like "%商务局%";
@@ -49,6 +49,18 @@ update projects set oid=1 where o_incharge like "%发改局%";
 truncate progress;
 insert into progress (pid) select pid from projects;
 update progress set fill_state="abc", phase="开工", fillby="一八年一月", phone="13920180001", progress="2018年1月进度进度进度进度进度进度进度", problem="2018年1月问题问题问题问题问题问题问题问题", invest_mon="50000", limit_start="2017-2", limit_end="2019-8";
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-1-25', 	'一七年一月', 	'13920170001', '2017年1月进度进度进度进度','2017.1问题问题问题问题问题问题',1000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-2-25', 	'一七年二月', 	'13920170002', '2017年2月进度进度进度进度','2017.2问题问题问题问题问题问题',2000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-3-25', 	'一七年三月', 	'13920170003', '2017年3月进度进度进度进度','2017.3问题问题问题问题问题问题',3000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-4-25', 	'一七年四月', 	'13920170004', '2017年4月进度进度进度进度','2017.4问题问题问题问题问题问题',4000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-5-25', 	'一七年五月', 	'13920170005', '2017年5月进度进度进度进度','2017.5问题问题问题问题问题问题',5000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-6-25', 	'一七年六月', 	'13920170006', '2017年6月进度进度进度进度','2017.6问题问题问题问题问题问题',6000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-7-25', 	'一七年七月', 	'13920170007', '2017年7月进度进度进度进度','2017.7问题问题问题问题问题问题',7000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-8-25', 	'一七年八月', 	'13920170008', '2017年8月进度进度进度进度','2017.8问题问题问题问题问题问题',8000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-9-25', 	'一七年九月', 	'13920170009', '2017年9月进度进度进度进度','2017.9问题问题问题问题问题问题',9000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-10-25', 	'一七年十月', 	'13920170010', '2017年10月进度进度进度进度','2017.10问题问题问题问题问题问题',10000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-11-25', 	'一七年十一月', '13920170011', '2017年11月进度进度进度进度','2017.11问题问题问题问题问题问题',11000);
+insert into progress (pid,date,fillby,phone,progress,problem,invest_mon) values('33', '2017-12-25', 	'一七年十二月', '13920170012', '2017年12月进度进度进度进度','2017.12问题问题问题问题问题问题',12000);
 
 truncate setting;
 INSERT INTO `setting` (`sid`, `s_key`, `value`, `sname`) VALUES
