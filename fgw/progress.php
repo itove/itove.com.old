@@ -314,7 +314,7 @@ else
 ?>
 						  <th class="<?= $tdclass ?>" scope="row">本月完成投资</th>
 						  <td class="<?= $tdclass ?>">
-							  <input name="invest_mon" placeholder="<?= $pg_rows[0]['invest_mon'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
+							  <input id="invest_mon" name="invest_mon" placeholder="<?= $pg_rows[0]['invest_mon'] ?>" type="text" class="form-control <?= $class ?>" <?= $disabled ?>>
 						  </td>
 					  </tr> 
 <?php

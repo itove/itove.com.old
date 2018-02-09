@@ -128,6 +128,7 @@ function dropdownmenu(){
 				if(x){
 					document.getElementById('fillby').placeholder=x.fillby;
 					document.getElementById('phone').placeholder=x.phone;
+					document.getElementById('invest_mon').placeholder=x.invest_mon;
 					document.getElementById('problem').placeholder=x.problem;
 					document.getElementById('prog').placeholder=x.progress;
 					// hide alert 'don't have data of selected month'
@@ -139,7 +140,12 @@ function dropdownmenu(){
 					//nodata.firstChild.textContent='没有' + this.innerText + '的数据';
 					nodata.classList.remove('d-none');
 					nodata.classList.add('show');
-
+					
+					document.getElementById('fillby').placeholder='';
+					document.getElementById('phone').placeholder='';
+					document.getElementById('invest_mon').placeholder='';
+					document.getElementById('problem').placeholder='';
+					document.getElementById('prog').placeholder='';
 				}
 			}
 			else{
