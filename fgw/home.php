@@ -69,7 +69,7 @@ $uname=$_SESSION['uname'];
 				  <div class="card-body">
 					  <h5 class="card-title">设 置</h5>
 <div>
-					  <p class="card-text intro">修改密码、添加用户、报表...</p>
+					  <p class="card-text intro">修改密码、添加用户、统计报表、网站相关设置...</p>
 </div>
 				  </div>
 				  <div class="card-footer"><a class="btn btn-outline-dark btn-block" href="<?= $root ?>/setting/chpwd">修改设置</a></div>
