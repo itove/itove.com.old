@@ -111,16 +111,6 @@
 								<option value="">完工</option>
 							</select>
 						  </td>
-						  <th scope="row">填报人</th>
-						  <td>
-							  <input id="fillby" name="fillby" type="text" class="form-control">
-						  </td>
-						  <th scope="row">联系电话</th>
-						  <td>
-							  <input id="phone" name="phone" type="text" class="form-control">
-						  </td>
-					  </tr> 
-					  <tr>
 						  <th scope="row">实际建设期限</th>
 						  <td>
 						  <input name="" type="text" class="form-control pickmonth" name="limit_start">
@@ -128,10 +118,6 @@
 						  <th scope="row">至</th>
 						  <td>
 							  <input name="" type="text" class="form-control pickmonth" name="limit_end">
-						  </td>
-						  <th scope="row">本月完成投资</th>
-						  <td>
-							  <input name="" type="text" class="form-control" name="invest_mon">
 						  </td>
 					  </tr> 
 <!-- data write to table progress end-->

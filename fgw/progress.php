@@ -64,16 +64,6 @@ else{
 				  <li class="breadcrumb-item"><a href="<?= $root . "/project" ?>">重点项目</a></li>
 					  <li class="breadcrumb-item active" aria-current="page"><?= $pj_row['pname'] ?></li>
 				  </ol>
-				  <div class="dropdown position-absolute" id="dates">
-					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  <?= date('Y-m') ?>
-					  </button>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<?php for($i=date('n'); date('n') - $i < 12; $i--): ?>
-						<a class="dropdown-item <?php if(date('n') == $i) echo 'active' ?>" href="#"><?= date('Y-m', mktime(0,0,0,$i,1)) ?></a>
-<?php endfor ?>
-					  </div>
-				  </div>
 		  </nav>
 
 		  <main>
@@ -89,13 +79,6 @@ else{
 		  </div>
 <?php endif ?>
 
-		  <div id="nodata" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
-			  没有数据！
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-			  </button>
-		  </div>
-
 <?php if(0): ?>
 		  <div class="alert bg-danger alert-dismissible fade show" role="alert">
 			  <strong>您上月的数据未提交！</strong> 
@@ -105,10 +88,14 @@ else{
 		  </div>
 <?php endif ?>
 
-		  <form method="post">
-			  <table class="table table-bordered">
-				  <tbody>
 <!-- data from table projects start-->
+			  <table class="table table-bordered">
+				  <thead>
+					<tr>
+					  <th scope="col" colspan="6">项目信息</th>
+					</tr>
+				  </thead>
+				  <tbody>
 					  <tr>
 						  <th scope="row">建设内容</th>
 						  <td colspan="6">
@@ -211,9 +198,36 @@ unset($imgs[0], $imgs[1]); // remove . and ..
 -->
 						  </td>
 					  </tr> 
+				  </tbody>
+			  </table>
 <!-- data from table projects end-->
 
+		  <div id="nodata" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+			  没有数据！
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+			  </button>
+		  </div>
+
 <!-- data from table progress start-->
+		  <form method="post" class="position-relative">
+			<div class="dropdown position-absolute" id="dates">
+					  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <?= date('Y-m') ?>
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<?php for($i=date('n'); date('n') - $i < 12; $i--): ?>
+						<a class="dropdown-item <?php if(date('n') == $i) echo 'active' ?>" href="#"><?= date('Y-m', mktime(0,0,0,$i,1)) ?></a>
+<?php endfor ?>
+					  </div>
+			</div>
+			  <table class="table table-bordered">
+				  <thead>
+					<tr>
+					  <th scope="col" colspan="6">项目进度</th>
+					</tr>
+				  </thead>
+				  <tbody>
 					  <tr>
 <?php
 if($pg_rows[0]['phase']==$pg_rows[1]['phase'])
