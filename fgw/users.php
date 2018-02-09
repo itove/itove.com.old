@@ -62,7 +62,7 @@ $u_rows=(new Db)->query($sql);
 		  用户名由字母和数字组成，不能包含特殊字符，长度3至10位。第一位不能是数字！
 <?php endif ?>
 <?php if($_SESSION['alert']== 2): ?>
-		  用户名<?= $_SESSION['newuser']?>已存在，试试别的！
+		  用户名 <?= $_SESSION['newuser']?> 已存在，试试别的！
 <?php unset($_SESSION['newuser']) ?>
 <?php endif ?>
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
