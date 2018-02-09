@@ -15,20 +15,41 @@ if($_POST && $dayleft > 0){
 			$cols .= "$k='$v',";
 		}
 	}
+	// try to obtain data of this month
 	$sql = "select * from progress where pid='$pid' and date like '${month}%'";
 	$prog = (new Db)->query($sql);
-	// if not have any data of this month yet, copy it from previous month
+	// if NO data of this month yet, insert one
 	if(!$prog){
 		// we use 'order by date desc limt 1' instead of 'and where date like date('Y-m', strtotime('first day of last month'))%', because you don't know whether last month has data
 		$sql="insert into progress (pid,fill_state,phase,fillby,phone,progress,problem,invest_mon,limit_start,limit_end) select pid,fill_state,phase,fillby,phone,progress,problem,invest_mon,limit_start,limit_end from progress where pid='$pid' order by date desc limit 1";
+		// make a copy of previous month
+		if((new Db)->query($sql)){
+			// then set alert to 1
+			$sql="update projects set alert='1' where pid='$pid'";
+		}
+		// if there is NO previous month
+		else{
+			$sql="insert into progress (pid) values('$pid')";
+		}
 		(new Db)->query($sql);
 	}
 
-	// if anything is submitted
+	// if any value is submitted
 	if($cols){
 		$cols = rtrim($cols, ',');
 		$sql="update progress set $cols where pid='$pid' and date like '${month}%'";
 		(new Db)->query($sql);
+		
+		// if same as previous month, set alert to 1, render yellow color;
+		if(1){
+			$sql="update projects set alert='1' where pid='$pid'";
+		}
+		// if ..., set alert to 2, render red color;
+		if(2){
+			$sql="update projects set alert='2' where pid='$pid'";
+		}
+		(new Db)->query($sql);
+		
 		header("Location: $root/$controller/$method");
 		exit;
 	}
