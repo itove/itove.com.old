@@ -1,5 +1,6 @@
 <?php
 $sql="select pid,projects.oid,pname,investment,oname,p_incharge,property,alert from projects join organization on projects.oid=organization.oid";
+// $sql="select pid,oid,pname,investment,o_incharge,p_incharge,property,alert from projects";
 $p_rows=(new Db)->query($sql);
 
 $oid=$_SESSION['oid'];
@@ -74,6 +75,9 @@ case 2:
 					  <td><?= $row['pname'] ?></td>
 					  <td><?= $row['investment'] ?></td>
 					  <td><?= $row['oname'] ?></td>
+<!--
+					  <td><?= $row['o_incharge'] ?></td>
+-->
 					  <td><?= $row['p_incharge'] ?></td>
 					  <td><?= $row['property'] ?></td>
 				  </tr>
