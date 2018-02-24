@@ -40,7 +40,11 @@ truncate projects;
 --
 -- table `projects` inserted by uploading spreadsheet
 --
-source w/it/fgw/sql/projects.sql; -- or source this
+source /home/dot/w/it/fgw/sql/projects.sql; -- or source this
+update projects SET type='工业' WHERE pid BETWEEN 1 and 42;
+update projects SET type='商贸' WHERE pid BETWEEN 43 and 55;
+update projects SET type='基建' WHERE pid BETWEEN 56 and 83;
+update projects SET type='美丽乡村' WHERE pid BETWEEN 84 and 100;
 update projects set oid=8 where o_incharge like "%经信局%";
 update projects set oid=9 where o_incharge like "%科技局%";
 update projects set oid=10 where o_incharge like "%商务局%";

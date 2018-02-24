@@ -192,7 +192,8 @@ else{
 						  <select class="custom-select" disabled>
 								<option value="">基建</option>
 								<option value="">工业</option>
-								<option value="">商业</option>
+								<option value="">商贸</option>
+								<option value="">美丽乡村</option>
 							</select>
 						  </td>
 						  <th scope="row">施工照片</th>

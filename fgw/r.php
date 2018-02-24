@@ -10,6 +10,9 @@ $type='Xls';
 //$inputFileName = __DIR__ . '/fgw.xls';
 $inputFileName = $file;
 $sheetname='工业 ';
+$sheetname='美丽乡村';
+$sheetname='基建';
+$sheetname='商贸';
 
 $reader = IOFactory::createReader($type);
 $reader->setLoadSheetsOnly($sheetname);
@@ -29,9 +32,9 @@ $mysqli=new mysqli('localhost','root','dot','fgw');
 $mysqli->set_charset('utf8');
 //echo $mysqli->character_set_name();
 
-for($i=5;$i<=46;$i++){
+for($i=5;$i<=17;$i++){
 	//echo $sheetData[$i]['D'];
-	$sql="insert into projects (pid,pname,property,intro,investment,invest_plan,start,finish,investby,o_incharge,p_incharge) values(
+	$sql="insert into projects (pid,pname,property,intro,investment,invest_plan,start,finish,investby,o_incharge,p_incharge,o_serve) values(
 		" . "\"" .  $sheetData[$i]['A'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['B'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['C'] ."\""  . ",
@@ -42,7 +45,8 @@ for($i=5;$i<=46;$i++){
 		" . "\"" .  $sheetData[$i]['H'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['I'] ."\""  . ",
 		" . "\"" .  $sheetData[$i]['J'] ."\""  . ",
-		" . "\"" .  $sheetData[$i]['K'] ."\""  . ")";
+		" . "\"" .  $sheetData[$i]['K'] ."\""  . ",
+		" . "\"" .  $sheetData[$i]['L'] ."\""  . ")";
 
 	//echo $sql;
 
