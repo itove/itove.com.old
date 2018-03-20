@@ -56,7 +56,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="num">Call: +86 0719 8025335</p>
+						<p class="num">Call: +86 132 0726 2011</p>
 						<ul class="fh5co-social">
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
