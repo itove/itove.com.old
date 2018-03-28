@@ -2,3 +2,12 @@
 .thead{
 	width: 8rem;
 }
+a:hover{
+	text-decoration: none;
+}
+
+@media (max-width: 576px) {
+	nav h2{
+		font-size: 1.4rem;
+	}
+}
