@@ -1,4 +1,12 @@
-
+#bars{
+	top: 0.8rem;
+	right: 0.9rem;
+	cursor: pointer;
+}
+#navul{
+	overflow: hidden;
+	transition: height .5s;
+}
 .thead{
 	width: 8rem;
 }
@@ -9,5 +17,8 @@ a:hover{
 @media (max-width: 576px) {
 	nav h2{
 		font-size: 1.4rem;
+	}
+	#navul{
+		height: 0px;
 	}
 }
