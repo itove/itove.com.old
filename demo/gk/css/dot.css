@@ -19,3 +19,7 @@ a:hover{
 		font-size: 1.4rem;
 	}
 }
+
+#login{
+	max-width: 330px;
+}
