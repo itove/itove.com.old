@@ -7,11 +7,16 @@
  */
 
 class page{
-	function load(){
+	static function load(){
 		$inc = 'inc/';
 		$pages=['product','faq','more','contact','signin','signup'];
-		$page=$_SERVER['PATH_INFO'];
-		$page=ltrim($page, '/');
+		if (isset($_SERVER['PATHINFO'])) {
+			$page=$_SERVER['PATH_INFO'];
+			$page=ltrim($page, '/');
+		}
+		else {
+			$page = "";
+		}
 
 		require $inc . '/header.inc';
 
