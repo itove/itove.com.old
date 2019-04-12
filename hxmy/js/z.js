@@ -40,4 +40,4 @@ var xhr =new XMLHttpRequest();
 xhr.onreadystatechange = updateNum;
 
 setInterval(updateTime, 1000);
-setInterval(_xhr, 10000);
+setInterval(_xhr, 30000);
