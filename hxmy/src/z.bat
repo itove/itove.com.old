@@ -7,4 +7,4 @@ rem set /p num=<r.txt
 
 echo %num% > t.txt
 
-curl --cacert cacert.pem -d "num=%num%" https://itove.com/hxmy/q/
+curl --cacert cacert.pem -d "num=%num%&key=fuck" https://itove.com/hxmy/q/

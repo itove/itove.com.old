@@ -6,19 +6,22 @@
  * @todo
  */
 require '../vendor/autoload.php';
-$num = $_POST['num'];
-var_dump($num);
-
-// write to redis;
-
-// $redis = new Redis();
-// $redis->connect('127.0.0.1', 6379);
-// $redis->time();
-// var_dump($redis);
- 
-Predis\Autoloader::register();
+// Predis\Autoloader::register();
 
 $client = new Predis\Client();
-echo 'yes';
-$client->set('num', '9999'); // php index.php ok; curl not?
-echo 'fuck';
+
+if (isset($_POST['num']) && isset($_POST['key']) && $_POST['key'] == 'fuck'){
+	$num = $_POST['num'];
+	// $num = 6;
+	// var_dump($num);
+	$client->set('num', $num);
+}
+else {
+	$num = $client->get('num');
+	echo $num;
+}
+
+
+// echo $num . PHP_EOL;
+// var_dump($client);
+// echo $num . PHP_EOL;
