@@ -39,5 +39,7 @@ var time = document.getElementById('time');
 var xhr =new XMLHttpRequest();
 xhr.onreadystatechange = updateNum;
 
+window.onload = _xhr;
+
 setInterval(updateTime, 1000);
 setInterval(_xhr, 10000);
