@@ -1,3 +1,7 @@
 .spinner-grow {
 	animation-duration: 10s;
 }
+
+#rsv_row {
+	margin-bottom: -15px;
+}

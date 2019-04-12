@@ -11,7 +11,7 @@ function JSClock() {
 
 function _xhr(){
 	xhr.open('GET', 'q/');
-	xhr.responseType='';
+	xhr.responseType='json';
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	xhr.send();
 }
@@ -20,12 +20,12 @@ function updateNum(){
 		if(xhr.status === 200){
 			var x = xhr.response;
 			//console.log(x);
-			num.innerText = x;
+			oc.innerText = x.oc;
+			rsv.innerText = x.rsv;
 		}
 	}
 }
 
-// update page
 function updateTime() {
 	var t = JSClock();
 	//console.log(n);
@@ -34,7 +34,8 @@ function updateTime() {
 
 }
 
-var num = document.getElementById('num');
+var oc = document.getElementById('oc');
+var rsv = document.getElementById('rsv');
 var time = document.getElementById('time');
 var xhr =new XMLHttpRequest();
 xhr.onreadystatechange = updateNum;

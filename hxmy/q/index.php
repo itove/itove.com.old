@@ -10,18 +10,18 @@ require '../vendor/autoload.php';
 
 $client = new Predis\Client();
 
-if (isset($_POST['num']) && isset($_POST['key']) && $_POST['key'] == 'fuck'){
-	$num = $_POST['num'];
-	// $num = 6;
-	// var_dump($num);
-	$client->set('num', $num);
+if (isset($_POST['oc']) && isset($_POST['rsv']) && isset($_POST['key']) && $_POST['key'] == 'fuck'){
+	$oc = $_POST['oc'];
+	$rsv = $_POST['rsv'];
+	$client->set('oc', $oc);
+	$client->set('rsv', $rsv);
 }
 else {
-	$num = $client->get('num');
-	echo $num;
+	// $x = new stdClass();
+	//$x->oc = $client->get('oc');
+	//$x->rsv = $client->get('rsv');
+	//echo json_encode($x, JSON_UNESCAPED_UNICODE);
+	$oc = $client->get('oc');
+	$rsv = $client->get('rsv');
+	echo '{"oc": "' . $oc . '", "rsv": "' . $rsv .'"}';
 }
-
-
-// echo $num . PHP_EOL;
-// var_dump($client);
-// echo $num . PHP_EOL;
