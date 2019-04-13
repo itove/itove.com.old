@@ -42,5 +42,5 @@ xhr.onreadystatechange = updateNum;
 
 window.onload = _xhr;
 
-setInterval(updateTime, 1000);
+//setInterval(updateTime, 1000);
 setInterval(_xhr, 10000);
