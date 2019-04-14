@@ -43,4 +43,6 @@ xhr.onreadystatechange = updateNum;
 window.onload = _xhr;
 
 //setInterval(updateTime, 1000);
-setInterval(_xhr, 10000);
+var intvls = [];
+var i = setInterval(_xhr, 10000);
+intvls.push(i);
