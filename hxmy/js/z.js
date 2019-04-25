@@ -11,11 +11,7 @@ function updateNum(){
 			//console.log(x);
 			oc.innerText = x.oc;
 			rsv.innerText = x.rsv;
-			var i = new Date().getMinutes() - x.min;
-			if(i < 0){
-				i += 60;
-			}
-			if(i > 3){
+			if((Math.floor(new Date().getTime()/1000) - x.sec) > 180){
 				spinner.className='spinner-grow text-danger';
 			}
 			else{
