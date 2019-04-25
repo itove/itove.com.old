@@ -15,13 +15,13 @@ if (isset($_POST['oc']) && isset($_POST['rsv']) && isset($_POST['key']) && $_POS
 	$rsv = $_POST['rsv'];
 	$client->set('oc', $oc);
 	$client->set('rsv', $rsv);
+	$client->set('min', date('i'));
 }
 else {
-	// $x = new stdClass();
-	//$x->oc = $client->get('oc');
-	//$x->rsv = $client->get('rsv');
-	//echo json_encode($x, JSON_UNESCAPED_UNICODE);
-	$oc = $client->get('oc');
-	$rsv = $client->get('rsv');
-	echo '{"oc": "' . $oc . '", "rsv": "' . $rsv .'"}';
+	$a = [
+		'oc' => $client->get('oc'),
+		'rsv' => $client->get('rsv'),
+		'min' => $client->get('min')
+	];
+	echo json_encode($a, JSON_UNESCAPED_UNICODE);
 }
